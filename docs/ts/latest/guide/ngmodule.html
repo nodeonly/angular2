@@ -1,0 +1,1273 @@
+<!DOCTYPE html><html lang="en" ng-app="angularIOApp" itemscope itemtype="http://schema.org/Framework"><!-- template: public/docs/_layout--><head><title>Angular Modules (NgModule) - ts</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta name="keywords" content="Angular, AngularJS, AngularDart, Javscript, Dart, Framework, JavaScript MVC, Google"/><meta name="robots" content="all"/><meta name="referrer" content="origin"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"/><meta property="og:title" content="Angular 2"/><meta property="og:image" content="/resources/images/logos/standard/shield-large.png"/><meta property="og:image:type" content="image/png"/><meta property="og:image:width" content="184"/><meta property="og:image:height" content="200"/><meta property="og:description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="name" content="Angular 2"/><meta itemprop="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="image" content="https://angular.io/resources/images/logos/standard/shield-large.png"/><link rel="icon" type="image/x-icon" href="/resources/images/icons/favicon.ico"/><link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/><link rel="stylesheet" href="/resources/css/vendor/icomoon/style.css"/><link rel="stylesheet" href="/resources/css/vendor/animate.css"/><link rel="stylesheet" href="/resources/css/main.css"/><!-- MOBILE ICONS -->
+<link rel="apple-touch-icon" sizes="57x57" href="/resources/images/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/resources/images/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/resources/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/resources/images/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/resources/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/resources/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/resources/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/resources/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/resources/images/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/resources/images/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/resources/images/favicons/manifest.json"></head><body ng-controller="AppCtrl as appCtrl" class="l-offset-nav l-offset-side-nav"><nav scroll-y-offset-element="scroll-y-offset-element" class="main-nav l-pinned-top l-layer-5"><h1><a href="/" md-button>Angular <sup>by Google</sup></a></h1><button aria-label="View Menu" ng-click="appCtrl.toggleMainMenu($event)" md-button="md-button" class="main-nav-button main-nav-mobile-trigger l-right">Site Menu <span class="icon icon-arrow-drop-down"></span></button><ul ng-class="appCtrl.showMainNav ? 'is-visible' : ''"><li class="l-left"><a class="main-nav-button" href="/features.html" md-button>Features</a></li><li class="l-left"><a class="main-nav-button" href="/docs/ts/latest/" md-button>Docs</a></li><li class="l-left"><a class="main-nav-button" href="/events.html" md-button>Events</a></li><li class="l-left"><a class="main-nav-button" href="/news.html" md-button>News</a></li><li class="l-right"><a class="main-nav-button" href="/docs/ts/latest/quickstart.html" md-button>Get Started</a></li></ul></nav><!-- Include this file ONLY when current.path[2] is defined--><nav ng-class="appCtrl.showDocsNav ? 'is-visible' : ''" class="sidenav l-pinned-left l-layer-4 l-offset-nav"><!-- SEARCH BAR--><header class="sidenav-search st-input-wrapper"><form class="st-input-inner"><label for="search-io" class="is-hidden">Search Docs</label><input type="search" id="search-io" placeholder="SEARCH DOCS..."/></form><button aria-label="View Docs Menu" ng-click="appCtrl.toggleDocsMenu($event)" md-button="md-button" class="mobile-trigger button">Docs <span class="icon icon-arrow-drop-down"></span></button></header><ul class="sidenav-links"><li class="sidenav-section no-border"><a href="/docs/ts/latest/" class="nav-title">Docs Home</a></li><!-- CORE DOCUMENTATION--><li class="sidenav-section-divider"><h3>Core Documentation</h3></li><li class="sidenav-section"><a href="/docs/ts/latest/quickstart.html" title="Get up and running with Angular 2" class="nav-title ">Quickstart</a></li><li class="sidenav-section"><a href="/docs/ts/latest/guide/" title="How to read and use this documentation" class="nav-title is-parent ">Guide<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-ordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/guide/" title="How to read and use this documentation">1. Overview</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/architecture.html" title="The basic building blocks of Angular 2 applications">2. Architecture</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/displaying-data.html" title="Interpolation and other forms of property binding help us show app data in the UI.">3. Displaying Data</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/user-input.html" title="User input triggers DOM events. We listen to those events with event bindings that funnel updated values back into our components and models.">4. User Input</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/forms.html" title="A form creates a cohesive, effective, and compelling data entry experience. An Angular form coordinates a set of data-bound user controls, tracks changes, validates input, and presents errors.">5. Forms</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/dependency-injection.html" title="Angular's dependency injection system creates and delivers dependent services &quot;just-in-time&quot;.">6. Dependency Injection</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/template-syntax.html" title="Learn how to write templates that display data and consume user events with the help of data binding.">7. Template Syntax</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/cheatsheet.html" title="A quick guide to Angular syntax. (Content is provisional and may change.)">8. Angular Cheat Sheet</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/style-guide.html" title="Write Angular 2 with style.">9. Style Guide</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/glossary.html" title="Brief definitions of the most important words in the Angular 2 vocabulary">10. Glossary</a></li></ul></div></li><li class="sidenav-section no-border"><a href="/docs/ts/latest/api/" title="API Preview" class="nav-title ">API Reference</a></li><!-- ADVANCED DOCUMENATION--><li class="sidenav-section-divider"><h3>Additional Documentation</h3></li><li class="sidenav-section"><a href="/docs/ts/latest/tutorial/" title="The Tour of Heroes tutorial takes us through the steps of creating an Angular application in TypeScript." class="nav-title is-parent ">Tutorial<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-ordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/" title="The Tour of Heroes tutorial takes us through the steps of creating an Angular application in TypeScript.">1. Introduction</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt1.html" title="We build a simple hero editor">2. The Hero Editor</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt2.html" title="We build a master/detail page with a list of heroes">3. Master/Detail</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt3.html" title="We refactor the master/detail view into separate components">4. Multiple Components</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt4.html" title="We create a reusable service to manage our hero data calls">5. Services</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt5.html" title="We add the Angular Component Router and learn to navigate among the views">6. Routing</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt6.html" title="We convert our service and components to use Angular's HTTP service">7. HTTP</a></li></ul></div></li><li class="sidenav-section"><a href="/docs/ts/latest/guide/ngmodule.html" title="Define application modules with @NgModule" class="nav-title is-parent is-selected">Advanced Documentation<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-unordered-lists"><ul><li class="nav-list-item is-selected"><a href="/docs/ts/latest/guide/ngmodule.html" title="Define application modules with @NgModule">Angular Modules (NgModule)</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/animations.html" title="A guide to Angular's animation system.">Animations</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/attribute-directives.html" title="Attribute directives attach behavior to elements.">Attribute Directives</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/browser-support.html" title="Browser support and polyfills guide.">Browser support</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/component-styles.html" title="Learn how to apply CSS styles to components.">Component Styles</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/hierarchical-dependency-injection.html" title="Angular's hierarchical dependency injection system supports nested injectors in parallel with the component tree.">Hierarchical Injectors</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/server-communication.html" title="Talk to a remote server with an HTTP Client.">HTTP Client</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/lifecycle-hooks.html" title="Angular calls lifecycle hook methods on directives and components as it creates, changes, and destroys them.">Lifecycle Hooks</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/npm-packages.html" title="Recommended npm packages, and how to specify package dependencies">Npm Packages</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/pipes.html" title="Pipes transform displayed values within a template.">Pipes</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/router.html" title="Discover the basics of screen navigation with the Angular 2 Router.">Routing &amp; Navigation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/security.html" title="Developing for content security in Angular applications">Security</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/structural-directives.html" title="Angular has a powerful template engine that lets us easily manipulate the DOM structure of our elements.">Structural Directives</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/testing.html" title="Techniques and practices for testing an Angular 2 app">Testing</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/typescript-configuration.html" title="TypeScript configuration for Angular 2 developers">TypeScript Configuration</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/upgrade.html" title="Angular 1 applications can be incrementally upgraded to Angular 2.">Upgrading from 1.x</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/webpack.html" title="Create your Angular 2 applications with a Webpack based tooling">Webpack: an introduction</a></li></ul></div></li><li class="sidenav-section"><a href="/docs/ts/latest/cookbook/" title="A collection of recipes for common Angular application scenarios" class="nav-title is-parent ">Cookbook<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-unordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/" title="A collection of recipes for common Angular application scenarios">Overview</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/aot-compiler.html" title="Learn how to use Ahead-of-time compilation">Ahead-of-Time Compilation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/a1-a2-quick-reference.html" title="Learn how Angular 1 concepts and techniques map to Angular 2">Angular 1 to 2 Quick Ref</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/ngmodule-faq.html" title="Answers to frequently asked questions about @NgModule">Angular Module FAQs</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/component-communication.html" title="Share information between different directives and components">Component Interaction</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/component-relative-paths.html" title="Use relative URLs for component templates and styles.">Component-relative Paths</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/dependency-injection.html" title="Techniques for Dependency Injection">Dependency Injection</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/dynamic-form.html" title="Render dynamic forms with FormGroup">Dynamic Forms</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/form-validation.html" title="Validate user's form entries">Form Validation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/rc4-to-rc5.html" title="Migrate your RC4 app to RC5 in minutes.">RC4 to RC5 Migration</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/set-document-title.html" title="Setting the document or window title using the Title service.">Set the Document Title</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/ts-to-js.html" title="Convert Angular 2 TypeScript examples into ES5 JavaScript">TypeScript to JavaScript</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/visual-studio-2015.html" title="Use Visual Studio 2015 with the QuickStart files">Visual Studio 2015 QuickStart</a></li></ul></div></li></ul><!-- DROPDOWN BUTTON --><nav class="dropdown"><button aria-label="Select a version of Angular" md-button="md-button" ng-click="appCtrl.toggleVersionMenu($event)" class="dropdown-button">Angular 2 for TypeScript  <span class="icon icon-arrow-drop-down"></span></button><div ng-click="appCtrl.toggleVersionMenu($event)" ng-show="appCtrl.showMenu" class="overlay ng-hide"></div><!-- DROPDOWN MENU --><ul ng-class="appCtrl.showMenu ? 'is-visible' : ''" class="dropdown-menu"><li><a href="/docs/ts/latest/guide/ngmodule.html" md-button>Angular 2 for TypeScript </a></li><li><a href="/docs/js/latest/guide/ngmodule.html" md-button>Angular 2 for JavaScript </a></li><li><a href="/docs/dart/latest/guide/ngmodule.html" md-button>Angular 2 for Dart </a></li></ul></nav></nav><script>// Could put in appCtrl but only needed here and clear here
+(function scrollToSelectedLink() {
+  var sideNav = document.getElementsByClassName('sidenav')[0];
+  var link = sideNav.getElementsByClassName('is-selected')[0];
+  if(link && link.offsetTop > window.innerHeight){
+    sideNav.scrollTop = link.offsetTop - (window.innerHeight/2);
+    //alert("offsetTop: " + link.offsetTop + " side-nav top is " + sideNav.scrollTop);
+  }
+})()</script><!-- template: public/_includes/_hero--><header class="hero background-sky"><h1 class="hero-title ">Angular Modules (NgModule)</h1><!--CLEAR FLOAT ELEMENTS--><div class="clear"></div></header><div class="banner"><p class="text-body">Define application modules with @NgModule</p></div><article class="l-content-small grid-fluid docs-content"><script>function why(id, backTo) {
+  var id = "#"+id;
+  var el = document.querySelector(id);
+  el.hidden=el.hidden=!el.hidden;
+
+  if (el.hidden && backTo){
+    // the next line is required to work around a bug in WebKit (Chrome / Safari)
+    location.href = "#";
+    location.href =  "#" + backTo;
+  }
+}</script><script>function verbose(isVerbose) {
+  isVerbose = !! isVerbose;
+  var el = document.querySelector('button.verbose.off');
+  el.style.display = isVerbose ? 'block' : 'none';
+  var el = document.querySelector('button.verbose.on');
+  el.style.display = isVerbose ? 'none' : 'block';
+
+  CCSStylesheetRuleStyle('main','.l-verbose-section', 'display',
+    isVerbose ? 'block' : 'none');
+}
+</script><script>function CCSStylesheetRuleStyle(stylesheet, selectorText, style, value){
+  /* returns the value of the element style of the rule in the stylesheet
+  *  If no value is given, reads the value
+  *  If value is given, the value is changed and returned
+  *  If '' (empty string) is given, erases the value.
+  *  The browser will apply the default one
+  *
+  * string stylesheet: part of the .css name to be recognized, e.g. 'default'
+  * string selectorText: css selector, e.g. '#myId', '.myClass', 'thead td'
+  * string style: camelCase element style, e.g. 'fontSize'
+  * string value optional : the new value
+  */
+  var CCSstyle = undefined, rules, sheet;
+  for(var m in document.styleSheets){
+    sheet = document.styleSheets[m];
+    if(sheet.href && sheet.href.indexOf(stylesheet) != -1){
+    rules = sheet[document.all ? 'rules' : 'cssRules'];
+    for(var n in rules){
+      console.log(rules[n].selectorText);
+      if(rules[n].selectorText == selectorText){
+        CCSstyle = rules[n].style;
+        break;
+      }
+    }
+    break;
+    }
+  }
+  if(value == undefined)
+    return CCSstyle[style]
+  else
+    return CCSstyle[style] = value
+}
+</script><!-- TODOImages
+--><p><strong>Angular Modules</strong> help organize an application into cohesive blocks of functionality.</p>
+<p>An Angular Module is a <em>class</em> adorned with the <strong>@NgModule</strong> decorator function.
+<code>@NgModule</code> takes a metadata object that tells Angular how to compile and run module code. 
+It identifies the module&#39;s <em>own</em> components, directives and pipes, 
+making some of them public so external components can use them. 
+It may add service providers to the application dependency injectors. 
+And there are more options covered here. </p>
+<p>This page explains how to <strong>create</strong> <code>NgModule</code> classes and how to load them, 
+either immediately when the application launches or later, as needed, via the <a href="router.html">Router</a>.  </p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#angular-modularity" title="Add structure to the app with NgModule">Angular modularity</a></li>
+<li><a href="#root-module" title="The startup module that every app requires">The application root module</a></li>
+<li><a href="#bootstrap" title="Launch the app in a browser with the root module as the entry point">Bootstrap</a> the root module</li>
+<li><a href="#declarations" title="Declare the components, directives, and pipes that belong to a module">Declarations</a></li>
+<li><a href="#providers" title="Extend the app with additional services">Providers</a></li>
+<li><a href="#imports" title="Import components, directives, and pipes for use in component templates">Imports</a></li>
+<li><a href="#resolve-conflicts" title="When two directives have the same selector ...">Resolve conflicts</a></li>
+<li><a href="#feature-modules" title="Partition the app into feature modules">Feature modules</a></li>
+<li><a href="#lazy-load" title="Load modules asynchronously">Lazy loaded modules</a> with the Router</li>
+<li><a href="#shared-module" title="Create modules for commonly used components, directives, and pipes">Shared modules</a> </li>
+<li><a href="#core-module" title="Create a core module with app-wide singleton services and single-use components">The Core module</a> </li>
+<li><a href="#core-for-root" title="Configure providers during module import">Configure core services with <em>forRoot</em></a></li>
+<li><a href="#prevent-reimport" title="because bad things happen if a lazy loaded module imports Core">Prevent reimport of the <em>CoreModule</em></a></li>
+<li><a href="#ngmodule-properties" title="A technical summary of the @NgModule metadata properties">NgModule metadata properties</a></li>
+</ul>
+<h3 id="live-examples">Live examples</h3>
+<p>This page explains Angular Modules through a progression of improvements to a sample with a &quot;Tour of Heroes&quot; theme.
+Here&#39;s an index to live examples at key moments in the evolution of that sample:</p>
+<ul>
+<li><live-example plnkr="minimal.0">A minimal NgModule app</live-example></li>
+<li><live-example plnkr="contact.1b">The first contact module</live-example></li>
+<li><live-example plnkr="contact.2">The revised contact module</live-example></li>
+<li><live-example plnkr="pre-shared.3">Just before adding <em>SharedModule</em></live-example> </li>
+<li><live-example>The final version</live-example></li>
+</ul>
+<h3 id="frequently-asked-questions-faqs-">Frequently Asked Questions (FAQs)</h3>
+<p>This page covers Angular Module concepts in a tutorial fashion.</p>
+<p>The companion <a href="../cookbook/ngmodule-faq.html" title="Angular Module FAQs">Angular Module FAQs</a> cookbook
+offers ready answers to specific design and implementation questions.
+Read this page first before hopping over to those FAQs.</p>
+<div class="l-hr"></div><a id="angular-modularity"> </a><div class="l-main-section"></div><h2 id="angular-modularity">Angular Modularity</h2>
+<p>Modules are a great way to organize the application and extend it with capabilities from external libraries.</p>
+<p>Many Angular libraries are modules (e.g, <code>FormsModule</code>, <code>HttpModule</code>, <code>RouterModule</code>). 
+Many third party libraries are available as Angular modules (e.g., 
+<a href="https://material.angular.io/" target="_blank">Material Design</a>,
+<a href="http://ionicframework.com/" target="_blank">Ionic</a>,
+<a href="https://github.com/angular/angularfire2" target="_blank">AngularFire2</a>).</p>
+<p>Angular modules consolidate components, directives and pipes into
+cohesive blocks of functionality, each focused on a 
+feature area, application business domain, workflow, or common collection of utilities.</p>
+<p>Modules can also add services to the application.
+Such services might be internally-developed such as the application logger.
+They can come from outside sources such as the Angular router and Http client.</p>
+<p>Modules can be loaded eagerly when the application starts.
+They can also be <em>lazy loaded</em> asynchronously by the router.</p>
+<p>An Angular module is a class decorated with <code>@NgModule</code> metadata. The metadata:</p>
+<ul>
+<li>declare which components, directives and pipes  <em>belong</em> to the module.</li>
+<li>make some of those classes public so that other component templates can use them.</li>
+<li>import other modules with the components, directives and pipes needed by the components in <em>this</em> module.</li>
+<li>provide services at the application level that any application component can use.</li>
+</ul>
+<p>Every Angular app has at least one module class, the <em>root module</em>. 
+We bootstrap that module to launch the application.</p>
+<p>The <em>root module</em> is all we need in a simple application with a few components.
+As the app grows, we refactor the <em>root module</em> into <strong>feature modules</strong> 
+that represent collections of related functionality. 
+We then import these modules into the <em>root module</em>.</p>
+<p>We&#39;ll see how later in the page. Let&#39;s start with the <em>root module</em>.</p>
+<a id="root_module"> </a><div class="l-main-section"></div><h2 id="_appmodule_-the-application-root-module"><em>AppModule</em> - the application root module</h2>
+<p>Every Angular app has a <strong>root module</strong> class. 
+By convention it&#39;s a class called <code>AppModule</code> in a file named <code>app.module.ts</code>.</p>
+<p>This <code>AppModule</code> is about as minimal as it gets:</p>
+<div class="code-example"><header><h4>app/app.module.ts (minimal)</h4></header><code-example language="ts" format="">import { NgModule }      from &#39;@angular/core&#39;;
+import { BrowserModule } from &#39;@angular/platform-browser&#39;;
+
+import
+       { AppComponent }  from &#39;./app.component&#39;;
+
+@NgModule({
+  imports: [ BrowserModule ],
+  declarations: [ AppComponent ],
+  bootstrap:    [ AppComponent ]
+})
+export class AppModule { }
+</code-example></div><p>The <code>@NgModule</code> decorator defines the metadata for the module. 
+We&#39;ll take an intuitive approach to understanding the metadata and fill in details as we go.</p>
+<p>This metadata imports a single helper module, <code>BrowserModule</code>, the module every browser app must import.</p>
+<p><code>BrowserModule</code> registers critical application service providers.
+It also includes common directives like <code>NgIf</code> and <code>NgFor</code> which become immediately visible and usable
+in any of this modules component templates. </p>
+<p>The <code>declarations</code> list identifies the application&#39;s only component, 
+the <em>root component</em>, the top of this app&#39;s rather bare component tree.</p>
+<p>The example <code>AppComponent</code> simply displays a data-bound title:</p>
+<div class="code-example"><header><h4>app/app.component.ts (minimal)</h4></header><code-example language="ts" format="">import { Component } from &#39;@angular/core&#39;;
+
+@Component({
+  selector: &#39;my-app&#39;,
+  template: &#39;&lt;h1&gt;{{title}}&lt;/h1&gt;&#39;,
+})
+export class AppComponent {
+  title = &#39;Minimal NgModule&#39;;
+}
+</code-example></div><p>Lastly, the <code>@NgModule.bootstrap</code> property identifies this <code>AppComponent</code> as the <em>bootstrap component</em>. 
+When Angular launches the app, it places the HTML rendering of <code>AppComponent</code> in the DOM,
+inside the <code>&lt;my-app&gt;</code> element tags of the <code>index.html</code></p>
+<a id="bootstrap"></a><div class="l-main-section"></div><h2 id="bootstrapping-in-_main-ts_">Bootstrapping in <em>main.ts</em></h2>
+<p>We launch the application by bootstrapping the <code>AppModule</code> in the <code>main.ts</code> file.</p>
+<p>Angular offers a variety of bootstrapping options, targeting multiple platforms. 
+In this page we consider two options, both targeting the browser.</p>
+<h3 id="dynamic-bootstrapping-with-the-just-in-time-jit-compiler">Dynamic bootstrapping with the Just-in-time (JiT) compiler</h3>
+<p>In the first, <em>dynamic</em> option, the <a href="../cookbook/ngmodule-faq.html#q-angular-compiler" title="About the Angular Compiler">Angular compiler</a> 
+compiles the application in the browser and then launches the app.</p>
+<div class="code-example"><header><h4>app/main.ts (dynamic)</h4></header><code-example language="ts" format="">// The browser platform with a compiler
+import { platformBrowserDynamic } from &#39;@angular/platform-browser-dynamic&#39;;
+
+// The app module
+import { AppModule } from &#39;./app.module&#39;;
+
+// Compile and launch the module
+platformBrowserDynamic().bootstrapModule(AppModule);
+</code-example></div><p>The samples in this page demonstrate the dynamic bootstrapping approach. </p>
+<p><live-example embedded plnkr="minimal.0" img="devguide/ngmodule/minimal-plunker.png">Try the live example.</live-example></p>
+<h3 id="static-bootstrapping-with-the-ahead-of-time-aot-compiler">Static bootstrapping with the Ahead-Of-time (AoT) compiler</h3>
+<p>Consider the static alternative which can produce a much smaller application that
+launches faster, especially on mobile devices and high latency networks.</p>
+<p>In the <em>static</em> option, the Angular compiler runs ahead-of-time as part of the build process,
+producing a collection of class factories in their own files. 
+Among them is the <code>AppModuleNgFactory</code>.</p>
+<p>The syntax for bootstrapping the pre-compiled <code>AppModuleNgFactory</code> is similar to 
+the dynamic version that bootstraps the <code>AppModule</code> class.</p>
+<div class="code-example"><header><h4>app/main.ts (static)</h4></header><code-example language="ts" format="">// The browser platform without a compiler
+import { platformBrowser } from &#39;@angular/platform-browser&#39;;
+
+// The app module factory produced by the static offline compiler
+import { AppModuleNgFactory } from &#39;./app.module.ngfactory&#39;;
+
+// Launch with the app module factory.
+platformBrowser().bootstrapModuleFactory(AppModuleNgFactory);
+</code-example></div><p>Because the entire application was pre-compiled, 
+we don&#39;t ship the <em>Angular Compiler</em> to the browser and we don&#39;t compile in the browser.</p>
+<p>The application code downloaded to the browser is much smaller than the dynamic equivalent
+and it is ready to execute immediately. The performance boost can be significant.</p>
+<p>Both the JiT and AoT compilers generate an <code>AppModuleNgFactory</code> class from the same <code>AppModule</code>
+ source code.
+The JiT compiler creates that factory class on the fly, in memory, in the browser.
+The AoT compiler outputs the factory to a physical file
+that we&#39;re importing here in the static version of <code>main.ts</code>.</p>
+<p>In general, the <code>AppModule</code> should neither know nor care how it is bootstrapped.</p>
+<p>Although the <code>AppModule</code> evolves as the app grows, the bootstrap code in <code>main.ts</code> doesn&#39;t change.
+This is the last time we&#39;ll look at <code>main.ts</code>.</p>
+<div class="l-hr"></div><a id="declarations"></a><div class="l-main-section"></div><h2 id="declare-directives-and-components">Declare directives and components</h2>
+<p>The app evolves. 
+The first addition is a <code>HighlightDirective</code>, an <a href="attribute-directives.html">attribute directive</a>
+that sets the background color of the attached element.</p>
+<div class="code-example"><header><h4>app/highlight.directive.ts</h4></header><code-example language="ts" format="">import { Directive, ElementRef, Renderer } from &#39;@angular/core&#39;;
+
+@Directive({ selector: &#39;[highlight]&#39; })
+/** Highlight the attached element in gold */
+export class HighlightDirective {
+  constructor(renderer: Renderer, el: ElementRef) {
+    renderer.setElementStyle(el.nativeElement, &#39;backgroundColor&#39;, &#39;gold&#39;);
+    console.log(
+      `* AppRoot highlight called for ${el.nativeElement.tagName}`);
+  }
+}
+</code-example></div><p>We update the <code>AppComponent</code> template to attach the directive to the title:</p>
+<div class="code-example"><code-example language="ts" format="">template: &#39;&lt;h1 highlight&gt;{{title}}&lt;/h1&gt;&#39;
+</code-example></div><p>If we ran the app now, Angular would not recognize the <code>highlight</code> attribute and would ignore it. 
+We must declare the directive in <code>AppModule</code>.</p>
+<p>Import the <code>HighlightDirective</code> class and add it to the module&#39;s <code>declarations</code> like this:</p>
+<div class="code-example"><code-example language="ts" format="">declarations: [
+  AppComponent,
+  HighlightDirective,
+],
+</code-example></div><h3 id="add-a-component">Add a component</h3>
+<p>We decide to refactor the title into its own <code>TitleComponent</code>. 
+The component&#39;s template binds to the component&#39;s <code>title</code> and <code>subtitle</code> properties like this:</p>
+<div class="code-example"><header><h4>app/title.component.html</h4></header><code-example language="html" format="">&lt;h1 highlight&gt;{{title}} {{subtitle}}&lt;/h1&gt;
+</code-example></div><div class="code-example"><header><h4>app/title.component.ts</h4></header><code-example language="ts" format="">import { Component, Input } from &#39;@angular/core&#39;;
+
+@Component({
+  moduleId: module.id,
+  selector: &#39;app-title&#39;,
+  templateUrl: &#39;title.component.html&#39;,
+})
+export class TitleComponent {
+  @Input() subtitle = &#39;&#39;;
+  title = &#39;Angular Modules&#39;;
+}
+</code-example></div><p>We rewrite the <code>AppComponent</code> to display the new <code>TitleComponent</code> in the <code>&lt;app-title&gt;</code> element,
+using an input binding to set the <code>subtitle</code>.</p>
+<div class="code-example"><header><h4>app/app.component.ts (v1)</h4></header><code-example language="ts" format="">import { Component } from &#39;@angular/core&#39;;
+
+@Component({
+  selector: &#39;my-app&#39;,
+  template: &#39;&lt;app-title [subtitle]=&quot;subtitle&quot;&gt;&lt;/app-title&gt;&#39;
+})
+export class AppComponent {
+  subtitle = &#39;(v1)&#39;;
+}
+</code-example></div><p>Angular won&#39;t recognize the <code>&lt;app-title&gt;</code> tag until we declare it in <code>AppModule</code>. 
+Import the <code>TitleComponent</code> class and add it to the module&#39;s <code>declarations</code>:</p>
+<div class="code-example"><code-example language="ts" format="">  declarations: [
+    AppComponent,
+    HighlightDirective,
+    TitleComponent,
+  ],
+</code-example></div><a id="providers"></a><div class="l-main-section"></div><h2 id="service-providers">Service Providers</h2>
+<p>Modules are a great way to provide services for all of the module&#39;s components.</p>
+<p>The <a href="dependency-injection.html">Dependency Injection</a> page describes
+the Angular hierarchical dependency injection system and how to configure that system
+with <a href="dependency-injection.html#providers">providers</a> at different levels of the
+application&#39;s component tree.</p>
+<p>A module can add providers to the application&#39;s root dependency injector, making those services
+available everywhere in the application.</p>
+<p>Many applications capture information about the currently logged-in user and make that information 
+accessible through a user service. 
+This sample application has a dummy implementation of such a <code>UserService</code>.</p>
+<div class="code-example"><header><h4>app/user.service.ts</h4></header><code-example language="ts" format="">import { Injectable } from &#39;@angular/core&#39;;
+
+@Injectable()
+/** Dummy version of an authenticated user service */
+export class UserService {
+  userName = &#39;Sherlock Holmes&#39;;
+}
+</code-example></div><p>The sample application should display a welcome message to the logged in user just below the application title.
+Update the <code>TitleComponent</code> template to show the welcome message below the application title.</p>
+<div class="code-example"><header><h4>app/title.component.html</h4></header><code-example language="html" format="">&lt;h1 highlight&gt;{{title}} {{subtitle}}&lt;/h1&gt;
+&lt;p *ngIf=&quot;user&quot;&gt;
+  &lt;i&gt;Welcome, {{user}}&lt;/i&gt;
+&lt;p&gt;
+</code-example></div><p>Update the <code>TitleComponent</code> class with a constructor that injects the <code>UserService</code>
+and sets the component&#39;s <code>user</code> property from the service.</p>
+<div class="code-example"><header><h4>app/title.component.ts</h4></header><code-example language="ts" format="">import { Component, Input } from &#39;@angular/core&#39;;
+import { UserService } from &#39;./user.service&#39;;
+
+@Component({
+  moduleId: module.id,
+  selector: &#39;app-title&#39;,
+  templateUrl: &#39;title.component.html&#39;,
+})
+export class TitleComponent {
+  @Input() subtitle = &#39;&#39;;
+  title = &#39;Angular Modules&#39;;
+  user = &#39;&#39;;
+
+  constructor(userService: UserService) {
+    this.user = userService.userName;
+  }
+}
+</code-example></div><p>We&#39;ve <em>defined</em> and <em>used</em> the service. Now we <em>provide</em> it for all components to use by
+adding it to a <code>providers</code> property in the <code>AppModule</code> metadata:</p>
+<div class="code-example"><header><h4>app/app.module.ts (providers)</h4></header><code-example language="ts" format="">providers: [ UserService ],
+</code-example></div><a id="imports"></a><div class="l-main-section"></div><h2 id="import-supporting-modules">Import supporting modules</h2>
+<p>The app shouldn&#39;t welcome a user if there is no user.</p>
+<p>Notice in the revised <code>TitleComponent</code> that an <code>*ngIf</code> directive guards the message.
+There is no message if there is no user.</p>
+<div class="code-example"><header><h4>app/title.component.html (ngIf)</h4></header><code-example language="html" format="">&lt;p *ngIf=&quot;user&quot;&gt;
+  &lt;i&gt;Welcome, {{user}}&lt;/i&gt;
+&lt;p&gt;
+</code-example></div><p>Although <code>AppModule</code> doesn&#39;t declare <code>NgIf</code>, the application still compiles and runs.
+How can that be? The Angular compiler should either ignore or complain about unrecognized HTML.</p>
+<p>Angular <em>does</em> recognize <code>NgIf</code> because we imported it earlier. 
+The initial version of <code>AppModule</code> imports <code>BrowserModule</code>.</p>
+<div class="code-example"><header><h4>app/app.module.ts (imports)</h4></header><code-example language="ts" format="">imports: [ BrowserModule ],
+</code-example></div><p>Importing <code>BrowserModule</code> made all of its public components, directives and pipes visible 
+to the component templates in <code>AppModule</code>. They are ready to use without further ado.</p>
+<div class="l-sub-section"><p>More accurately, <code>NgIf</code> is declared in <code>CommonModule</code> from <code>@angular/common</code>.</p>
+<p><code>CommonModule</code> contributes many of the common directives that applications need including <code>ngIf</code> and <code>ngFor</code>.</p>
+<p><code>BrowserModule</code> imports <code>CommonModule</code> and <a href="../cookbook/ngmodule-faq.html#q-re-export"><em>re-exports</em></a> it.
+The net effect is that an importer of <code>BrowserModule</code> gets <code>CommonModule</code> directives automatically.</p>
+</div><p>Many familiar Angular directives do not belong to<code>CommonModule</code>. 
+For example,  <code>NgModel</code> and <code>RouterLink</code> belong to Angular&#39;s <code>FormsModule</code> and <code>RouterModule</code> respectively.
+We must <em>import</em> those modules before we can use their directives.</p>
+<p>To illustrate this point, we extend the sample app with <code>ContactComponent</code>, 
+a form component that imports form support from the Angular <code>FormsModule</code>.</p>
+<h3 id="add-the-_contactcomponent_">Add the <em>ContactComponent</em></h3>
+<p><a href="forms.html">Angular Forms</a> are a great way to manage user data entry.</p>
+<p>The <code>ContactComponent</code> presents a &quot;contact editor&quot;, 
+implemented with <em>Angular Forms</em> in the <a href="forms.html"><em>template-driven form</em></a> style.</p>
+<div class="l-sub-section"><h4 id="angular-form-styles">Angular Form Styles</h4>
+<p>We write Angular form components in either the
+<a href="forms.html"><em>template-driven form</em></a> style or 
+the <a href="../cookbook/dynamic-form.html"><em>reactive form</em></a> style.</p>
+<p>This sample is about to import the <code>FormsModule</code> from <code>@angular/forms</code> because
+the <code>ContactComponent</code> is written in the <em>template-driven</em> style.
+Modules with components written in the <em>reactive</em> style,
+should import the <code>ReactiveFormsModule</code> instead.</p>
+</div><p>The <code>ContactComponent</code> selector matches an element named <code>&lt;app-contact&gt;</code>. 
+Add an element with that name to the <code>AppComponent</code> template just below the <code>&lt;app-title&gt;</code>:</p>
+<div class="code-example"><header><h4>app/app.component.ts (template)</h4></header><code-example language="ts" format="">template: `
+  &lt;app-title [subtitle]=&quot;subtitle&quot;&gt;&lt;/app-title&gt;
+  &lt;app-contact&gt;&lt;/app-contact&gt;
+`
+</code-example></div><p>The <code>ContactComponent</code> has a lot going on. 
+Form components are often complex anyway and this one has its own <code>ContactService</code>, 
+its own <a href="#pipes.html#custom-pipes">custom pipe</a> called <code>Awesome</code>,
+and an alternative version of the <code>HighlightDirective</code>.</p>
+<p>To make it manageable, we place all contact-related material in an <code>app/contact</code> folder
+and break the component into three constituent HTML, TypeScript, and css files:</p>
+<code-tabs><code-pane language="html" name="app/contact/contact.component.html" format="linenums">&lt;h2&gt;Contact of {{userName}}&lt;/h2&gt;
+&lt;div *ngIf=&quot;msg&quot; class=&quot;msg&quot;&gt;{{msg}}&lt;/div&gt;
+
+&lt;form *ngIf=&quot;contacts&quot; (ngSubmit)=&quot;onSubmit()&quot; #contactForm=&quot;ngForm&quot;&gt;
+  &lt;h3 highlight&gt;{{ contact.name | awesome }}&lt;/h3&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; required
+      [(ngModel)]=&quot;contact.name&quot;
+        name=&quot;name&quot;  #name=&quot;ngModel&quot; &gt;
+    &lt;div [hidden]=&quot;name.valid&quot; class=&quot;alert alert-danger&quot;&gt;
+      Name is required
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;br&gt;
+  &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; [disabled]=&quot;!contactForm.form.valid&quot;&gt;Save&lt;/button&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn&quot; (click)=&quot;next()&quot; [disabled]=&quot;!contactForm.form.valid&quot;&gt;Next Contact&lt;/button&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn&quot; (click)=&quot;newContact()&quot;&gt;New Contact&lt;/button&gt;
+&lt;/form&gt;
+</code-pane><code-pane language="ts" name="app/contact/contact.component.ts" format="linenums">import { Component, OnInit }      from &#39;@angular/core&#39;;
+
+import { Contact, ContactService } from &#39;./contact.service&#39;;
+import { UserService }    from &#39;../user.service&#39;;
+
+@Component({
+  moduleId: module.id,
+  selector: &#39;app-contact&#39;,
+  templateUrl: &#39;contact.component.html&#39;,
+  styleUrls: [&#39;contact.component.css&#39;]
+})
+export class ContactComponent implements OnInit {
+  contact:  Contact;
+  contacts: Contact[];
+
+  msg = &#39;Loading contacts ...&#39;;
+  userName = &#39;&#39;;
+
+  constructor(private contactService: ContactService, userService: UserService) {
+    this.userName = userService.userName;
+  }
+
+  ngOnInit() {
+    this.contactService.getContacts().then(contacts =&gt; {
+      this.msg = &#39;&#39;;
+      this.contacts = contacts;
+      this.contact = contacts[0];
+    });
+  }
+
+  next() {
+    let ix = 1 + this.contacts.indexOf(this.contact);
+    if (ix &gt;= this.contacts.length) { ix = 0; }
+    this.contact = this.contacts[ix];
+  }
+
+  onSubmit() {
+    // POST-DEMO TODO: do something like save it
+    this.displayMessage(&#39;Saved &#39; + this.contact.name);
+  }
+
+  newContact() {
+    this.displayMessage(&#39;New contact&#39;);
+    this.contact = {id: 42, name: &#39;&#39;};
+    this.contacts.push(this.contact);
+  }
+
+  /** Display a message briefly, then remove it. */
+  displayMessage(msg: string) {
+    this.msg = msg;
+    setTimeout(() =&gt; this.msg = &#39;&#39;, 1500);
+  }
+}
+</code-pane><code-pane language="css" name="app/contact/contact.component.css" format="linenums">.ng-valid[required] {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.alert {
+  padding: 15px;
+  margin: 8px 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.msg {
+  color: blue;
+  background-color: whitesmoke;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+</code-pane><code-pane language="ts" name="app/contact/contact.service.ts" format="linenums">import { Injectable } from &#39;@angular/core&#39;;
+
+export class Contact {
+  constructor(public id: number, public name: string) { }
+}
+
+const CONTACTS: Contact[] = [
+  new Contact(21, &#39;Sam Spade&#39;),
+  new Contact(22, &#39;Nick Danger&#39;),
+  new Contact(23, &#39;Nancy Drew&#39;)
+];
+
+const FETCH_LATENCY = 500;
+
+@Injectable()
+export class ContactService {
+
+  getContacts() {
+    return new Promise&lt;Contact[]&gt;(resolve =&gt; {
+      setTimeout(() =&gt; { resolve(CONTACTS); }, FETCH_LATENCY);
+    });
+  }
+
+  getContact(id: number | string) {
+    return this.getContacts()
+      .then(heroes =&gt; heroes.find(hero =&gt; hero.id === +id));
+  }
+}
+</code-pane><code-pane language="ts" name="app/contact/awesome.pipe.ts" format="linenums">import { Pipe, PipeTransform } from &#39;@angular/core&#39;;
+
+@Pipe({ name: &#39;awesome&#39; })
+/** Precede the input string with the word &quot;Awesome &quot; */
+export class AwesomePipe implements PipeTransform {
+  transform(phrase: string) {
+    return phrase ? &#39;Awesome &#39; + phrase : &#39;&#39;;
+  }
+}
+</code-pane><code-pane language="ts
+  " name="app/contact/highlight.directive.ts" format="linenums">import { Directive, ElementRef, Renderer } from &#39;@angular/core&#39;;
+
+@Directive({ selector: &#39;[highlight], input&#39; })
+/** Highlight the attached element or an InputElement in blue */
+export class HighlightDirective {
+  constructor(renderer: Renderer, el: ElementRef) {
+    renderer.setElementStyle(el.nativeElement, &#39;backgroundColor&#39;, &#39;powderblue&#39;);
+    console.log(
+      `* Contact highlight called for ${el.nativeElement.tagName}`);
+  }
+}
+</code-pane></code-tabs><p>Focus on the component template.
+Notice the two-way data binding <code>[(ngModel)]</code> in the middle of the template.
+<code>ngModel</code> is the selector for the <code>NgModel</code> directive.</p>
+<p>Although <code>NgModel</code> is an Angular directive, the <em>Angular Compiler</em> won&#39;t recognize it
+because (a) <code>AppModule</code> doesn&#39;t declare it and (b) it wasn&#39;t imported via <code>BrowserModule</code>.</p>
+<p>Less obviously, even if Angular somehow recognized <code>ngModel</code>,
+this <code>ContactComponent</code> would not behave like an Angular form because
+form features such as validation are not yet available.</p>
+<h3 id="import-the-formsmodule">Import the FormsModule</h3>
+<p>Add the <code>FormsModule</code> to the <code>AppModule</code> metadata&#39;s <code>imports</code> list.</p>
+<div class="code-example"><code-example language="ts" format="">imports: [ BrowserModule, FormsModule ],
+</code-example></div><p>Now <code>[(ngModel)]</code> binding will work and the user input will be validated by Angular Forms, 
+once we declare our new component, pipe and directive.</p>
+<div class="alert is-critical"><p><strong>Do not</strong> add <code>NgModel</code> &mdash; or the <code>FORMS_DIRECTIVES</code> &mdash; 
+to the <code>AppModule</code> metadata&#39;s declarations!</p>
+<p>These directives belong to the <code>FormsModule</code>.
+Components, directives and pipes belong to one module &mdash; and <em>one module only</em>.</p>
+<p><strong>Never re-declare classes that belong to another module.</strong></p>
+</div><a id="declare-pipe"></a><h3 id="declare-the-contact-component-directive-and-pipe">Declare the contact component, directive and pipe</h3>
+<p>The application fails to compile until we declare the contact component, directive and pipe.
+Update the <code>declarations</code> in the  <code>AppModule</code> accordingly:</p>
+<div class="code-example"><header><h4>app/app.module.ts (declarations)</h4></header><code-example language="ts" format="">  declarations: [
+    AppComponent,
+    HighlightDirective,
+    TitleComponent,
+
+    AwesomePipe,
+    ContactComponent,
+    ContactHighlightDirective
+  ],
+</code-example></div><a id="import-name-conflict"></a><div class="l-sub-section"><p>There are two directives with the same name, both called <code>HighlightDirective</code>.</p>
+<p>We work around it by creating an alias for the second, contact version using the <code>as</code> JavaScript import keyword:</p>
+<div class="code-example"><code-example language="ts" format="">import {
+  HighlightDirective as ContactHighlightDirective
+} from &#39;./contact/highlight.directive&#39;;
+</code-example></div><p>This solves the immediate problem of referencing both directive <em>types</em> in the same file but 
+leaves another problem unresoved as we discuss <a href="#resolve-conflicts">below</a>.</p>
+</div><h3 id="provide-the-_contactservice_">Provide the <em>ContactService</em></h3>
+<p>The <code>ContactComponent</code> displays contacts retrieved by the <code>ContactService</code>
+which Angular injects into its constructor. </p>
+<p>We have to provide that service somewhere.
+The <code>ContactComponent</code> <em>could</em> provide it. 
+But then it would be scoped to this component <em>only</em>. 
+We want to share this service with other contact-related components that we will surely add later.</p>
+<p>In this app we chose to add <code>ContactService</code> to the <code>AppModule</code> metadata&#39;s <code>providers</code> list:</p>
+<div class="code-example"><header><h4>app/app.module.ts (providers)</h4></header><code-example language="ts" format="">providers: [ ContactService, UserService ],
+</code-example></div><p>Now <code>ContactService</code> (like <code>UserService</code>) can be injected into any component in the application.</p>
+<a id="application-scoped-providers"></a><div class="l-sub-section"><h4 id="application-scoped-providers">Application-scoped Providers</h4>
+<p>  The <code>ContactService</code> provider is <em>application</em>-scoped because Angular 
+  registers a module&#39;s <code>providers</code> with the application&#39;s <strong>root injector</strong>.</p>
+<p>  Architecturally, the <code>ContactService</code> belongs to the Contact business domain. 
+  Classes in <em>other</em> domains don&#39;t need the <code>ContactService</code> and shouldn&#39;t inject it.</p>
+<p>  We might expect Angular to offer a <em>module</em>-scoping mechanism to enforce this design.
+  It doesn&#39;t. Angular module instances, unlike components, do not have their own injectors
+  so they can&#39;t have their own provider scopes.</p>
+<p>  This omission is intentional. 
+  Angular modules are designed primarily to extend an application, 
+  to enrich the entire app with the module&#39;s capabilities.</p>
+<p>  Service scoping is rarely a problem in practice.
+  Non-contact components can&#39;t inject the <code>ContactService</code> by accident.
+  To inject <code>ContactService</code>, you must first import its <em>type</em>.
+  Only Contact components should import the <code>ContactService</code> <em>type</em>.</p>
+<p>  See the <a href="../cookbook/ngmodule-faq.html#q-component-scoped-providers">FAQ that pursues this issue</a> 
+  and its mitigations in greater detail.</p>
+</div><h3 id="run-the-app">Run the app</h3>
+<p>Everything is now in place to run the application with its contact editor.</p>
+<p>The app file structure looks like this:</p>
+<div class="filetree"><div class="file">app</div><div class="children"><div class="file">app.component.ts</div><div class="file">app.module.ts</div><div class="file">highlight.directive.ts</div><div class="file">main.ts</div><div class="file">title.component.(html|ts)</div><div class="file">user.service.ts</div><div class="file">contact</div><div class="children"><div class="file">awesome.pipe.ts</div><div class="file">contact.component.(css|html|ts)</div><div class="file">contact.service.ts</div><div class="file">highlight.directive.ts</div></div></div></div><p>Try the example:</p>
+<p><live-example embedded plnkr="contact.1b" img="devguide/ngmodule/contact-1b-plunker.png"></live-example></p>
+<a id="resolve-conflicts"></a><div class="l-main-section"> </div><h2 id="resolve-directive-conflicts">Resolve directive conflicts</h2>
+<p>We ran into trouble <a href="#import-name-conflict">above</a> when we declared the contact&#39;s <code>HighlightDirective</code> because
+we already had a <code>HighlightDirective</code> class at the application level.</p>
+<p>That both directives have the same name smells of trouble.</p>
+<p>A look at their selectors reveals that they both highlight the attached element with a different color.</p>
+<code-tabs><code-pane language="ts" name="app/highlight.directive.ts" format="linenums">import { Directive, ElementRef, Renderer } from &#39;@angular/core&#39;;
+
+@Directive({ selector: &#39;[highlight]&#39; })
+/** Highlight the attached element in gold */
+export class HighlightDirective {
+  constructor(renderer: Renderer, el: ElementRef) {
+    renderer.setElementStyle(el.nativeElement, &#39;backgroundColor&#39;, &#39;gold&#39;);
+    console.log(
+      `* AppRoot highlight called for ${el.nativeElement.tagName}`);
+  }
+}
+</code-pane><code-pane language="ts" name="app/contact/highlight.directive.ts" format="linenums">import { Directive, ElementRef, Renderer } from &#39;@angular/core&#39;;
+
+@Directive({ selector: &#39;[highlight], input&#39; })
+/** Highlight the attached element or an InputElement in blue */
+export class HighlightDirective {
+  constructor(renderer: Renderer, el: ElementRef) {
+    renderer.setElementStyle(el.nativeElement, &#39;backgroundColor&#39;, &#39;powderblue&#39;);
+    console.log(
+      `* Contact highlight called for ${el.nativeElement.tagName}`);
+  }
+}
+</code-pane></code-tabs><p>Will Angular use only one of them? No. 
+Both directives are declared in this module so <em>both directives are active</em>.</p>
+<p>When the two directives compete to color the same element, 
+the directive declared later wins because its DOM changes overwrite the first.
+In this case, the contact&#39;s <code>HighlightDirective</code> colors the application title text blue
+when it should stay gold.</p>
+<div class="l-sub-section"><p>The real problem is that there are <em>two different classes</em> trying to do the same thing.</p>
+<p>It&#39;s OK to import the <em>same</em> directive class multiple times. 
+Angular removes duplicate classes and only registers one of them.</p>
+<p>But these are actually two different classes, defined in different files, that happen to have the same name.</p>
+<p>They&#39;re not duplicates from Angular&#39;s perspective. Angular keeps both directives and
+they take turns modifying the same HTML element.</p>
+</div><p>At least the app still compiles. 
+If we define two different component classes with the same selector specifying the same element tag, 
+the compiler reports an error. It can&#39;t insert two components in the same DOM location.</p>
+<p>What a mess! </p>
+<p>We can eliminate component and directive conflicts by creating feature modules
+that insulate the declarations in one module from the declarations in another.</p>
+<a id="feature-modules"></a><div class="l-main-section"></div><h2 id="feature-modules">Feature Modules</h2>
+<p>This application isn&#39;t big yet. But it&#39;s already suffering structural problems.</p>
+<ul>
+<li><p>The root <code>AppModule</code> grows larger with each new application class and shows no signs of stopping.</p>
+</li>
+<li><p>We have conflicting directives. 
+The <code>HighlightDirective</code> in contact is re-coloring the work done by the <code>HighlightDirective</code> declared in <code>AppModule</code>.
+And it&#39;s coloring the application title text when it should only color the <code>ContactComponent</code>.</p>
+</li>
+<li><p>The app lacks clear boundaries between contact functionality and other application features.
+That lack of clarity makes it harder to assign development responsibilities to different teams.</p>
+</li>
+</ul>
+<p>We mitigate these problems with <em>feature modules</em>.</p>
+<h3 id="_feature-module_"><em>Feature Module</em></h3>
+<p>A <em>feature module</em> is a class adorned by the <code>@NgModule</code> decorator and its metadata,
+just like a root module. 
+Feature module metadata have the same properties as the metadata for a root module.</p>
+<p>The root module and the feature module share the same execution context.
+They share the same dependency injector which means the services in one module
+are available to all.</p>
+<p>There are two significant technical differences:</p>
+<ol>
+<li><p>We <em>boot</em> the root module to <em>launch</em> the app;
+we <em>import</em> a feature module to <em>extend</em> the app.</p>
+</li>
+<li><p>A feature module can expose or hide its implementation from other modules.</p>
+</li>
+</ol>
+<p>Otherwise, a feature module is distinguished primarily by its intent.</p>
+<p>A feature module delivers a cohesive set of functionality
+focused on an application business domain, a user workflow, a facility (forms, http, routing), 
+or a collection of related utilities.</p>
+<p>While we can do everything within the root module,
+feature modules help us partition the app into areas of specific interest and purpose.</p>
+<p>A feature module collaborates with the root module and with other modules 
+through the services it provides and 
+the components, directives, and pipes that it chooses to share.</p>
+<p>In the next section, we carve the contact functionality out of the root module
+and into a dedicated feature module.</p>
+<p><a id="contact-module-v1"></a></p>
+<h3 id="make-_contact_-a-feature-module">Make <em>Contact</em> a feature module</h3>
+<p>It&#39;s easy to refactor the contact material into a contact feature module.</p>
+<ol>
+<li>Create the <code>ContactModule</code> in the <code>app/contact</code> folder.</li>
+<li>Move the contact material from <code>AppModule</code> to <code>ContactModule</code>.</li>
+<li>Replace the imported  <code>BrowserModule</code> with <code>CommonModule</code>.</li>
+<li>Import the <code>ContactModule</code> into the <code>AppModule</code>.</li>
+</ol>
+<p><code>AppModule</code> is the only <em>existing</em> class that changes. But we do add one new file.</p>
+<h3 id="add-the-_contactmodule_">Add the <em>ContactModule</em></h3>
+<p>Here&#39;s the new <code>ContactModule</code></p>
+<div class="code-example"><header><h4>app/contact/contact.module.ts</h4></header><code-example language="ts" format="linenums">import { NgModule }           from &#39;@angular/core&#39;;
+import { CommonModule }       from &#39;@angular/common&#39;;
+import { FormsModule }        from &#39;@angular/forms&#39;;
+
+import { AwesomePipe }        from &#39;./awesome.pipe&#39;;
+
+import
+       { ContactComponent }   from &#39;./contact.component&#39;;
+import { ContactService }     from &#39;./contact.service&#39;;
+import { HighlightDirective } from &#39;./highlight.directive&#39;;
+
+@NgModule({
+  imports:      [ CommonModule, FormsModule ],
+  declarations: [ ContactComponent, HighlightDirective, AwesomePipe ],
+  exports:      [ ContactComponent ],
+  providers:    [ ContactService ]
+})
+export class ContactModule { }
+</code-example></div><p>We copy from <code>AppModule</code> the contact-related import statements and the <code>@NgModule</code> properties
+that concern the contact and paste them in <code>ContactModule</code>.</p>
+<p>We <em>import</em> the <code>FormsModule</code> because the contact component needs it. </p>
+<div class="alert is-important"><p>Modules do not inherit access to the components, directives or pipes that are declared in other modules.
+What <code>AppModule</code> imports is irrelevant to <code>ContactModule</code> and vice versa.
+Before <code>ContactComponent</code> can bind with <code>[(ngModel)]</code>, its <code>ContactModule</code> must import <code>FormsModule</code>.</p>
+</div><p>We also replaced <code>BrowserModule</code> by <code>CommonModule</code> for reasons explained in
+<a href="../cookbook/ngmodule-faq.html#q-browser-vs-common-module">an FAQ</a>.</p>
+<p>We <em>declare</em> the contact component, directive, and pipe in the module <code>declarations</code>.</p>
+<p>We <em>export</em> the <code>ContactComponent</code> so
+other modules that import the <code>ContactModule</code> can include it in their component templates.</p>
+<p>All other declared contact classes are private by default.
+The <code>AwesomePipe</code> and <code>HighlightDirective</code> are hidden from the rest of the application. 
+The <code>HighlightDirective</code> can no longer color the <code>AppComponent</code> title text.</p>
+<h3 id="refactor-the-_appmodule_">Refactor the <em>AppModule</em></h3>
+<p>Return to the <code>AppModule</code> and remove everything specific to the contact feature set.</p>
+<p>Delete the contact import statements.
+Delete the contact declarations and contact providers.
+Remove the <code>FormsModule</code> from the <code>imports</code> list (<code>AppComponent</code> doesn&#39;t need it).
+Leave only the classes required at the application root level.</p>
+<p>Then import the <code>ContactModule</code> so the app can continue to display the exported <code>ContactComponent</code>.</p>
+<p>Here&#39;s the refactored version of the <code>AppModule</code> side-by-side with the previous version.</p>
+<code-tabs><code-pane language="ts" name="app/app.module.ts (v2)" format="linenums">import { NgModule }           from &#39;@angular/core&#39;;
+import { BrowserModule }      from &#39;@angular/platform-browser&#39;;
+
+/* App Root */
+import
+       { AppComponent }       from &#39;./app.component&#39;;
+import { HighlightDirective } from &#39;./highlight.directive&#39;;
+import { TitleComponent }     from &#39;./title.component&#39;;
+import { UserService }        from &#39;./user.service&#39;;
+
+/* Contact Imports */
+import
+       { ContactModule }      from &#39;./contact/contact.module&#39;;
+
+@NgModule({
+  imports:      [ BrowserModule, ContactModule ],
+  declarations: [ AppComponent, HighlightDirective, TitleComponent ],
+  providers:    [ UserService ],
+  bootstrap:    [ AppComponent ],
+})
+export class AppModule { }
+</code-pane><code-pane language="ts" name="app/app.module.ts (v1)" format="linenums">import { NgModule }           from &#39;@angular/core&#39;;
+import { BrowserModule }      from &#39;@angular/platform-browser&#39;;
+
+/* App Root */
+import
+       { AppComponent }       from &#39;./app.component&#39;;
+import { HighlightDirective } from &#39;./highlight.directive&#39;;
+import { TitleComponent }     from &#39;./title.component&#39;;
+import { UserService }        from &#39;./user.service&#39;;
+
+/* Contact Imports */
+import
+       { ContactComponent }   from &#39;./contact/contact.component&#39;;
+import { ContactService }     from &#39;./contact/contact.service&#39;;
+import { AwesomePipe }        from &#39;./contact/awesome.pipe&#39;;
+
+import {
+  HighlightDirective as ContactHighlightDirective
+} from &#39;./contact/highlight.directive&#39;;
+
+import { FormsModule }        from &#39;@angular/forms&#39;;
+
+@NgModule({
+  imports: [ BrowserModule,  FormsModule ],
+  declarations: [
+    AppComponent, HighlightDirective, TitleComponent,
+    AwesomePipe, ContactComponent, ContactHighlightDirective
+  ],
+  providers: [ ContactService, UserService ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+</code-pane></code-tabs><h3 id="improvements">Improvements</h3>
+<p>There&#39;s a lot to like in the revised <code>AppModule</code></p>
+<ul>
+<li>It does not change as the <em>Contact</em> domain grows.</li>
+<li>It only changes when we add new modules.</li>
+<li>It&#39;s simpler:<ul>
+<li>Fewer import statements</li>
+<li>No <code>FormsModule</code> import</li>
+<li>No contact-specific declarations</li>
+<li>No <code>ContactService</code> provider</li>
+<li>No <code>HighlightDirective</code> conflict</li>
+</ul>
+</li>
+</ul>
+<p>Try this <code>ContactModule</code> version of the sample.</p>
+<p><live-example embedded plnkr="contact.2" img="devguide/ngmodule/contact-2-plunker.png">Try the live example.</live-example></p>
+<a id="lazy-load"></a><div class="l-main-section"></div><h2 id="lazy-loading-modules-with-the-router">Lazy loading modules with the Router</h2>
+<p>The Heroic Staffing Agency sample app has evolved. 
+It has two more modules, one for managing the heroes-on-staff and another for matching crises to the heroes.
+Both modules are in the early stages of development. 
+Their specifics aren&#39;t important to the story and we won&#39;t discuss every line of code.</p>
+<div class="l-sub-section"><p>Examine and download the complete source for this version from the </p>
+<p><live-example plnkr="pre-shared.3" img="devguide/ngmodule/v3-plunker.png">live example.</live-example></p>
+</div><p>Some facets of the current application merit discussion.</p>
+<ul>
+<li>The app has three feature modules: Contact, Hero, and Crisis.</li>
+<li>The Angular router helps users navigate among these modules.</li>
+<li>The <code>ContactComponent</code> is the default destination when the app starts.</li>
+<li>The <code>ContactModule</code> continues to be &quot;eagerly&quot; loaded when the application starts.</li>
+<li><code>HeroModule</code> and the <code>CrisisModule</code> are lazy loaded.</li>
+</ul>
+<p><a id="app-component-template"></a>
+Let&#39;s start at the top with the new <code>AppComponent</code> template:
+a title, three links, and a <code>&lt;router-outlet&gt;</code>.</p>
+<div class="code-example"><header><h4>app/app.component.ts (v3 - Template)</h4></header><code-example language="ts" format="">template: `
+  &lt;app-title [subtitle]=&quot;subtitle&quot;&gt;&lt;/app-title&gt;
+  &lt;nav&gt;
+    &lt;a routerLink=&quot;contact&quot; routerLinkActive=&quot;active&quot;&gt;Contact&lt;/a&gt;
+    &lt;a routerLink=&quot;crisis&quot;  routerLinkActive=&quot;active&quot;&gt;Crisis Center&lt;/a&gt;
+    &lt;a routerLink=&quot;heroes&quot;  routerLinkActive=&quot;active&quot;&gt;Heroes&lt;/a&gt;
+  &lt;/nav&gt;
+  &lt;router-outlet&gt;&lt;/router-outlet&gt;
+`
+</code-example></div><p>The <code>&lt;app-contact&gt;</code> element is gone; we&#39;re routing to the <em>Contact</em> page now.</p>
+<p>The <code>AppModule</code> has changed modestly:</p>
+<div class="code-example"><header><h4>app/app.module.ts (v3)</h4></header><code-example language="ts" format="linenums">import { NgModule }           from &#39;@angular/core&#39;;
+import { BrowserModule }      from &#39;@angular/platform-browser&#39;;
+
+/* App Root */
+import { AppComponent }       from &#39;./app.component.3&#39;;
+import { HighlightDirective } from &#39;./highlight.directive&#39;;
+import { TitleComponent }     from &#39;./title.component&#39;;
+import { UserService }        from &#39;./user.service&#39;;
+
+/* Feature Modules */
+import { ContactModule }      from &#39;./contact/contact.module.3&#39;;
+import { routing }            from &#39;./app.routing.3&#39;;
+
+@NgModule({
+  imports:      [
+    BrowserModule,
+    ContactModule,
+    routing
+  ],
+  providers:    [ UserService ],
+  declarations: [ AppComponent, HighlightDirective, TitleComponent ],
+  bootstrap:    [ AppComponent ]
+})
+export class AppModule { }
+</code-example></div><div class="l-sub-section"><p>Some file names bear a <code>.3</code> extension indicating
+a difference with prior or future versions.
+We&#39;ll explain differences that matter in due course.</p>
+</div><p>The module still imports <code>ContactModule</code> so that its routes and components are mounted when the app starts. </p>
+<p>The module does <em>not</em> import <code>HeroModule</code> or <code>CrisisModule</code>. 
+They&#39;ll be fetched and mounted asynchronously when the user navigates to one of their routes.</p>
+<p>The significant change from version 2 is the addition of a <strong><em>routing</em></strong> object to the <code>imports</code>.
+The routing object, which provides a configured <code>Router</code> service, is defined in the <code>app.routing.ts</code> file.</p>
+<h3 id="app-routing">App routing</h3>
+<div class="code-example"><header><h4>app/app.routing.ts</h4></header><code-example language="ts" format="">import { ModuleWithProviders }  from &#39;@angular/core&#39;;
+import { Routes, RouterModule } from &#39;@angular/router&#39;;
+
+export const routes: Routes = [
+  { path: &#39;&#39;, redirectTo: &#39;contact&#39;, pathMatch: &#39;full&#39;},
+  { path: &#39;crisis&#39;, loadChildren: &#39;app/crisis/crisis.module#CrisisModule&#39; },
+  { path: &#39;heroes&#39;, loadChildren: &#39;app/hero/hero.module#HeroModule&#39; }
+];
+
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+</code-example></div><p>The router is the subject of <a href="router.html">its own page</a> so we&#39;ll skip lightly over the details and 
+concentrate on the intersection of Angular modules and routing.</p>
+<p>This file defines three routes. </p>
+<p>The first redirects the empty URL (e.g., <code>http://host.com/</code>) 
+to another route whose path is <code>contact</code> (e.g., <code>http://host.com/contact</code>).</p>
+<p>The <code>contact</code> route isn&#39;t defined here.
+It&#39;s defined in the <em>Contact</em> feature&#39;s <em>own</em> routing file, <code>contact.routing.ts</code>.
+It&#39;s standard practice for feature modules with routing components to define their own routes.
+We&#39;ll get to that file in a moment.</p>
+<p>The remaining two routes use lazy loading syntax to tell the router where to find the modules:</p>
+<div class="code-example"><code-example language="ts" format="">{ path: &#39;crisis&#39;, loadChildren: &#39;app/crisis/crisis.module#CrisisModule&#39; },
+{ path: &#39;heroes&#39;, loadChildren: &#39;app/hero/hero.module#HeroModule&#39; }
+</code-example></div><div class="l-sub-section"><p>A lazy loaded module location is a <em>string</em>, not a <em>type</em>. 
+In this app, the string identifies both the module <em>file</em> and the module <em>class</em>,
+the latter separated from the former by a <code>#</code>.</p>
+</div><h3 id="routermodule-forroot">RouterModule.forRoot</h3>
+<p>The last line calls the <code>forRoot</code> static class method of the <code>RouterModule</code>, passing in the configuration.</p>
+<div class="code-example"><code-example language="ts" format="">export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+</code-example></div><p>The returned <code>routing</code> object is a <code>ModuleWithProviders</code> containing both the <code>RouterModule</code> directives
+and the Dependency Injection providers that produce a configured <code>Router</code>. </p>
+<p>This <code>routing</code> object is intended for the app <em>root</em> module <em>only</em>.</p>
+<div class="alert is-critical"><p>Never call <code>RouterModule.forRoot</code> in a feature module.</p>
+</div><p>Back in the root <code>AppModule</code>, we add this <code>routing</code> object to its <code>imports</code> list, 
+and the app is ready to navigate.</p>
+<div class="code-example"><header><h4>app/app.module.ts (imports)</h4></header><code-example language="ts" format="">imports:      [
+  BrowserModule,
+  ContactModule,
+  routing
+],
+</code-example></div><h3 id="routing-to-a-feature-module">Routing to a feature module</h3>
+<p>The <code>app/contact</code> folder holds a new file, <code>contact.routing.ts</code>.
+It defines the <code>contact</code> route we mentioned a bit earlier and also creates a <code>routing</code> object like so:</p>
+<div class="code-example"><header><h4>app/contact/contact.routing.ts (routing)</h4></header><code-example language="ts" format="">export const routing: ModuleWithProviders = RouterModule.forChild([
+  { path: &#39;contact&#39;, component: ContactComponent}
+]);
+</code-example></div><p>This time we pass the route list to the <code>forChild</code> method of the <code>RouterModule</code>.
+It produces a different kind of object intended for feature modules.</p>
+<div class="alert is-important"><p>Always call <code>RouterModule.forChild</code> in a feature module.</p>
+</div><div class="alert is-helpful"><p><strong><em>forRoot</em></strong> and <strong><em>forChild</em></strong> are conventional names for methods that
+deliver different <code>import</code> values to root and feature modules.
+Angular doesn&#39;t recognize them but Angular developers do.</p>
+<p><a href="../cookbook/ngmodule-faq.html#q-for-root">Follow this convention</a> if you write a similar module
+that has both shared <a href="../cookbook/ngmodule-faq.html#q-declarable"><em>declarables</em></a> and services.</p>
+</div><p><code>ContactModule</code> has changed in two small but important details</p>
+<code-tabs><code-pane language="ts" name="app/contact/contact.module.3.ts" format="linenums">@NgModule({
+  imports:      [ CommonModule, FormsModule, routing ],
+  declarations: [ ContactComponent, HighlightDirective, AwesomePipe ],
+  providers:    [ ContactService ]
+})
+export class ContactModule { }
+</code-pane><code-pane language="ts" name="app/contact/contact.module.2.ts" format="linenums">@NgModule({
+  imports:      [ CommonModule, FormsModule ],
+  declarations: [ ContactComponent, HighlightDirective, AwesomePipe ],
+  exports:      [ ContactComponent ],
+  providers:    [ ContactService ]
+})
+export class ContactModule { }
+</code-pane></code-tabs><ol>
+<li>It imports the <code>routing</code> object from <code>contact.routing.ts</code></li>
+<li>It no longer exports <code>ContactComponent</code></li>
+</ol>
+<p>Now that we navigate to <code>ContactComponent</code> with the router there&#39;s no reason to make it public.
+Nor does it need a selector. 
+No template will ever again reference this <code>ContactComponent</code>.
+It&#39;s gone from the <a href="#app-component-template"><em>AppComponent</em> template</a>.</p>
+<a id="hero-module"></a><h3 id="lazy-loaded-routing-to-a-module">Lazy loaded routing to a module</h3>
+<p>The lazy loaded <code>HeroModule</code> and <code>CrisisModule</code> follow the same principles as any feature module.
+They don&#39;t look different from the eagerly loaded <code>ContactModule</code>.</p>
+<p>The <code>HeroModule</code> is a bit more complex than the <code>CrisisModule</code> which makes it 
+a more interesting and useful example. Here&#39;s its file structure:</p>
+<div class="filetree"><div class="file">hero</div><div class="children"><div class="file">hero-detail.component.ts</div><div class="file">hero-list.component.ts</div><div class="file">hero.component.ts</div><div class="file">hero.module.ts</div><div class="file">hero.routing.ts</div><div class="file">hero.service.ts</div><div class="file">highlight.directive.ts</div></div></div><p>This is the child routing scenario familiar to readers of the <a href="router.html#child-routing-component">Router</a> page.
+The <code>HeroComponent</code> is the feature&#39;s top component and routing host. 
+Its template has a <code>&lt;router-outlet&gt;</code> that displays either a list of heroes (<code>HeroList</code>) 
+or an editor of a selected hero (<code>HeroDetail</code>).
+Both components delegate to the <code>HeroService</code> to fetch and save data.</p>
+<p>There&#39;s yet <em>another</em> <code>HighlightDirective</code> that colors elements in yet a different shade.
+We should <a href="#shared-module" title="Shared modules">do something</a> about the repetition and inconsistencies.
+We endure for now.</p>
+<p>The <code>HeroModule</code> is a feature module like any other.</p>
+<div class="code-example"><header><h4>app/hero/hero.module.ts (class)</h4></header><code-example language="ts" format="">@NgModule({
+  imports: [ CommonModule, FormsModule, routing ],
+  declarations: [
+    HeroComponent, HeroDetailComponent, HeroListComponent,
+    HighlightDirective
+  ]
+})
+export class HeroModule { }
+</code-example></div><p>It imports the <code>FormsModule</code> because the <code>HeroDetailComponent</code> template binds with <code>[(ngModel)]</code>. 
+It imports a <code>routing</code> object from <code>hero.routing.ts</code> just as <code>ContactModule</code> and <code>CrisisModule</code> do.</p>
+<p>The <code>CrisisModule</code> is much the same. There&#39;s nothing more to say that&#39;s new. </p>
+<p><live-example embedded plnkr="pre-shared.3" img="devguide/ngmodule/v3-plunker.png">Try the live example.</live-example></p>
+<a id="shared-module"></a><div class="l-main-section"></div><h2 id="shared-modules">Shared modules</h2>
+<p>The app is shaping up. 
+One thing we don&#39;t like is carrying three different versions of the <code>HighlightDirective</code>.
+And there&#39;s a bunch of other stuff cluttering the app folder level that could be tucked away.</p>
+<p>Let&#39;s add a <code>SharedModule</code> to hold the common components, directives, and pipes 
+and share them with the modules that need them.</p>
+<ul>
+<li>create an <code>app/shared</code> folder</li>
+<li>move the <code>AwesomePipe</code> and <code>HighlightDirective</code> from <code>app/contact</code> to <code>app/shared</code>.</li>
+<li>delete the <code>HighlightDirective</code> classes from <code>app/</code> and <code>app/hero</code></li>
+<li>create a <code>SharedModule</code> class to own the shared material</li>
+<li>update other feature modules to import <code>SharedModule</code></li>
+</ul>
+<p>Most of this is familiar blocking and tackling. Here is the <code>SharedModule</code></p>
+<div class="code-example"><header><h4>app/app/shared/shared.module.ts</h4></header><code-example language="ts" format="linenums">import { NgModule }            from &#39;@angular/core&#39;;
+import { CommonModule }        from &#39;@angular/common&#39;;
+import { FormsModule }         from &#39;@angular/forms&#39;;
+
+import { AwesomePipe }         from &#39;./awesome.pipe&#39;;
+import { HighlightDirective }  from &#39;./highlight.directive&#39;;
+
+@NgModule({
+  imports:      [ CommonModule ],
+  declarations: [ AwesomePipe, HighlightDirective ],
+  exports:      [ AwesomePipe, HighlightDirective,
+                  CommonModule, FormsModule ]
+})
+export class SharedModule { }
+</code-example></div><p>Some highlights</p>
+<ul>
+<li>It imports the <code>CommonModule</code> because its component needs common directives.</li>
+<li>It declares and exports the utility pipe, directive, and component classes as expected.</li>
+<li>It re-exports the <code>CommonModule</code> and <code>FormsModule</code></li>
+</ul>
+<h4 id="re-exporting-other-modules">Re-exporting other modules</h4>
+<p>While reviewing our application, we noticed that many components requiring <code>SharedModule</code> directives
+also use <code>NgIf</code> and <code>NgFor</code> from <code>CommonModule</code>
+and bind to component properties with <code>[(ngModel)]</code>, a directive in the <code>FormsModule</code>.
+Modules that declare these components would have to import <code>CommonModule</code>, <code>FormsModule</code> and <code>SharedModule</code>.</p>
+<p>We can reduce the repetition by having <code>SharedModule</code> re-export <code>CommonModule</code> and <code>FormsModule</code>
+so that importers of <code>SharedModule</code> get <code>CommonModule</code> and <code>FormsModule</code> <em>for free</em>.</p>
+<p>As it happens, the components declared by <code>SharedModule</code> itself don&#39;t bind with <code>[(ngModel)]</code>. 
+Technically,  there is no need for <code>SharedModule</code> to import <code>FormsModule</code>.</p>
+<p><code>SharedModule</code> can still export <code>FormsModule</code> without listing it among its <code>imports</code>.</p>
+<h3 id="why-_titlecomponent_-isn-t-shared">Why <em>TitleComponent</em> isn&#39;t shared</h3>
+<p><code>SharedModule</code> exists to make commonly used components, directives and pipes available
+for use in the templates of components in <em>many</em> other modules.</p>
+<p>The <code>TitleComponent</code> is used <em>only once</em> by the <code>AppComponent</code>. 
+There&#39;s no point in sharing it.</p>
+<p><a id="no-shared-module-providers"></a></p>
+<h3 id="why-_userservice_-isn-t-shared">Why <em>UserService</em> isn&#39;t shared</h3>
+<p>While many components share the same service <em>instances</em>,
+they rely on Angular dependency injection to do this kind of sharing, not the module system.</p>
+<p>Several components of our sample inject the <code>UserService</code>.
+There should be <em>only one</em> instance of the <code>UserService</code> in the entire application 
+and <em>only one</em> provider of it.</p>
+<p><code>UserService</code> is an application-wide singleton.
+We don&#39;t want each module to have its own separate instance. 
+Yet there is <a href="../cookbook/ngmodule-faq.html#q-why-it-is-bad">a real danger</a> of that happening 
+if the <code>SharedModule</code> provides the <code>UserService</code>.</p>
+<div class="alert is-critical"><p>Do <strong>not</strong> specify app-wide singleton <code>providers</code> in a shared module.
+A lazy loaded module that imports that shared module will make its own copy of the service.</p>
+</div><a id="core-module"></a><div class="l-main-section"></div><h2 id="the-core-module">The Core module</h2>
+<p>At the moment, our root folder is cluttered with the <code>UserService</code>
+and the <code>TitleComponent</code> that only appears in the root <code>AppComponent</code>.
+We did not include them in the <code>SharedModule</code> for reasons just explained.</p>
+<p>Instead, we&#39;ll gather them in a single <code>CoreModule</code> that we <strong>import <em>once</em> when the app starts</strong>
+and <em>never import anywhere else</em>.</p>
+<p><strong>Steps:</strong></p>
+<ul>
+<li>create an <code>app/core</code> folder</li>
+<li>move the <code>UserService</code> and <code>TitleComponent</code> from <code>app/</code> to <code>app/core</code></li>
+<li>create a <code>CoreModule</code> class to own the core material</li>
+<li>update the <code>AppRoot</code> module to  import <code>CoreModule</code></li>
+</ul>
+<p>Again, most of this is familiar blocking and tackling. The interesting part is the <code>CoreModule</code></p>
+<div class="code-example"><header><h4>app/app/core/core.module.ts</h4></header><code-example language="ts" format="linenums">import {
+  ModuleWithProviders, NgModule,
+  Optional, SkipSelf }       from &#39;@angular/core&#39;;
+
+import { CommonModule }      from &#39;@angular/common&#39;;
+
+import { TitleComponent }    from &#39;./title.component&#39;;
+import { UserService }       from &#39;./user.service&#39;;
+@NgModule({
+  imports:      [ CommonModule ],
+  declarations: [ TitleComponent ],
+  exports:      [ TitleComponent ],
+  providers:    [ UserService ]
+})
+export class CoreModule {
+}
+</code-example></div><div class="l-sub-section"><p>We&#39;re importing some extra symbols from the Angular core library that we&#39;re not using yet.
+They&#39;ll become relevant later in this page.</p>
+</div><p>The <code>@NgModule</code> metadata should be familiar. 
+We declare the <code>TitleComponent</code>  because this module <em>owns</em> it and we export it
+because <code>AppComponent</code> (which is in <code>AppModule</code>) displays the title in its template.
+<code>TitleComponent</code> needs the Angular <code>NgIf</code> directive that we import from <code>CommonModule</code>.</p>
+<p><code>CoreModule</code> <em>provides</em> the <code>UserService</code>. Angular registers that provider with the app root injector,
+making a singleton instance of the <code>UserService</code> available to any component that needs it, 
+whether that component is eagerly or lazily loaded.</p>
+<div class="l-sub-section"><h4 id="why-bother-">Why bother?</h4>
+<p>This scenario is clearly contrived. 
+The app is too small to worry about a single service file and a tiny, one-time component.</p>
+<p>A <code>TitleComponent</code> sitting in the root folder isn&#39;t bothering anyone.
+The root <code>AppModule</code> can register the <code>UserService</code> itself,
+as it does currently, even if we decide to relocate the <code>UserService</code> file to the <code>app/core</code> folder.</p>
+<p>Real world apps have more to worry about. 
+They can have several single-use components (e.g., spinners, message toasts, and modal dialogs)
+that appear only in the <code>AppComponent</code> template. 
+We don&#39;t import them elsewhere so they&#39;re not <em>shared</em> in that sense. 
+Yet they&#39;re too big and messy to leave loose in the root folder.</p>
+<p>Apps often have many singleton services like this sample&#39;s <code>UserService</code>.
+Each must be registered <em>exactly once</em>, in the app root injector, when the application starts.</p>
+<p>While many Components inject such services in their constructors &mdash;
+and therefore require JavaScript <code>import</code> statements to import their symbols &mdash;
+no other component or module should define or re-create the services themselves.
+Their <em>providers</em> are not shared.</p>
+<p>We recommend collecting such single-use classes and hiding their gory details inside a <code>CoreModule</code>.
+A simplified root <code>AppModule</code> imports <code>CoreModule</code> in its capacity as orchestrator of the application as a whole.</p>
+</div><div class="l-main-section"></div><h2 id="cleanup">Cleanup</h2>
+<p>Having refactored to a <code>CoreModule</code> and a <code>SharedModule</code>, it&#39;s time to cleanup the other modules. </p>
+<h3 id="a-trimmer-_appmodule_">A trimmer <em>AppModule</em></h3>
+<p>Here is the updated <code>AppModule</code> paired with version 3 for comparison:</p>
+<code-tabs><code-pane language="ts" name="app/app.module.ts (v4)" format="linenums">import { NgModule }       from &#39;@angular/core&#39;;
+import { BrowserModule }  from &#39;@angular/platform-browser&#39;;
+
+/* App Root */
+import { AppComponent }   from &#39;./app.component&#39;;
+
+/* Feature Modules */
+import { ContactModule }  from &#39;./contact/contact.module&#39;;
+import { CoreModule }     from &#39;./core/core.module&#39;;
+import { routing }        from &#39;./app.routing&#39;;
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    ContactModule,
+    CoreModule,
+    routing
+  ],
+  declarations: [ AppComponent ],
+  bootstrap:    [ AppComponent ]
+})
+export class AppModule { }
+</code-pane><code-pane language="ts" name="app/app.module.ts (v3)" format="linenums">import { NgModule }           from &#39;@angular/core&#39;;
+import { BrowserModule }      from &#39;@angular/platform-browser&#39;;
+
+/* App Root */
+import { AppComponent }       from &#39;./app.component.3&#39;;
+import { HighlightDirective } from &#39;./highlight.directive&#39;;
+import { TitleComponent }     from &#39;./title.component&#39;;
+import { UserService }        from &#39;./user.service&#39;;
+
+/* Feature Modules */
+import { ContactModule }      from &#39;./contact/contact.module.3&#39;;
+import { routing }            from &#39;./app.routing.3&#39;;
+
+@NgModule({
+  imports:      [
+    BrowserModule,
+    ContactModule,
+    routing
+  ],
+  providers:    [ UserService ],
+  declarations: [ AppComponent, HighlightDirective, TitleComponent ],
+  bootstrap:    [ AppComponent ]
+})
+export class AppModule { }
+</code-pane></code-tabs><p>Notice that <code>AppModule</code> is ...</p>
+<ul>
+<li>a little smaller because many <code>app/root</code> classes have moved to other modules.</li>
+<li>stable because we&#39;ll add future components and providers to other modules, not this one.</li>
+<li>delegating to imported modules rather than doing work.</li>
+<li>focused on its main task, orchestrating the app as a whole.</li>
+</ul>
+<h3 id="a-trimmer-_contactmodule_">A trimmer <em>ContactModule</em></h3>
+<p>Here is the new <code>ContactModule</code> paired with the prior version:</p>
+<code-tabs><code-pane language="ts" name="app/contact/contact.module.ts (v4)" format="linenums">import { NgModule }           from &#39;@angular/core&#39;;
+import { SharedModule }       from &#39;../shared/shared.module&#39;;
+
+import { ContactComponent }   from &#39;./contact.component&#39;;
+import { ContactService }     from &#39;./contact.service&#39;;
+import { routing }            from &#39;./contact.routing&#39;;
+
+@NgModule({
+  imports:      [ SharedModule, routing ],
+  declarations: [ ContactComponent ],
+  providers:    [ ContactService ]
+})
+export class ContactModule { }
+</code-pane><code-pane language="ts" name="app/contact/contact.module.ts (v3)" format="linenums">import { NgModule }           from &#39;@angular/core&#39;;
+import { CommonModule }       from &#39;@angular/common&#39;;
+import { FormsModule }        from &#39;@angular/forms&#39;;
+
+import { AwesomePipe }        from &#39;./awesome.pipe&#39;;
+
+import { ContactComponent }   from &#39;./contact.component.3&#39;;
+import { ContactService }     from &#39;./contact.service&#39;;
+import { HighlightDirective } from &#39;./highlight.directive&#39;;
+
+import { routing }            from &#39;./contact.routing.3&#39;;
+
+@NgModule({
+  imports:      [ CommonModule, FormsModule, routing ],
+  declarations: [ ContactComponent, HighlightDirective, AwesomePipe ],
+  providers:    [ ContactService ]
+})
+export class ContactModule { }
+</code-pane></code-tabs><p>Notice that</p>
+<ul>
+<li>The <code>AwesomePipe</code> and <code>HighlightDirective</code> are gone.</li>
+<li>The imports include <code>SharedModule</code> instead of <code>CommonModule</code> and <code>FormsModule</code></li>
+<li>This new version is leaner and cleaner.</li>
+</ul>
+<div class="l-hr"></div><a id="core-for-root"></a><div class="l-main-section"></div><h2 id="configure-core-services-with-_coremodule-forroot_">Configure core services with <em>CoreModule.forRoot</em></h2>
+<p>A module that adds providers to the application can offer a facility for configuring those providers as well.</p>
+<p>By convention, the <strong><em>forRoot</em></strong> static method both provides and configures services at the same time.
+It takes a service configuration object and returns a
+<a href="../api/core/index/ModuleWithProviders-interface.html">ModuleWithProviders</a> which is
+a simple object with two properties:</p>
+<ul>
+<li><code>ngModule</code> - the <code>CoreModule</code> class</li>
+<li><code>providers</code> - the configured providers</li>
+</ul>
+<p>The root <code>AppModule</code> imports the <code>CoreModule</code> and adds the <code>providers</code> to the <code>AppModule</code> providers.</p>
+<div class="l-sub-section"><p>More precisely, Angular accumulates all imported providers <em>before</em> appending the items listed in <code>@NgModule.providers</code>. 
+This sequence ensures that whatever we add explicitly to the <code>AppModule</code> providers takes precedence 
+over the providers of imported modules.</p>
+</div><p>Let&#39;s add a <code>CoreModule.forRoot</code> method that configures the core <code>UserService</code>.</p>
+<p>We&#39;ve extended the core <code>UserService</code> with an optional, injected <code>UserServiceConfig</code>.
+If a <code>UserServiceConfig</code> exists, the <code>UserService</code> sets the user name from that config.</p>
+<div class="code-example"><header><h4>app/core/user.service.ts (constructor)</h4></header><code-example language="ts" format="">constructor(@Optional() config: UserServiceConfig) {
+  if (config) { this._userName = config.userName; }
+}
+</code-example></div><p>Here&#39;s <code>CoreModule.forRoot</code> that takes a <code>UserServiceConfig</code> object:</p>
+<div class="code-example"><header><h4>app/core/core.module.ts (forRoot)</h4></header><code-example language="ts" format="">static forRoot(config: UserServiceConfig): ModuleWithProviders {
+  return {
+    ngModule: CoreModule,
+    providers: [
+      {provide: UserServiceConfig, useValue: config }
+    ]
+  };
+}
+</code-example></div><p>Lastly, we call it <em>within the</em> <code>imports</code> <em>list</em> of the <code>AppModule</code>.</p>
+<div class="code-example"><header><h4>app//app.module.ts (imports)</h4></header><code-example language="ts" format="">  imports: [
+    BrowserModule,
+    ContactModule,
+    CoreModule.forRoot({userName: &#39;Miss Marple&#39;}),
+    routing
+  ],
+</code-example></div><p>The app displays &quot;Miss Marple&quot; as the user instead of the default &quot;Sherlock Holmes&quot;.</p>
+<div class="alert is-important"><p>Call <code>forRoot</code> only in the root application module, <code>AppModule</code>.
+Calling it in any other module, particularly in a lazy loaded module,
+is contrary to the intent and is likely to produce a runtime error.</p>
+<p>Remember to <em>import</em> the result; don&#39;t add it to any other <code>@NgModule</code> list.</p>
+</div><div class="l-hr"></div><a id="prevent-reimport"></a><div class="l-main-section"></div><h2 id="prevent-reimport-of-the-_coremodule_">Prevent reimport of the <em>CoreModule</em></h2>
+<p>Only the root <code>AppModule</code> should import the <code>CoreModule</code>. 
+<a href="../cookbook/ngmodule-faq.html#q-why-it-is-bad">Bad things happen</a> if a lazy loaded module imports it.</p>
+<p>We could <em>hope</em> that no developer makes that mistake. 
+Or we can guard against it and fail fast by adding the following <code>CoreModule</code> constructor.</p>
+<div class="code-example"><code-example language="ts" format="">constructor (@Optional() @SkipSelf() parentModule: CoreModule) {
+  if (parentModule) {
+    throw new Error(
+      &#39;CoreModule is already loaded. Import it in the AppModule only&#39;);
+  }
+}
+</code-example></div><p>The constructor tells Angular to inject the <code>CoreModule</code> into itself.
+That seems dangerously circular.</p>
+<p>The injection <em>would be circular</em> if Angular looked for <code>CoreModule</code> in the <em>current</em> injector.
+The <code>@SkipSelf</code> decorator means &quot;<em>look for</em> <code>CoreModule</code> <em>in an ancestor injector, above me in the injector hierarchy.</em>&quot;</p>
+<p>If the constructor executes as intended in the <code>AppModule</code>, 
+there is no ancestor injector that could provide an instance of <code>CoreModule</code>.
+The injector should give up.</p>
+<p>By default the injector throws an error when it can&#39;t find a requested provider.
+The <code>@Optional</code> decorator means not finding the service is OK. 
+The injector returns <code>null</code>, the <code>parentModule</code> parameter is null,
+and the constructor concludes uneventfully.</p>
+<p>It&#39;s a different story if we improperly import <code>CoreModule</code> into a lazy loaded module such as <code>HeroModule</code> (try it).</p>
+<p>Angular creates a lazy loaded module with its own injector, a <em>child</em> of the root injector.
+<code>@SkipSelf</code> causes Angular to look for a <code>CoreModule</code> in the parent injector which this time is the root injector.
+Of course it finds the instance imported by the root <code>AppModule</code>. 
+Now <code>parentModule</code> exists and the constructor throws the error.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>You made it! You can examine and download the complete source for this final version from the live example.</p>
+<p><live-example embedded img="devguide/ngmodule/final-plunker.png"></live-example></p>
+<h3 id="frequently-asked-questions">Frequently Asked Questions</h3>
+<p>Now that you understand Angular Modules, you may be interested
+in the companion <a href="../cookbook/ngmodule-faq.html" title="Angular Module FAQs">Angular Module FAQs</a> cookbook
+with its ready answers to specific design and implementation questions.</p><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--></article><div class="main-footer"><nav class="background-midnight grid-fluid"><div class="c3 main-footer-branding"><div class="logo-inverse-large"></div></div><div class="c2"><h3 class="text-headline">RESOURCES</h3><ul class="text-body"><!-- TODO: (ericjim) make a libraries page to showcase all angular 2 libraries--><!--li <a href="/libraries.html">Libraries</a>--><li><a href="/about/">About</a></li><li><a href="/resources/">Books & Training</a></li><li><a href="/resources/">Tools & Libraries</a></li><li><a href="/resources/">Community</a></li><li><a href="/presskit.html">Press Kit</a></li></ul></div><div class="c2"><h3 class="text-headline">HELP</h3><ul class="text-body"><li><a href="http://stackoverflow.com/questions/tagged/angular2">Stack Overflow</a></li><li><a href="https://gitter.im/angular/angular">Gitter</a></li><li><a href="https://groups.google.com/forum/#!forum/angular"> Google Group</a></li><li><a href="https://github.com/angular/angular/issues"> Report Issues</a></li><li><a class="footer-feedback" ng-click="appCtrl.openFeedback()" aria-label="Submit feedback on this page"> Site Feedback</a></li></ul></div><div class="c2"><h3 class="text-headline">COMMUNITY</h3><ul class="text-body"><li><a href="/events.html">Events</a></li><li><a href="http://www.meetup.com/topics/angularjs/">Meetups</a></li><li><a href="https://twitter.com/angularjs"> Twitter</a></li><li><a href="https://github.com/angular/angular"> GitHub</a></li><li><a href="/contribute.html"> Contribute</a></li></ul></div><div class="c2"><h3 class="text-headline">LANGUAGES</h3><ul class="text-body"><li><a href="https://angular.cn/">中文版</a></li></ul></div></nav><footer class="background-midnight"><small class="text-caption">Powered by Google ©2010-2016. Code licensed under an <a href="/license" class="text-snow">MIT-style License</a>. Documentation licensed under <a class="text-snow" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</small><a aria-label="View Style Guide" href="/docs/ts/latest/styleguide.html" title="Style Guide" class="styleguide-trigger text-snow"><span class="icon-favorite"></span></a></footer></div><!-- VENDORS --><script src="/resources/js/vendor/prettify.js"></script><script src="/resources/js/vendor/lang-basic.js"></script><script src="/resources/js/vendor/lang-dart.js"></script><script src="/resources/js/vendor/lodash.js"></script><script src="/resources/js/vendor/clipboard.min.js"></script><!-- Angular Material Dependencies --><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script><!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+<!-- Angular.io Site JS --><script src="/resources/js/site.js"></script><script src="/resources/js/util.js"></script><script src="/resources/js/controllers/app-controller.js"></script><script src="/resources/js/controllers/resources-controller.js"></script><script src="/resources/js/directives/cheatsheet.js"></script><script src="/resources/js/directives/api-list.js"></script><script src="/resources/js/directives/bio.js"></script><script src="/resources/js/directives/bold.js"></script><script src="/resources/js/directives/announcement-bar.js"></script><script src="/resources/js/directives/code.js"></script><script src="/resources/js/directives/copy.js"></script><script src="/resources/js/directives/code-tabs.js"></script><script src="/resources/js/directives/code-pane.js"></script><script src="/resources/js/directives/code-example.js"></script><script src="/resources/js/directives/if-docs.js"></script><script src="/resources/js/directives/live-example.js"></script><script src="/resources/js/directives/ngio-ex-path.js"></script><script src="/resources/js/directives/scroll-y-offset-element.js"></script><!-- GA --><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-8594346-15', 'auto');
+ga('send', 'pageview')
+
+</script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+_st('install','VsuU7kH5Hnnj9tfyNvfK');
+</script><!-- Google Feedback --><script src="//www.gstatic.com/feedback/api.js" type="text/javascript"></script><!-- Twitter Widget --><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}})(document,"script","twitter-wjs");</script></body></html>

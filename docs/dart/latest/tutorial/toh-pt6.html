@@ -1,0 +1,1161 @@
+<!DOCTYPE html><html lang="en" ng-app="angularIOApp" itemscope itemtype="http://schema.org/Framework"><!-- template: public/docs/_layout--><head><title>HTTP - dart</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta name="keywords" content="Angular, AngularJS, AngularDart, Javscript, Dart, Framework, JavaScript MVC, Google"/><meta name="robots" content="all"/><meta name="referrer" content="origin"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"/><meta property="og:title" content="Angular 2"/><meta property="og:image" content="/resources/images/logos/standard/shield-large.png"/><meta property="og:image:type" content="image/png"/><meta property="og:image:width" content="184"/><meta property="og:image:height" content="200"/><meta property="og:description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="name" content="Angular 2"/><meta itemprop="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="image" content="https://angular.io/resources/images/logos/standard/shield-large.png"/><link rel="icon" type="image/x-icon" href="/resources/images/icons/favicon.ico"/><link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/><link rel="stylesheet" href="/resources/css/vendor/icomoon/style.css"/><link rel="stylesheet" href="/resources/css/vendor/animate.css"/><link rel="stylesheet" href="/resources/css/main.css"/><!-- MOBILE ICONS -->
+<link rel="apple-touch-icon" sizes="57x57" href="/resources/images/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/resources/images/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/resources/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/resources/images/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/resources/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/resources/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/resources/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/resources/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/resources/images/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/resources/images/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/resources/images/favicons/manifest.json"></head><body ng-controller="AppCtrl as appCtrl" class="l-offset-nav l-offset-side-nav"><nav scroll-y-offset-element="scroll-y-offset-element" class="main-nav l-pinned-top l-layer-5"><h1><a href="/" md-button>Angular <sup>by Google</sup></a></h1><button aria-label="View Menu" ng-click="appCtrl.toggleMainMenu($event)" md-button="md-button" class="main-nav-button main-nav-mobile-trigger l-right">Site Menu <span class="icon icon-arrow-drop-down"></span></button><ul ng-class="appCtrl.showMainNav ? 'is-visible' : ''"><li class="l-left"><a class="main-nav-button" href="/features.html" md-button>Features</a></li><li class="l-left"><a class="main-nav-button" href="/docs/ts/latest/" md-button>Docs</a></li><li class="l-left"><a class="main-nav-button" href="/events.html" md-button>Events</a></li><li class="l-left"><a class="main-nav-button" href="/news.html" md-button>News</a></li><li class="l-right"><a class="main-nav-button" href="/docs/ts/latest/quickstart.html" md-button>Get Started</a></li></ul></nav><!-- Include this file ONLY when current.path[2] is defined--><nav ng-class="appCtrl.showDocsNav ? 'is-visible' : ''" class="sidenav l-pinned-left l-layer-4 l-offset-nav"><!-- SEARCH BAR--><header class="sidenav-search st-input-wrapper"><form class="st-input-inner"><label for="search-io" class="is-hidden">Search Docs</label><input type="search" id="search-io" placeholder="SEARCH DOCS..."/></form><button aria-label="View Docs Menu" ng-click="appCtrl.toggleDocsMenu($event)" md-button="md-button" class="mobile-trigger button">Docs <span class="icon icon-arrow-drop-down"></span></button></header><ul class="sidenav-links"><li class="sidenav-section no-border"><a href="/docs/dart/latest/" class="nav-title">Docs Home</a></li><!-- CORE DOCUMENTATION--><li class="sidenav-section-divider"><h3>Core Documentation</h3></li><li class="sidenav-section"><a href="/docs/dart/latest/quickstart.html" title="Get up and running with Angular 2" class="nav-title ">Quickstart</a></li><li class="sidenav-section"><a href="/docs/dart/latest/guide/" title="How to read and use this documentation" class="nav-title is-parent ">Guide<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-ordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/dart/latest/guide/" title="How to read and use this documentation">1. Overview</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/architecture.html" title="The basic building blocks of Angular 2 applications">2. Architecture</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/displaying-data.html" title="Interpolation and other forms of property binding help us show app data in the UI.">3. Displaying Data</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/user-input.html" title="User input triggers DOM events. We listen to those events with event bindings that funnel updated values back into our components and models.">4. User Input</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/forms.html" title="A form creates a cohesive, effective, and compelling data entry experience. An Angular form coordinates a set of data-bound user controls, tracks changes, validates input, and presents errors.">5. Forms</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/dependency-injection.html" title="Angular's dependency injection system creates and delivers dependent services &quot;just-in-time&quot;.">6. Dependency Injection</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/template-syntax.html" title="Learn how to write templates that display data and consume user events with the help of data binding.">7. Template Syntax</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/cheatsheet.html" title="A quick guide to Angular syntax. (Content is provisional and may change.)">8. Angular Cheat Sheet</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/style-guide.html" title="Write Angular 2 with style.">9. Style Guide</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/glossary.html" title="Brief definitions of the most important words in the Angular 2 vocabulary">10. Glossary</a></li></ul></div></li><li class="sidenav-section no-border"><a href="/docs/dart/latest/api/" title="API Preview" class="nav-title ">API Reference</a></li><!-- ADVANCED DOCUMENATION--><li class="sidenav-section-divider"><h3>Additional Documentation</h3></li><li class="sidenav-section"><a href="/docs/dart/latest/tutorial/" title="The Tour of Heroes tutorial takes us through the steps of creating an Angular application in Dart." class="nav-title is-parent is-selected">Tutorial<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-ordered-lists"><ul><li class="nav-list-item "><a href="/docs/dart/latest/tutorial/" title="The Tour of Heroes tutorial takes us through the steps of creating an Angular application in Dart.">1. Introduction</a></li><li class="nav-list-item "><a href="/docs/dart/latest/tutorial/toh-pt1.html" title="We build a simple hero editor">2. The Hero Editor</a></li><li class="nav-list-item "><a href="/docs/dart/latest/tutorial/toh-pt2.html" title="We build a master/detail page with a list of heroes">3. Master/Detail</a></li><li class="nav-list-item "><a href="/docs/dart/latest/tutorial/toh-pt3.html" title="We refactor the master/detail view into separate components">4. Multiple Components</a></li><li class="nav-list-item "><a href="/docs/dart/latest/tutorial/toh-pt4.html" title="We create a reusable service to manage our hero data calls">5. Services</a></li><li class="nav-list-item "><a href="/docs/dart/latest/tutorial/toh-pt5.html" title="We add the Angular Component Router and learn to navigate among the views">6. Routing</a></li><li class="nav-list-item is-selected"><a href="/docs/dart/latest/tutorial/toh-pt6.html" title="We convert our service and components to use Angular's HTTP service">7. HTTP</a></li></ul></div></li><li class="sidenav-section"><a href="/docs/dart/latest/guide/attribute-directives.html" title="Attribute directives attach behavior to elements." class="nav-title is-parent ">Advanced Documentation<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-unordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/dart/latest/guide/attribute-directives.html" title="Attribute directives attach behavior to elements.">Attribute Directives</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/browser-support.html" title="Browser support and polyfills guide.">Browser support</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/component-styles.html" title="Learn how to apply CSS styles to components.">Component Styles</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/hierarchical-dependency-injection.html" title="Angular's hierarchical dependency injection system supports nested injectors in parallel with the component tree.">Hierarchical Injectors</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/server-communication.html" title="Talk to a remote server with an HTTP Client.">HTTP Client</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/lifecycle-hooks.html" title="Angular calls lifecycle hook methods on directives and components as it creates, changes, and destroys them.">Lifecycle Hooks</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/pipes.html" title="Pipes transform displayed values within a template.">Pipes</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/router.html" title="Discover the basics of screen navigation with the Angular 2 Component Router.">Routing &amp; Navigation</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/security.html" title="Developing for content security in Angular applications">Security</a></li><li class="nav-list-item "><a href="/docs/dart/latest/guide/structural-directives.html" title="Angular has a powerful template engine that lets us easily manipulate the DOM structure of our elements.">Structural Directives</a></li></ul></div></li><li class="sidenav-section"><a href="/docs/dart/latest/cookbook/" title="A collection of recipes for common Angular application scenarios" class="nav-title is-parent ">Cookbook<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-unordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/dart/latest/cookbook/" title="A collection of recipes for common Angular application scenarios">Overview</a></li><li class="nav-list-item "><a href="/docs/dart/latest/cookbook/component-communication.html" title="Share information between different directives and components">Component Interaction</a></li><li class="nav-list-item "><a href="/docs/dart/latest/cookbook/set-document-title.html" title="Setting the document or window title using the Title service.">Set the Document Title</a></li></ul></div></li></ul><!-- DROPDOWN BUTTON --><nav class="dropdown"><button aria-label="Select a version of Angular" md-button="md-button" ng-click="appCtrl.toggleVersionMenu($event)" class="dropdown-button">Angular 2 for Dart  <span class="icon icon-arrow-drop-down"></span></button><div ng-click="appCtrl.toggleVersionMenu($event)" ng-show="appCtrl.showMenu" class="overlay ng-hide"></div><!-- DROPDOWN MENU --><ul ng-class="appCtrl.showMenu ? 'is-visible' : ''" class="dropdown-menu"><li><a href="/docs/ts/latest/tutorial/toh-pt6.html" md-button>Angular 2 for TypeScript </a></li><li><a href="/docs/js/latest/tutorial/toh-pt6.html" md-button>Angular 2 for JavaScript </a></li><li><a href="/docs/dart/latest/tutorial/toh-pt6.html" md-button>Angular 2 for Dart </a></li></ul></nav></nav><script>// Could put in appCtrl but only needed here and clear here
+(function scrollToSelectedLink() {
+  var sideNav = document.getElementsByClassName('sidenav')[0];
+  var link = sideNav.getElementsByClassName('is-selected')[0];
+  if(link && link.offsetTop > window.innerHeight){
+    sideNav.scrollTop = link.offsetTop - (window.innerHeight/2);
+    //alert("offsetTop: " + link.offsetTop + " side-nav top is " + sideNav.scrollTop);
+  }
+})()</script><!-- template: public/_includes/_hero--><header class="hero background-sky"><h1 class="hero-title ">HTTP</h1><!--CLEAR FLOAT ELEMENTS--><div class="clear"></div></header><div class="banner"><p class="text-body">We convert our service and components to use Angular's HTTP service</p></div><article class="l-content-small grid-fluid docs-content"><script>function why(id, backTo) {
+  var id = "#"+id;
+  var el = document.querySelector(id);
+  el.hidden=el.hidden=!el.hidden;
+
+  if (el.hidden && backTo){
+    // the next line is required to work around a bug in WebKit (Chrome / Safari)
+    location.href = "#";
+    location.href =  "#" + backTo;
+  }
+}</script><script>function verbose(isVerbose) {
+  isVerbose = !! isVerbose;
+  var el = document.querySelector('button.verbose.off');
+  el.style.display = isVerbose ? 'block' : 'none';
+  var el = document.querySelector('button.verbose.on');
+  el.style.display = isVerbose ? 'none' : 'block';
+
+  CCSStylesheetRuleStyle('main','.l-verbose-section', 'display',
+    isVerbose ? 'block' : 'none');
+}
+</script><script>function CCSStylesheetRuleStyle(stylesheet, selectorText, style, value){
+  /* returns the value of the element style of the rule in the stylesheet
+  *  If no value is given, reads the value
+  *  If value is given, the value is changed and returned
+  *  If '' (empty string) is given, erases the value.
+  *  The browser will apply the default one
+  *
+  * string stylesheet: part of the .css name to be recognized, e.g. 'default'
+  * string selectorText: css selector, e.g. '#myId', '.myClass', 'thead td'
+  * string style: camelCase element style, e.g. 'fontSize'
+  * string value optional : the new value
+  */
+  var CCSstyle = undefined, rules, sheet;
+  for(var m in document.styleSheets){
+    sheet = document.styleSheets[m];
+    if(sheet.href && sheet.href.indexOf(stylesheet) != -1){
+    rules = sheet[document.all ? 'rules' : 'cssRules'];
+    for(var n in rules){
+      console.log(rules[n].selectorText);
+      if(rules[n].selectorText == selectorText){
+        CCSstyle = rules[n].style;
+        break;
+      }
+    }
+    break;
+    }
+  }
+  if(value == undefined)
+    return CCSstyle[style]
+  else
+    return CCSstyle[style] = value
+}
+</script><h1 id="getting-and-saving-data">Getting and Saving Data</h1>
+<p>Our stakeholders appreciate our progress.
+Now they want to get the hero data from a server, let users add, edit, and delete heroes,
+and save these changes back to the server.</p>
+<p>In this chapter we teach our application to make the corresponding HTTP calls to a remote server&#39;s web API.</p>
+<p>Run the <live-example></live-example> for this part.</p>
+<div class="l-main-section"></div><h2 id="where-we-left-off">Where We Left Off</h2>
+<p>In the <a href="toh-pt5.html">previous chapter</a>, we learned to navigate between the dashboard and the fixed heroes list, editing a selected hero along the way.
+That&#39;s our starting point for this chapter.</p>
+<h3 id="keep-the-app-compiling-and-running">Keep the app compiling and running</h3>
+<p>Open a terminal/console window.
+Start the Dart compiler, watch for changes, and start our server by entering the command:</p>
+<code-example language="bash">pub serve
+</code-example><p>The application runs and updates automatically as we continue to build the Tour of Heroes.</p>
+<div id="http-providers" class="l-main-section"></div><h1>Providing HTTP Services</h1><p>We&#39;ll be using the Dart <a href="https://pub.dartlang.org/packages/http"><b>http</b></a> package&#39;s
+<code>BrowserClient</code> class to communicate with a server.</p>
+<h3 id="pubspec-updates">Pubspec updates</h3>
+<p>Update package dependencies by adding the
+<code>stream_transformers</code> and Dart <a href="https://pub.dartlang.org/packages/http"><b>http</b></a> packages.</p>
+<p>We also need to add a <code>resolved_identifiers</code> entry, to inform the <a href="https://github.com/angular/angular/wiki/Angular-2-Dart-Transformer">angular2
+transformer</a> that we&#39;ll be using <code>BrowserClient</code>. (For an explanation of why
+this extra configuration is needed, see the <a href="../guide/server-communication.html#!#http-providers">HTTP client chapter</a>.) We&#39;ll
+also need to use <code>Client</code> from http, so let&#39;s add that now as well.</p>
+<p>Update <code>pubspec.yaml</code> to look like this (additions are highlighted):</p>
+<div class="code-example"><header><h4>pubspec.yaml (additions)</h4></header><code-example language="yaml" format="">name: angular2_tour_of_heroes
+# . . . 
+dependencies:
+  angular2: 2.0.0-beta.21
+  # . . . 
+  <span class="pnk">http: ^0.11.0</span>
+  <span class="pnk">stream_transformers: ^0.3.0</span>
+transformers:
+- angular2:
+# . . . 
+    entry_points: web/main.dart
+    <span class="pnk">resolved_identifiers:</span>
+        <span class="pnk">BrowserClient: &#39;package:http/browser_client.dart&#39;</span>
+        <span class="pnk">Client: &#39;package:http/http.dart&#39;</span>
+- dart_to_js_script_rewriter
+</code-example></div><h3 id="register-for-http-services">Register for HTTP services</h3>
+<p>Before our app can use <code>BrowserClient</code>, we have to register it as a service provider.</p>
+<p>We should be able to access <code>BrowserClient</code> services from anywhere in the application.
+So we register it in the <code>bootstrap</code> call where we
+launch the application and its root <code>AppComponent</code>.</p>
+<div class="code-example"><header><h4>web/main.dart (v1)</h4></header><code-example language="dart" format="">import &#39;package:angular2/core.dart&#39;;
+import &#39;package:angular2/platform/browser.dart&#39;;
+import &#39;package:angular2_tour_of_heroes/app_component.dart&#39;;
+import &#39;package:http/browser_client.dart&#39;;
+
+void main() {
+  bootstrap(AppComponent, [
+    provide(BrowserClient, useFactory: () =&gt; new BrowserClient(), deps: [])
+  ]);
+  // Simplify bootstrap provider list to [BrowserClient]
+  // once there is a fix for:
+  // https://github.com/dart-lang/angular2/issues/37
+}
+</code-example></div><p>Notice that we supply <code>BrowserClient</code> in a list, as the second parameter to
+the <code>bootstrap</code> method.  This has the same effect as the <code>providers</code> list in
+<code>@Component</code> annotation.</p>
+<div class="l-main-section"></div><h2 id="simulating-the-web-api">Simulating the web API</h2>
+<p>We recommend registering application-wide services in the root
+<code>AppComponent</code> <em>providers</em>.  <span if-docs="dart">Here we&#39;re
+registering in <code>main</code> for a special reason.</span></p>
+<p>Our application is in the early stages of development and far from ready for production.
+We don&#39;t even have a web server that can handle requests for heroes.
+Until we do, <em>we&#39;ll have to fake it</em>.</p>
+<p>We&#39;re going to <em>trick</em> the HTTP client into fetching and saving data from
+a mock service, the <em>in-memory web API</em>.
+<span if-docs="dart"> The application itself doesn&#39;t need to know and
+shouldn&#39;t know about this.  So we&#39;ll slip the in-memory web API into the
+configuration <em>above</em> the <code>AppComponent</code>.</span></p>
+<p>Here is a version of <span ngio-ex>web/main.dart</span> that performs this trick:</p>
+<div class="code-example"><header><h4>web/main.dart (v2)</h4></header><code-example language="dart" format="">import &#39;package:angular2/core.dart&#39;;
+import &#39;package:angular2/platform/browser.dart&#39;;
+import &#39;package:angular2_tour_of_heroes/app_component.dart&#39;;
+import &#39;package:angular2_tour_of_heroes/in_memory_data_service.dart&#39;;
+import &#39;package:http/http.dart&#39;;
+
+void main() {
+  bootstrap(AppComponent,
+    [provide(Client, useClass: InMemoryDataService)]
+    // Using a real back end? Import browser_client.dart and change the above to
+    // [provide(Client, useFactory: () =&gt; new BrowserClient(), deps: [])]
+  );
+}
+</code-example></div><p>We want to replace <code>BrowserClient</code>, the service that talks to the remote server,
+with the in-memory web API service.
+Our in-memory web API service, shown below, is implemented using the
+<code>http</code> library <code>MockClient</code> class.
+All <code>http</code> client implementations share a common <code>Client</code> interface, so
+we&#39;ll have our app use the <code>Client</code> type so that we can freely switch between
+implementations.</p>
+<div class="code-example"><header><h4>lib/in_memory_data_service.dart</h4></header><code-example language="dart" format="">import &#39;dart:async&#39;;
+import &#39;dart:convert&#39;;
+import &#39;dart:math&#39;;
+
+import &#39;package:angular2/core.dart&#39;;
+import &#39;package:http/http.dart&#39;;
+import &#39;package:http/testing.dart&#39;;
+
+import &#39;hero.dart&#39;;
+
+@Injectable()
+class InMemoryDataService extends MockClient {
+  static final _initialHeroes = [
+    {&#39;id&#39;: 11, &#39;name&#39;: &#39;Mr. Nice&#39;},
+    {&#39;id&#39;: 12, &#39;name&#39;: &#39;Narco&#39;},
+    {&#39;id&#39;: 13, &#39;name&#39;: &#39;Bombasto&#39;},
+    {&#39;id&#39;: 14, &#39;name&#39;: &#39;Celeritas&#39;},
+    {&#39;id&#39;: 15, &#39;name&#39;: &#39;Magneta&#39;},
+    {&#39;id&#39;: 16, &#39;name&#39;: &#39;RubberMan&#39;},
+    {&#39;id&#39;: 17, &#39;name&#39;: &#39;Dynama2&#39;},
+    {&#39;id&#39;: 18, &#39;name&#39;: &#39;Dr IQ&#39;},
+    {&#39;id&#39;: 19, &#39;name&#39;: &#39;Magma&#39;},
+    {&#39;id&#39;: 20, &#39;name&#39;: &#39;Tornado&#39;}
+  ];
+  static final List&lt;Hero&gt; _heroesDb =
+      _initialHeroes.map((json) =&gt; new Hero.fromJson(json)).toList();
+  static int _nextId = _heroesDb.map((hero) =&gt; hero.id).reduce(max) + 1;
+
+  static Future&lt;Response&gt; _handler(Request request) async {
+    var data;
+    switch (request.method) {
+      case &#39;GET&#39;:
+        String prefix = request.url.queryParameters[&#39;name&#39;] ?? &#39;&#39;;
+        final regExp = new RegExp(prefix, caseSensitive: false);
+        data = _heroesDb.where((hero) =&gt; hero.name.contains(regExp)).toList();
+        break;
+      case &#39;POST&#39;:
+        var name = JSON.decode(request.body)[&#39;name&#39;];
+        var newHero = new Hero(_nextId++, name);
+        _heroesDb.add(newHero);
+        data = newHero;
+        break;
+      case &#39;PUT&#39;:
+        var heroChanges = new Hero.fromJson(JSON.decode(request.body));
+        var targetHero = _heroesDb.firstWhere((h) =&gt; h.id == heroChanges.id);
+        targetHero.name = heroChanges.name;
+        data = targetHero;
+        break;
+      case &#39;DELETE&#39;:
+        var id = int.parse(request.url.pathSegments.last);
+        _heroesDb.removeWhere((hero) =&gt; hero.id == id);
+        // No data, so leave it as null.
+        break;
+      default:
+        throw &#39;Unimplemented HTTP method ${request.method}&#39;;
+    }
+    return new Response(JSON.encode({&#39;data&#39;: data}), 200,
+        headers: {&#39;content-type&#39;: &#39;application/json&#39;});
+  }
+
+  InMemoryDataService() : super(_handler);
+}
+</code-example></div><p>This file replaces the <code>mock_heroes.dart</code> which is now safe to delete.</p><p>As is common for web API services, our mock in-memory service will be
+encoding and decoding heroes in JSON format, so we enhance the <code>Hero</code>
+class with these capabilities:</p>
+<div class="code-example"><header><h4>lib/hero.dart</h4></header><code-example language="dart" format="linenums">class Hero {
+  final int id;
+  String name;
+
+  Hero(this.id, this.name);
+
+  factory Hero.fromJson(Map&lt;String, dynamic&gt; hero) =&gt;
+    new Hero(_toInt(hero[&#39;id&#39;]), hero[&#39;name&#39;]);
+
+  Map toJson() =&gt; {&#39;id&#39;: id, &#39;name&#39;: name};
+}
+
+int _toInt(id) =&gt; id is int ? id : int.parse(id);
+</code-example></div><div class="l-main-section"></div><h2 id="heroes-and-http">Heroes and HTTP</h2>
+<p>Look at our current <code>HeroService</code> implementation</p>
+<div class="code-example"><code-example language="dart" format="">Future&lt;List&lt;Hero&gt;&gt; getHeroes() async =&gt; mockHeroes;
+</code-example></div><p>We returned a Future resolved with mock heroes.
+It may have seemed like overkill at the time, but we were anticipating the
+day when we fetched heroes with an HTTP client and we knew that would have to be an asynchronous operation.</p>
+<p>That day has arrived! Let&#39;s convert <code>getHeroes()</code> to use HTTP.</p>
+<div class="code-example"><header><h4>lib/hero_service.dart (updated getHeroes and new class members)</h4></header><code-example language="dart" format="">  static const _heroesUrl = &#39;app/heroes&#39;; // URL to web API
+
+  final Client _http;
+
+  HeroService(this._http);
+
+  Future&lt;List&lt;Hero&gt;&gt; getHeroes() async {
+    try {
+      final response = await _http.get(_heroesUrl);
+      final heroes = _extractData(response)
+          .map((value) =&gt; new Hero.fromJson(value))
+          .toList();
+      return heroes;
+    } catch (e) {
+      throw _handleError(e);
+    }
+  }
+
+  dynamic _extractData(Response resp) =&gt; JSON.decode(resp.body)[&#39;data&#39;];
+
+  Exception _handleError(dynamic e) {
+    print(e); // for demo purposes only
+    return new Exception(&#39;Server error; cause: $e&#39;);
+  }
+</code-example></div><p>Our updated import statements are now:</p>
+<div class="code-example"><header><h4>lib/hero_service.dart (updated imports)</h4></header><code-example language="dart" format="">import &#39;dart:async&#39;;
+import &#39;dart:convert&#39;;
+
+import &#39;package:angular2/core.dart&#39;;
+import &#39;package:http/http.dart&#39;;
+
+import &#39;hero.dart&#39;;
+</code-example></div><p>Refresh the browser, and the hero data should be successfully loaded from the
+mock server.</p>
+<h3 id="http-future">HTTP Future</h3>
+
+<p>We&#39;re still returning a Future but we&#39;re creating it differently.</p>
+<p>To get the list of heroes, we first make an asynchronous call to
+<code>http.get()</code>. Then we use the <code>_extractData</code> helper method to decode the
+response body.</p>
+<p>That response JSON has a single <code>data</code> property.
+The <code>data</code> property holds the list of <em>heroes</em> that the caller really wants.
+So we grab that list and return it as the resolved Future value.</p>
+<div class="alert is-important"><p>Pay close attention to the shape of the data returned by the server.
+This particular <em>in-memory web API</em> example happens to return an object with a <code>data</code> property.
+Your API might return something else. Adjust the code to match <em>your web API</em>.</p>
+</div><p>The caller is unaware of these machinations. It receives a Future of <em>heroes</em> just as it did before.
+It has no idea that we fetched the heroes from the (mock) server.
+It knows nothing of the twists and turns required to convert the HTTP response into heroes.
+Such is the beauty and purpose of delegating data access to a service like this <code>HeroService</code>.</p>
+<h3 id="error-handling">Error Handling</h3>
+<p>At the end of <code>getHeroes()</code> we <code>catch</code> server failures and pass them to an error handler:</p>
+<div class="code-example"><code-example language="dart" format="">} catch (e) {
+  throw _handleError(e);
+}
+</code-example></div><p>This is a critical step!
+We must anticipate HTTP failures as they happen frequently for reasons beyond our control.</p>
+<div class="code-example"><code-example language="dart" format="">Exception _handleError(dynamic e) {
+  print(e); // for demo purposes only
+  return new Exception(&#39;Server error; cause: $e&#39;);
+}
+</code-example></div><p>In this demo service we log the error to the console; we would do better in real life.</p>
+<p>We&#39;ve also decided to return a user friendly form of the error to
+the caller in a propagated exception so that the caller can display a proper error message to the user.</p>
+<h3 id="unchanged-getheroes-api">Unchanged <code>getHeroes</code> API</h3>
+<p>Although we made significant <em>internal</em> changes to <code>getHeroes()</code>, the public signature did not change.
+We still return a Future. We won&#39;t have to update any of the components that call <code>getHeroes()</code>.</p>
+<p>Our stakeholders are thrilled with the added flexibility from the API integration. 
+Now they want the ability to create and delete heroes.</p>
+<p>Let&#39;s see first what happens when we try to update a hero&#39;s details.</p>
+<div class="l-main-section"></div><h2 id="update-hero-details">Update hero details</h2>
+<p>We can edit a hero&#39;s name already in the hero detail view. Go ahead and try
+it. As we type, the hero name is updated in the view heading. 
+But when we hit the <code>Back</code> button, the changes are lost!</p>
+<div class="l-sub-section"><p>Updates weren&#39;t lost before, what&#39;s happening?
+When the app used a list of mock heroes, changes were made directly to the
+hero objects in the single, app-wide shared list. Now that we are fetching data
+from a server, if we want changes to persist, we&#39;ll need to write them back to
+the server.</p>
+</div><h3 id="save-hero-details">Save hero details</h3>
+<p>Let&#39;s ensure that edits to a hero&#39;s name aren&#39;t lost. Start by adding,
+to the end of the hero detail template, a save button with a <code>click</code> event
+binding that invokes a new component method named <code>save</code>:</p>
+<div class="code-example"><header><h4>lib/hero_detail_component.html (save)</h4></header><code-example language="html" format="">&lt;button (click)=&quot;save()&quot;&gt;Save&lt;/button&gt;
+</code-example></div><p>The <code>save</code> method persists hero name changes using the hero service
+<code>update</code> method and then navigates back to the previous view:</p>
+<div class="code-example"><header><h4>lib/hero_detail_component.dart (save)</h4></header><code-example language="dart" format="">Future&lt;Null&gt; save() async {
+  await _heroService.update(hero);
+  goBack();
+}
+</code-example></div><h3 id="hero-service-update-method">Hero service <code>update</code> method</h3>
+<p>The overall structure of the <code>update</code> method is similar to that of
+<code>getHeroes</code>, although we&#39;ll use an HTTP <em>put</em> to persist changes
+server-side:</p>
+<div class="code-example"><header><h4>lib/hero_service.dart (update)</h4></header><code-example language="dart" format="">static final _headers = {&#39;Content-Type&#39;: &#39;application/json&#39;};
+
+Future&lt;Hero&gt; update(Hero hero) async {
+  try {
+    var url = &#39;$_heroesUrl/${hero.id}&#39;;
+    final response =
+        await _http.put(url, headers: _headers, body: JSON.encode(hero));
+    return new Hero.fromJson(_extractData(response));
+  } catch (e) {
+    throw _handleError(e);
+  }
+}
+</code-example></div><p>We identify <em>which</em> hero the server should update by encoding the hero id in
+the URL. The put body is the JSON string encoding of the hero, obtained by
+calling <code>JSON.encode</code>.  We identify the body content type
+(<code>application/json</code>) in the request header.</p>
+<p>Refresh the browser and give it a try. Changes to hero names should now persist.</p>
+<div class="l-main-section"></div><h2 id="add-a-hero">Add a hero</h2>
+<p>To add a new hero we need to know the hero&#39;s name. Let&#39;s use an input
+element for that, paired with an add button.</p>
+<p>Insert the following into the heroes component HTML, first thing after
+the heading:</p>
+<div class="code-example"><header><h4>lib/heroes_component.html (add)</h4></header><code-example language="html" format="">&lt;div&gt;
+  &lt;label&gt;Hero name:&lt;/label&gt; &lt;input #heroName /&gt;
+  &lt;button (click)=&quot;add(heroName.value); heroName.value=&#39;&#39;&quot;&gt;
+    Add
+  &lt;/button&gt;
+&lt;/div&gt;
+</code-example></div><p>In response to a click event, we call the component&#39;s click handler and then
+clear the input field so that it will be ready to use for another name.</p>
+<div class="code-example"><header><h4>lib/heroes_component.dart (add)</h4></header><code-example language="dart" format="">Future&lt;Null&gt; add(String name) async {
+  name = name.trim();
+  if (name.isEmpty) return;
+  heroes.add(await _heroService.create(name));
+  selectedHero = null;
+}
+</code-example></div><p>When the given name is non-blank, the handler delegates creation of the
+named hero to the hero service, and then adds the new hero to our list.</p>
+<p>Go ahead, refresh the browser and create some new heroes!</p>
+<div class="l-main-section"></div><h2 id="delete-a-hero">Delete a hero</h2>
+<p>Too many heroes?
+Let&#39;s add a delete button to each hero in the heroes view.</p>
+<p>Add this button element to the heroes component HTML, right after the hero
+name in the repeated <code>&lt;li&gt;</code> tag:</p>
+<div class="code-example"><code-example language="html" format="">&lt;button class=&quot;delete&quot;
+  (click)=&quot;delete(hero); $event.stopPropagation()&quot;&gt;x&lt;/button&gt;
+</code-example></div><p>The <code>&lt;li&gt;</code> element should now look like this:</p>
+<div class="code-example"><header><h4>lib/heroes_component.html (li-element)</h4></header><code-example language="html" format="">  &lt;li *ngFor=&quot;let hero of heroes&quot; (click)=&quot;onSelect(hero)&quot;
+      [class.selected]=&quot;hero === selectedHero&quot;&gt;
+    &lt;span class=&quot;badge&quot;&gt;{{hero.id}}&lt;/span&gt;
+    &lt;span&gt;{{hero.name}}&lt;/span&gt;
+    &lt;button class=&quot;delete&quot;
+      (click)=&quot;delete(hero); $event.stopPropagation()&quot;&gt;x&lt;/button&gt;
+  &lt;/li&gt;
+</code-example></div><p>In addition to calling the component&#39;s <code>delete</code> method, the delete button
+click handling code stops the propagation of the click event &mdash; we
+don&#39;t want the <code>&lt;li&gt;</code> click handler to be triggered because that would
+select the hero that we are going to delete!</p>
+<p>The logic of the <code>delete</code> handler is a bit trickier:</p>
+<div class="code-example"><header><h4>lib/heroes_component.dart (delete)</h4></header><code-example language="dart" format="">Future&lt;Null&gt; delete(Hero hero) async {
+  await _heroService.delete(hero.id);
+  heroes.remove(hero);
+  if (selectedHero == hero) selectedHero = null;
+}
+</code-example></div><p>Of course, we delegate hero deletion to the hero service, but the component
+is still responsible for updating the display: it removes the deleted hero
+from the list and resets the selected hero if necessary.</p>
+<p>We want our delete button to be placed at the far right of the hero entry.
+This extra CSS accomplishes that:</p>
+<div class="code-example"><header><h4>lib/heroes_component.css (additions)</h4></header><code-example language="css" format="">button.delete {
+  float:right;
+  margin-top: 2px;
+  margin-right: .8em;
+  background-color: gray !important;
+  color:white;
+}
+</code-example></div><h3 id="hero-service-delete-method">Hero service <code>delete</code> method</h3>
+<p>The hero service&#39;s <code>delete</code> method uses the <em>delete</em> HTTP method to remove the hero from the server:</p>
+<div class="code-example"><header><h4>lib/hero_service.dart (delete)</h4></header><code-example language="dart" format="">Future&lt;Null&gt; delete(int id) async {
+  try {
+    var url = &#39;$_heroesUrl/$id&#39;;
+    await _http.delete(url, headers: _headers);
+  } catch (e) {
+    throw _handleError(e);
+  }
+}
+</code-example></div><p>Refresh the browser and try the new delete functionality.</p>
+<h2 id="-_observable-s">Streams</h2>
+<p>Recall that <code>HeroService.getHeroes()</code> awaits for an <code>http.get()</code>
+response and yields a <em>Future</em> <code>List&lt;Hero&gt;</code>, which is fine when we are only
+interested in a single result.</p>
+<p>But requests aren&#39;t always &quot;one and done&quot;. We may start one request,
+then cancel it, and make a different request before the server has responded to the first request.
+Such a <em>request-cancel-new-request</em> sequence is difficult to implement with <em>Futures</em>.
+It&#39;s easy with <em>Streams</em> as we&#39;ll see.</p>
+<h3 id="search-by-name">Search-by-name</h3>
+<p>We&#39;re going to add a <em>hero search</em> feature to the Tour of Heroes.
+As the user types a name into a search box, we&#39;ll make repeated HTTP requests for heroes filtered by that name.</p>
+<p>We start by creating <code>HeroSearchService</code> that sends search queries to our server&#39;s web api.</p>
+<div class="code-example"><header><h4>lib/hero_search_service.dart</h4></header><code-example language="dart" format="linenums">import &#39;dart:async&#39;;
+import &#39;dart:convert&#39;;
+
+import &#39;package:angular2/core.dart&#39;;
+import &#39;package:http/http.dart&#39;;
+
+import &#39;hero.dart&#39;;
+
+@Injectable()
+class HeroSearchService {
+  final Client _http;
+
+  HeroSearchService(this._http);
+
+  Future&lt;List&lt;Hero&gt;&gt; search(String term) async {
+    try {
+      final response = await _http.get(&#39;app/heroes/?name=$term&#39;);
+      return _extractData(response)
+          .map((json) =&gt; new Hero.fromJson(json))
+          .toList();
+    } catch (e) {
+      throw _handleError(e);
+    }
+  }
+
+  dynamic _extractData(Response resp) =&gt; JSON.decode(resp.body)[&#39;data&#39;];
+
+  Exception _handleError(dynamic e) {
+    print(e); // for demo purposes only
+    return new Exception(&#39;Server error; cause: $e&#39;);
+  }
+}
+</code-example></div><p>The <code>_http.get()</code> call in <code>HeroSearchService</code> is similar to the one
+in the <code>HeroService</code>, although the URL now has a query string.
+<span if-docs="ts">Another notable difference: we no longer call <code>toPromise</code>,
+we simply return the <em>observable</em> instead.</span></p>
+<h3 id="herosearchcomponent">HeroSearchComponent</h3>
+<p>Let&#39;s create a new <code>HeroSearchComponent</code> that calls this new <code>HeroSearchService</code>.</p>
+<p>The component template is simple &mdash; just a text box and a list of matching search results.</p>
+<div class="code-example"><header><h4>lib/hero_search_component.html</h4></header><code-example language="html" format="linenums">&lt;div id=&quot;search-component&quot;&gt;
+  &lt;h4&gt;Hero Search&lt;/h4&gt;
+  &lt;input #searchBox id=&quot;search-box&quot; (keyup)=&quot;search(searchBox.value)&quot; /&gt;
+  &lt;div&gt;
+    &lt;div *ngFor=&quot;let hero of heroes | async&quot;
+         (click)=&quot;gotoDetail(hero)&quot; class=&quot;search-result&quot; &gt;
+      {{hero.name}}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code-example></div><p>We&#39;ll also want to add styles for the new component.</p>
+<div class="code-example"><header><h4>lib/hero_search_component.css</h4></header><code-example language="css" format="linenums">.search-result {
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  width:195px;
+  height: 20px;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+#search-box {
+  width: 200px;
+  height: 20px;
+}
+</code-example></div><p>As the user types in the search box, a <em>keyup</em> event binding calls the component&#39;s <code>search</code> method with the new search box value.</p>
+<p>The <code>*ngFor</code> repeats <em>hero</em> objects from the component&#39;s <code>heroes</code> property. No surprise there.</p>
+<p>But, as we&#39;ll soon see, the <code>heroes</code> property is now a <em>Stream</em> of hero lists, rather than just a hero list.
+The <code>*ngFor</code> can&#39;t do anything with a <code>Stream</code> until we flow it through the <code>async</code> pipe (<code>AsyncPipe</code>).
+The <code>async</code> pipe subscribes to the <code>Stream</code> and produces the list of heroes to <code>*ngFor</code>.</p>
+<p>Time to create the <code>HeroSearchComponent</code> class and metadata.</p>
+<div class="code-example"><header><h4>lib/hero_search_component.dart</h4></header><code-example language="dart" format="linenums">import &#39;dart:async&#39;;
+
+import &#39;package:angular2/core.dart&#39;;
+import &#39;package:angular2/router.dart&#39;;
+import &#39;package:stream_transformers/stream_transformers.dart&#39;;
+
+import &#39;hero_search_service.dart&#39;;
+import &#39;hero.dart&#39;;
+
+@Component(
+    selector: &#39;hero-search&#39;,
+    templateUrl: &#39;hero_search_component.html&#39;,
+    styleUrls: const [&#39;hero_search_component.css&#39;],
+    providers: const [HeroSearchService])
+class HeroSearchComponent implements OnInit {
+  HeroSearchService _heroSearchService;
+  Router _router;
+
+  Stream&lt;List&lt;Hero&gt;&gt; heroes;
+  StreamController&lt;String&gt; _searchTerms =
+      new StreamController&lt;String&gt;.broadcast();
+
+  HeroSearchComponent(this._heroSearchService, this._router) {}
+
+  // Push a search term into the stream.
+  void search(String term) =&gt; _searchTerms.add(term);
+
+  Future&lt;Null&gt; ngOnInit() async {
+    heroes = _searchTerms.stream
+        .transform(new Debounce(new Duration(milliseconds: 300)))
+        .distinct()
+        .transform(new FlatMapLatest((term) =&gt; term.isEmpty
+            ? new Stream&lt;List&lt;Hero&gt;&gt;.fromIterable([&lt;Hero&gt;[]])
+            : _heroSearchService.search(term).asStream()))
+        .handleError((e) {
+      print(e); // for demo purposes only
+    });
+  }
+
+  void gotoDetail(Hero hero) {
+    var link = [
+      &#39;HeroDetail&#39;,
+      {&#39;id&#39;: hero.id.toString()}
+    ];
+    _router.navigate(link);
+  }
+}
+</code-example></div><h4 id="search-terms">Search terms</h4>
+<p>Let&#39;s focus on the <code>_searchTerms</code>:</p>
+<div class="code-example"><code-example language="dart" format="">StreamController&lt;String&gt; _searchTerms =
+    new StreamController&lt;String&gt;.broadcast();
+
+// Push a search term into the stream.
+void search(String term) =&gt; _searchTerms.add(term);
+</code-example></div><p>A <a href="https://api.dartlang.org/stable/dart-async/StreamController-class.html">StreamController</a>, as its name implies, is a controller for a <a href="https://api.dartlang.org/stable/dart-async/Stream-class.html">Stream</a> that allows us to
+manipulate the underlying stream by adding data to it, for example.</p>
+<p>In our sample, the underlying stream of strings (<code>_searchTerms.stream</code>) represents the hero
+name search patterns entered by the user. Each call to <code>search</code> puts a new string into
+the stream by calling <code>add</code> over the controller.</p>
+<p><a id="ngoninit"></a></p>
+<h4 id="initialize-the-_-heroes-_-property-_-ngoninit-_-">Initialize the <em><strong>heroes</strong></em> property (<em><strong>ngOnInit</strong></em>)</h4>
+<p><span if-docs="ts">A <code>Subject</code> is also an <code>Observable</code>.</span>
+We&#39;re going to turn the stream
+of search terms into a stream of <code>Hero</code> lists and assign the result to the <code>heroes</code> property.</p>
+<div class="code-example"><code-example language="dart" format="">Stream&lt;List&lt;Hero&gt;&gt; heroes;
+
+Future&lt;Null&gt; ngOnInit() async {
+  heroes = _searchTerms.stream
+      .transform(new Debounce(new Duration(milliseconds: 300)))
+      .distinct()
+      .transform(new FlatMapLatest((term) =&gt; term.isEmpty
+          ? new Stream&lt;List&lt;Hero&gt;&gt;.fromIterable([&lt;Hero&gt;[]])
+          : _heroSearchService.search(term).asStream()))
+      .handleError((e) {
+    print(e); // for demo purposes only
+  });
+}
+</code-example></div><p>If we passed every user keystroke directly to the <code>HeroSearchService</code>, we&#39;d unleash a storm of HTTP requests.
+Bad idea. We don&#39;t want to tax our server resources and burn through our cellular network data plan.</p>
+<p>Fortunately, there are stream transformers that will help us reduce the request flow.
+We&#39;ll make fewer calls to the <code>HeroSearchService</code> and still get timely results. Here&#39;s how:</p>
+<ul>
+<li><p><code>transform(new Debounce(... 300)))</code> waits until the flow of search terms pauses for 300
+milliseconds before passing along the latest string. We&#39;ll never make requests more frequently
+than 300ms.</p>
+</li>
+<li><p><code>distinct()</code> ensures that we only send a request if a search term has changed.
+There&#39;s no point in repeating a request for the same search term.</p>
+</li>
+<li><p><code>transform(new FlatMapLatest(...))</code> applies a map-like transformer that (1) calls our search
+service for each search term that makes it through the debounce and distinct gauntlet and (2)
+returns only the most recent search service result, discarding any previous results.</p>
+</li>
+<li><p><code>handleError()</code> handles errors. Our simple example prints the error to the console; a real
+life application should do better.</p>
+</li>
+</ul>
+<h3 id="add-the-search-component-to-the-dashboard">Add the search component to the dashboard</h3>
+<p>We add the hero search HTML element to the bottom of the <code>DashboardComponent</code> template.</p>
+<div class="code-example"><header><h4>lib/dashboard_component.html</h4></header><code-example language="html" format="">&lt;h3&gt;Top Heroes&lt;/h3&gt;
+&lt;div class=&quot;grid grid-pad&quot;&gt;
+  &lt;div *ngFor=&quot;let hero of heroes&quot; (click)=&quot;gotoDetail(hero)&quot; class=&quot;col-1-4&quot;&gt;
+    &lt;div class=&quot;module hero&quot;&gt;
+      &lt;h4&gt;{{hero.name}}&lt;/h4&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;hero-search&gt;&lt;/hero-search&gt;
+</code-example></div><p>Finally, we import <code>HeroSearchComponent</code> from 
+<span ngio-ex>hero-search.component.ts</span>
+and add it to the <code>directives</code> list:</p>
+<div class="code-example"><header><h4>lib/dashboard_component.dart (search)</h4></header><code-example language="dart" format="">import &#39;hero_search_component.dart&#39;;
+
+@Component(
+    selector: &#39;my-dashboard&#39;,
+    templateUrl: &#39;dashboard_component.html&#39;,
+    styleUrls: const [&#39;dashboard_component.css&#39;],
+    directives: const [HeroSearchComponent])
+</code-example></div><p>Run the app again, go to the <em>Dashboard</em>, and enter some text in the search box.
+At some point it might look like this.</p>
+<figure class="image-display"><img src="/resources/images/devguide/toh/toh-hero-search.png" alt="Hero Search Component"></figure><div class="l-main-section"></div><h2 id="application-structure-and-code">Application structure and code</h2>
+<p>Review the sample source code in the <live-example></live-example> for this chapter.
+Verify that we have the following structure:</p>
+<div class="filetree"><div class="file">angular2_tour_of_heroes</div><div class="children"><div class="file">lib</div><div class="children"><div class="file">app_component.css</div><div class="file">app_component.dart</div><div class="file">dashboard_component.css</div><div class="file">dashboard_component.dart</div><div class="file">dashboard_component.html</div><div class="file">hero.dart</div><div class="file">hero_detail_component.css</div><div class="file">hero_detail_component.dart</div><div class="file">hero_detail_component.html</div><div class="file">hero_search_component.css (new)</div><div class="file">hero_search_component.dart (new)</div><div class="file">hero_search_component.html (new)</div><div class="file">hero_search_service.dart (new)</div><div class="file">hero_service.dart</div><div class="file">heroes_component.css</div><div class="file">heroes_component.dart</div><div class="file">heroes_component.html</div><div class="file">in_memory_data_service.dart (new)</div></div><div class="file">web</div><div class="children"><div class="file">main.dart</div><div class="file">index.html</div><div class="file">styles.css</div></div><div class="file">pubspec.yaml</div></div></div><div class="l-main-section"></div><h2 id="home-stretch">Home Stretch</h2>
+<p>We are at the end of our journey for now, but we have accomplished a lot.</p>
+<ul>
+<li>We added the necessary dependencies to use HTTP in our application.</li>
+<li>We refactored <code>HeroService</code> to load heroes from a web API.</li>
+<li>We extended <code>HeroService</code> to support post, put and delete methods.</li>
+<li>We updated our components to allow adding, editing and deleting of heroes.</li>
+<li>We configured an in-memory web API.</li>
+<li>We learned how to use Streams.</li>
+</ul>
+<p>Here are the files we added or changed in this chapter.</p>
+<code-tabs><code-pane language="dart" name="lib/dashboard_component.dart" format="linenums">import &#39;dart:async&#39;;
+
+import &#39;package:angular2/core.dart&#39;;
+import &#39;package:angular2/router.dart&#39;;
+
+import &#39;hero.dart&#39;;
+import &#39;hero_service.dart&#39;;
+import &#39;hero_search_component.dart&#39;;
+
+@Component(
+    selector: &#39;my-dashboard&#39;,
+    templateUrl: &#39;dashboard_component.html&#39;,
+    styleUrls: const [&#39;dashboard_component.css&#39;],
+    directives: const [HeroSearchComponent])
+class DashboardComponent implements OnInit {
+  List&lt;Hero&gt; heroes;
+
+  final Router _router;
+  final HeroService _heroService;
+
+  DashboardComponent(this._heroService, this._router);
+
+  Future&lt;Null&gt; ngOnInit() async {
+    heroes = (await _heroService.getHeroes()).skip(1).take(4).toList();
+  }
+
+  void gotoDetail(Hero hero) {
+    var link = [
+      &#39;HeroDetail&#39;,
+      {&#39;id&#39;: hero.id.toString()}
+    ];
+    _router.navigate(link);
+  }
+}
+</code-pane><code-pane language="html" name="lib/dashboard_component.html" format="linenums">&lt;h3&gt;Top Heroes&lt;/h3&gt;
+&lt;div class=&quot;grid grid-pad&quot;&gt;
+  &lt;div *ngFor=&quot;let hero of heroes&quot; (click)=&quot;gotoDetail(hero)&quot; class=&quot;col-1-4&quot;&gt;
+    &lt;div class=&quot;module hero&quot;&gt;
+      &lt;h4&gt;{{hero.name}}&lt;/h4&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;hero-search&gt;&lt;/hero-search&gt;
+</code-pane><code-pane language="dart" name="lib/hero.dart" format="linenums">class Hero {
+  final int id;
+  String name;
+
+  Hero(this.id, this.name);
+
+  factory Hero.fromJson(Map&lt;String, dynamic&gt; hero) =&gt;
+    new Hero(_toInt(hero[&#39;id&#39;]), hero[&#39;name&#39;]);
+
+  Map toJson() =&gt; {&#39;id&#39;: id, &#39;name&#39;: name};
+}
+
+int _toInt(id) =&gt; id is int ? id : int.parse(id);
+</code-pane><code-pane language="dart" name="lib/hero_detail_component.dart" format="linenums">import &#39;dart:async&#39;;
+import &#39;dart:html&#39;;
+
+import &#39;package:angular2/core.dart&#39;;
+import &#39;package:angular2/router.dart&#39;;
+
+import &#39;hero.dart&#39;;
+import &#39;hero_service.dart&#39;;
+
+@Component(
+    selector: &#39;my-hero-detail&#39;,
+    templateUrl: &#39;hero_detail_component.html&#39;,
+    styleUrls: const [&#39;hero_detail_component.css&#39;]
+    )
+class HeroDetailComponent implements OnInit {
+  Hero hero;
+  final HeroService _heroService;
+  final RouteParams _routeParams;
+
+  HeroDetailComponent(this._heroService, this._routeParams);
+
+  Future&lt;Null&gt; ngOnInit() async {
+    var idString = _routeParams.get(&#39;id&#39;);
+    var id = int.parse(idString, onError: (_) =&gt; null);
+    if (id != null) hero = await (_heroService.getHero(id));
+  }
+
+  Future&lt;Null&gt; save() async {
+    await _heroService.update(hero);
+    goBack();
+  }
+
+  void goBack() {
+    window.history.back();
+  }
+}
+</code-pane><code-pane language="html" name="lib/hero_detail_component.html" format="linenums">&lt;div *ngIf=&quot;hero != null&quot;&gt;
+  &lt;h2&gt;{{hero.name}} details!&lt;/h2&gt;
+  &lt;div&gt;
+    &lt;label&gt;id: &lt;/label&gt;{{hero.id}}&lt;/div&gt;
+  &lt;div&gt;
+    &lt;label&gt;name: &lt;/label&gt;
+    &lt;input [(ngModel)]=&quot;hero.name&quot; placeholder=&quot;name&quot; /&gt;
+  &lt;/div&gt;
+  &lt;button (click)=&quot;goBack()&quot;&gt;Back&lt;/button&gt;
+  &lt;button (click)=&quot;save()&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+</code-pane><code-pane language="dart" name="lib/hero_service.dart" format="linenums">import &#39;dart:async&#39;;
+import &#39;dart:convert&#39;;
+
+import &#39;package:angular2/core.dart&#39;;
+import &#39;package:http/http.dart&#39;;
+
+import &#39;hero.dart&#39;;
+
+@Injectable()
+class HeroService {
+  static final _headers = {&#39;Content-Type&#39;: &#39;application/json&#39;};
+  static const _heroesUrl = &#39;app/heroes&#39;; // URL to web API
+
+  final Client _http;
+
+  HeroService(this._http);
+
+  Future&lt;List&lt;Hero&gt;&gt; getHeroes() async {
+    try {
+      final response = await _http.get(_heroesUrl);
+      final heroes = _extractData(response)
+          .map((value) =&gt; new Hero.fromJson(value))
+          .toList();
+      return heroes;
+    } catch (e) {
+      throw _handleError(e);
+    }
+  }
+
+  dynamic _extractData(Response resp) =&gt; JSON.decode(resp.body)[&#39;data&#39;];
+
+  Exception _handleError(dynamic e) {
+    print(e); // for demo purposes only
+    return new Exception(&#39;Server error; cause: $e&#39;);
+  }
+
+  Future&lt;Hero&gt; getHero(int id) async =&gt;
+      (await getHeroes()).firstWhere((hero) =&gt; hero.id == id);
+
+  Future&lt;Hero&gt; create(String name) async {
+    try {
+      final response = await _http.post(_heroesUrl,
+          headers: _headers, body: JSON.encode({&#39;name&#39;: name}));
+      return new Hero.fromJson(_extractData(response));
+    } catch (e) {
+      throw _handleError(e);
+    }
+  }
+
+  Future&lt;Hero&gt; update(Hero hero) async {
+    try {
+      var url = &#39;$_heroesUrl/${hero.id}&#39;;
+      final response =
+          await _http.put(url, headers: _headers, body: JSON.encode(hero));
+      return new Hero.fromJson(_extractData(response));
+    } catch (e) {
+      throw _handleError(e);
+    }
+  }
+
+  Future&lt;Null&gt; delete(int id) async {
+    try {
+      var url = &#39;$_heroesUrl/$id&#39;;
+      await _http.delete(url, headers: _headers);
+    } catch (e) {
+      throw _handleError(e);
+    }
+  }
+
+}
+</code-pane><code-pane language="css" name="lib/heroes_component.css" format="linenums">.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.heroes li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.heroes li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.heroes li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+.heroes .text {
+  position: relative;
+  top: -3px;
+}
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button.delete {
+  float:right;
+  margin-top: 2px;
+  margin-right: .8em;
+  background-color: gray !important;
+  color:white;
+}
+</code-pane><code-pane language="dart" name="lib/heroes_component.dart" format="linenums">import &#39;dart:async&#39;;
+
+import &#39;package:angular2/core.dart&#39;;
+import &#39;package:angular2/router.dart&#39;;
+
+import &#39;hero.dart&#39;;
+import &#39;hero_detail_component.dart&#39;;
+import &#39;hero_service.dart&#39;;
+
+@Component(
+    selector: &#39;my-heroes&#39;,
+    templateUrl: &#39;heroes_component.html&#39;,
+    styleUrls: const [&#39;heroes_component.css&#39;],
+    directives: const [HeroDetailComponent])
+class HeroesComponent implements OnInit {
+  List&lt;Hero&gt; heroes;
+  Hero selectedHero;
+
+  final HeroService _heroService;
+  final Router _router;
+
+  HeroesComponent(this._heroService, this._router);
+
+  Future&lt;Null&gt; getHeroes() async {
+    heroes = await _heroService.getHeroes();
+  }
+
+  Future&lt;Null&gt; add(String name) async {
+    name = name.trim();
+    if (name.isEmpty) return;
+    heroes.add(await _heroService.create(name));
+    selectedHero = null;
+  }
+
+  Future&lt;Null&gt; delete(Hero hero) async {
+    await _heroService.delete(hero.id);
+    heroes.remove(hero);
+    if (selectedHero == hero) selectedHero = null;
+  }
+
+  void ngOnInit() {
+    getHeroes();
+  }
+
+  void onSelect(Hero hero) {
+    selectedHero = hero;
+  }
+
+  Future&lt;Null&gt; gotoDetail() =&gt; _router.navigate([
+        &#39;HeroDetail&#39;,
+        {&#39;id&#39;: selectedHero.id.toString()}
+      ]);
+}
+</code-pane><code-pane language="dart" name="lib/in_memory_data_service.dart" format="linenums">import &#39;dart:async&#39;;
+import &#39;dart:convert&#39;;
+import &#39;dart:math&#39;;
+
+import &#39;package:angular2/core.dart&#39;;
+import &#39;package:http/http.dart&#39;;
+import &#39;package:http/testing.dart&#39;;
+
+import &#39;hero.dart&#39;;
+
+@Injectable()
+class InMemoryDataService extends MockClient {
+  static final _initialHeroes = [
+    {&#39;id&#39;: 11, &#39;name&#39;: &#39;Mr. Nice&#39;},
+    {&#39;id&#39;: 12, &#39;name&#39;: &#39;Narco&#39;},
+    {&#39;id&#39;: 13, &#39;name&#39;: &#39;Bombasto&#39;},
+    {&#39;id&#39;: 14, &#39;name&#39;: &#39;Celeritas&#39;},
+    {&#39;id&#39;: 15, &#39;name&#39;: &#39;Magneta&#39;},
+    {&#39;id&#39;: 16, &#39;name&#39;: &#39;RubberMan&#39;},
+    {&#39;id&#39;: 17, &#39;name&#39;: &#39;Dynama2&#39;},
+    {&#39;id&#39;: 18, &#39;name&#39;: &#39;Dr IQ&#39;},
+    {&#39;id&#39;: 19, &#39;name&#39;: &#39;Magma&#39;},
+    {&#39;id&#39;: 20, &#39;name&#39;: &#39;Tornado&#39;}
+  ];
+  static final List&lt;Hero&gt; _heroesDb =
+      _initialHeroes.map((json) =&gt; new Hero.fromJson(json)).toList();
+  static int _nextId = _heroesDb.map((hero) =&gt; hero.id).reduce(max) + 1;
+
+  static Future&lt;Response&gt; _handler(Request request) async {
+    var data;
+    switch (request.method) {
+      case &#39;GET&#39;:
+        String prefix = request.url.queryParameters[&#39;name&#39;] ?? &#39;&#39;;
+        final regExp = new RegExp(prefix, caseSensitive: false);
+        data = _heroesDb.where((hero) =&gt; hero.name.contains(regExp)).toList();
+        break;
+      case &#39;POST&#39;:
+        var name = JSON.decode(request.body)[&#39;name&#39;];
+        var newHero = new Hero(_nextId++, name);
+        _heroesDb.add(newHero);
+        data = newHero;
+        break;
+      case &#39;PUT&#39;:
+        var heroChanges = new Hero.fromJson(JSON.decode(request.body));
+        var targetHero = _heroesDb.firstWhere((h) =&gt; h.id == heroChanges.id);
+        targetHero.name = heroChanges.name;
+        data = targetHero;
+        break;
+      case &#39;DELETE&#39;:
+        var id = int.parse(request.url.pathSegments.last);
+        _heroesDb.removeWhere((hero) =&gt; hero.id == id);
+        // No data, so leave it as null.
+        break;
+      default:
+        throw &#39;Unimplemented HTTP method ${request.method}&#39;;
+    }
+    return new Response(JSON.encode({&#39;data&#39;: data}), 200,
+        headers: {&#39;content-type&#39;: &#39;application/json&#39;});
+  }
+
+  InMemoryDataService() : super(_handler);
+}
+</code-pane></code-tabs><code-tabs><code-pane language="css" name="lib/hero_search_component.css" format="linenums">.search-result {
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  width:195px;
+  height: 20px;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+#search-box {
+  width: 200px;
+  height: 20px;
+}
+</code-pane><code-pane language="dart" name="lib/hero_search_component.dart" format="linenums">import &#39;dart:async&#39;;
+
+import &#39;package:angular2/core.dart&#39;;
+import &#39;package:angular2/router.dart&#39;;
+import &#39;package:stream_transformers/stream_transformers.dart&#39;;
+
+import &#39;hero_search_service.dart&#39;;
+import &#39;hero.dart&#39;;
+
+@Component(
+    selector: &#39;hero-search&#39;,
+    templateUrl: &#39;hero_search_component.html&#39;,
+    styleUrls: const [&#39;hero_search_component.css&#39;],
+    providers: const [HeroSearchService])
+class HeroSearchComponent implements OnInit {
+  HeroSearchService _heroSearchService;
+  Router _router;
+
+  Stream&lt;List&lt;Hero&gt;&gt; heroes;
+  StreamController&lt;String&gt; _searchTerms =
+      new StreamController&lt;String&gt;.broadcast();
+
+  HeroSearchComponent(this._heroSearchService, this._router) {}
+
+  // Push a search term into the stream.
+  void search(String term) =&gt; _searchTerms.add(term);
+
+  Future&lt;Null&gt; ngOnInit() async {
+    heroes = _searchTerms.stream
+        .transform(new Debounce(new Duration(milliseconds: 300)))
+        .distinct()
+        .transform(new FlatMapLatest((term) =&gt; term.isEmpty
+            ? new Stream&lt;List&lt;Hero&gt;&gt;.fromIterable([&lt;Hero&gt;[]])
+            : _heroSearchService.search(term).asStream()))
+        .handleError((e) {
+      print(e); // for demo purposes only
+    });
+  }
+
+  void gotoDetail(Hero hero) {
+    var link = [
+      &#39;HeroDetail&#39;,
+      {&#39;id&#39;: hero.id.toString()}
+    ];
+    _router.navigate(link);
+  }
+}
+</code-pane><code-pane language="html" name="lib/hero_search_component.html" format="linenums">&lt;div id=&quot;search-component&quot;&gt;
+  &lt;h4&gt;Hero Search&lt;/h4&gt;
+  &lt;input #searchBox id=&quot;search-box&quot; (keyup)=&quot;search(searchBox.value)&quot; /&gt;
+  &lt;div&gt;
+    &lt;div *ngFor=&quot;let hero of heroes | async&quot;
+         (click)=&quot;gotoDetail(hero)&quot; class=&quot;search-result&quot; &gt;
+      {{hero.name}}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code-pane><code-pane language="dart" name="lib/hero_search_service.dart" format="linenums">import &#39;dart:async&#39;;
+import &#39;dart:convert&#39;;
+
+import &#39;package:angular2/core.dart&#39;;
+import &#39;package:http/http.dart&#39;;
+
+import &#39;hero.dart&#39;;
+
+@Injectable()
+class HeroSearchService {
+  final Client _http;
+
+  HeroSearchService(this._http);
+
+  Future&lt;List&lt;Hero&gt;&gt; search(String term) async {
+    try {
+      final response = await _http.get(&#39;app/heroes/?name=$term&#39;);
+      return _extractData(response)
+          .map((json) =&gt; new Hero.fromJson(json))
+          .toList();
+    } catch (e) {
+      throw _handleError(e);
+    }
+  }
+
+  dynamic _extractData(Response resp) =&gt; JSON.decode(resp.body)[&#39;data&#39;];
+
+  Exception _handleError(dynamic e) {
+    print(e); // for demo purposes only
+    return new Exception(&#39;Server error; cause: $e&#39;);
+  }
+}
+</code-pane></code-tabs><code-tabs><code-pane language="yaml" name="pubspec.yaml" format="linenums">name: angular2_tour_of_heroes
+description: Tour of Heroes
+version: 0.0.1
+environment:
+  sdk: &#39;&gt;=1.13.0 &lt;2.0.0&#39;
+dependencies:
+  angular2: 2.0.0-beta.21
+  browser: ^0.10.0
+  dart_to_js_script_rewriter: ^1.0.1
+  http: ^0.11.0
+  stream_transformers: ^0.3.0
+transformers:
+- angular2:
+    platform_directives:
+    - &#39;package:angular2/common.dart#COMMON_DIRECTIVES&#39;
+    platform_pipes:
+    - &#39;package:angular2/common.dart#COMMON_PIPES&#39;
+    entry_points: web/main.dart
+    resolved_identifiers:
+        BrowserClient: &#39;package:http/browser_client.dart&#39;
+        Client: &#39;package:http/http.dart&#39;
+- dart_to_js_script_rewriter
+</code-pane><code-pane language="dart" name="web/main.dart" format="linenums">import &#39;package:angular2/core.dart&#39;;
+import &#39;package:angular2/platform/browser.dart&#39;;
+import &#39;package:angular2_tour_of_heroes/app_component.dart&#39;;
+import &#39;package:angular2_tour_of_heroes/in_memory_data_service.dart&#39;;
+import &#39;package:http/http.dart&#39;;
+
+void main() {
+  bootstrap(AppComponent,
+    [provide(Client, useClass: InMemoryDataService)]
+    // Using a real back end? Import browser_client.dart and change the above to
+    // [provide(Client, useFactory: () =&gt; new BrowserClient(), deps: [])]
+  );
+}
+</code-pane></code-tabs><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--></article><div class="main-footer"><nav class="background-midnight grid-fluid"><div class="c3 main-footer-branding"><div class="logo-inverse-large"></div></div><div class="c2"><h3 class="text-headline">RESOURCES</h3><ul class="text-body"><!-- TODO: (ericjim) make a libraries page to showcase all angular 2 libraries--><!--li <a href="/libraries.html">Libraries</a>--><li><a href="/about/">About</a></li><li><a href="/resources/">Books & Training</a></li><li><a href="/resources/">Tools & Libraries</a></li><li><a href="/resources/">Community</a></li><li><a href="/presskit.html">Press Kit</a></li></ul></div><div class="c2"><h3 class="text-headline">HELP</h3><ul class="text-body"><li><a href="http://stackoverflow.com/questions/tagged/angular2">Stack Overflow</a></li><li><a href="https://gitter.im/angular/angular">Gitter</a></li><li><a href="https://groups.google.com/forum/#!forum/angular"> Google Group</a></li><li><a href="https://github.com/angular/angular/issues"> Report Issues</a></li><li><a class="footer-feedback" ng-click="appCtrl.openFeedback()" aria-label="Submit feedback on this page"> Site Feedback</a></li></ul></div><div class="c2"><h3 class="text-headline">COMMUNITY</h3><ul class="text-body"><li><a href="/events.html">Events</a></li><li><a href="http://www.meetup.com/topics/angularjs/">Meetups</a></li><li><a href="https://twitter.com/angularjs"> Twitter</a></li><li><a href="https://github.com/angular/angular"> GitHub</a></li><li><a href="/contribute.html"> Contribute</a></li></ul></div><div class="c2"><h3 class="text-headline">LANGUAGES</h3><ul class="text-body"><li><a href="https://angular.cn/">中文版</a></li></ul></div></nav><footer class="background-midnight"><small class="text-caption">Powered by Google ©2010-2016. Code licensed under an <a href="/license" class="text-snow">MIT-style License</a>. Documentation licensed under <a class="text-snow" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</small><a aria-label="View Style Guide" href="/docs/dart/latest/styleguide.html" title="Style Guide" class="styleguide-trigger text-snow"><span class="icon-favorite"></span></a></footer></div><!-- VENDORS --><script src="/resources/js/vendor/prettify.js"></script><script src="/resources/js/vendor/lang-basic.js"></script><script src="/resources/js/vendor/lang-dart.js"></script><script src="/resources/js/vendor/lodash.js"></script><script src="/resources/js/vendor/clipboard.min.js"></script><!-- Angular Material Dependencies --><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script><!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+<!-- Angular.io Site JS --><script src="/resources/js/site.js"></script><script src="/resources/js/util.js"></script><script src="/resources/js/controllers/app-controller.js"></script><script src="/resources/js/controllers/resources-controller.js"></script><script src="/resources/js/directives/cheatsheet.js"></script><script src="/resources/js/directives/api-list.js"></script><script src="/resources/js/directives/bio.js"></script><script src="/resources/js/directives/bold.js"></script><script src="/resources/js/directives/announcement-bar.js"></script><script src="/resources/js/directives/code.js"></script><script src="/resources/js/directives/copy.js"></script><script src="/resources/js/directives/code-tabs.js"></script><script src="/resources/js/directives/code-pane.js"></script><script src="/resources/js/directives/code-example.js"></script><script src="/resources/js/directives/if-docs.js"></script><script src="/resources/js/directives/live-example.js"></script><script src="/resources/js/directives/ngio-ex-path.js"></script><script src="/resources/js/directives/scroll-y-offset-element.js"></script><!-- GA --><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-8594346-15', 'auto');
+ga('send', 'pageview')
+
+</script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+_st('install','VsuU7kH5Hnnj9tfyNvfK');
+</script><!-- Google Feedback --><script src="//www.gstatic.com/feedback/api.js" type="text/javascript"></script><!-- Twitter Widget --><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}})(document,"script","twitter-wjs");</script></body></html>

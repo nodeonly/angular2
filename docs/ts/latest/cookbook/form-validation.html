@@ -1,0 +1,897 @@
+<!DOCTYPE html><html lang="en" ng-app="angularIOApp" itemscope itemtype="http://schema.org/Framework"><!-- template: public/docs/_layout--><head><title>Form Validation - ts</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta name="keywords" content="Angular, AngularJS, AngularDart, Javscript, Dart, Framework, JavaScript MVC, Google"/><meta name="robots" content="all"/><meta name="referrer" content="origin"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"/><meta property="og:title" content="Angular 2"/><meta property="og:image" content="/resources/images/logos/standard/shield-large.png"/><meta property="og:image:type" content="image/png"/><meta property="og:image:width" content="184"/><meta property="og:image:height" content="200"/><meta property="og:description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="name" content="Angular 2"/><meta itemprop="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="image" content="https://angular.io/resources/images/logos/standard/shield-large.png"/><link rel="icon" type="image/x-icon" href="/resources/images/icons/favicon.ico"/><link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/><link rel="stylesheet" href="/resources/css/vendor/icomoon/style.css"/><link rel="stylesheet" href="/resources/css/vendor/animate.css"/><link rel="stylesheet" href="/resources/css/main.css"/><!-- MOBILE ICONS -->
+<link rel="apple-touch-icon" sizes="57x57" href="/resources/images/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/resources/images/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/resources/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/resources/images/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/resources/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/resources/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/resources/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/resources/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/resources/images/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/resources/images/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/resources/images/favicons/manifest.json"></head><body ng-controller="AppCtrl as appCtrl" class="l-offset-nav l-offset-side-nav"><nav scroll-y-offset-element="scroll-y-offset-element" class="main-nav l-pinned-top l-layer-5"><h1><a href="/" md-button>Angular <sup>by Google</sup></a></h1><button aria-label="View Menu" ng-click="appCtrl.toggleMainMenu($event)" md-button="md-button" class="main-nav-button main-nav-mobile-trigger l-right">Site Menu <span class="icon icon-arrow-drop-down"></span></button><ul ng-class="appCtrl.showMainNav ? 'is-visible' : ''"><li class="l-left"><a class="main-nav-button" href="/features.html" md-button>Features</a></li><li class="l-left"><a class="main-nav-button" href="/docs/ts/latest/" md-button>Docs</a></li><li class="l-left"><a class="main-nav-button" href="/events.html" md-button>Events</a></li><li class="l-left"><a class="main-nav-button" href="/news.html" md-button>News</a></li><li class="l-right"><a class="main-nav-button" href="/docs/ts/latest/quickstart.html" md-button>Get Started</a></li></ul></nav><!-- Include this file ONLY when current.path[2] is defined--><nav ng-class="appCtrl.showDocsNav ? 'is-visible' : ''" class="sidenav l-pinned-left l-layer-4 l-offset-nav"><!-- SEARCH BAR--><header class="sidenav-search st-input-wrapper"><form class="st-input-inner"><label for="search-io" class="is-hidden">Search Docs</label><input type="search" id="search-io" placeholder="SEARCH DOCS..."/></form><button aria-label="View Docs Menu" ng-click="appCtrl.toggleDocsMenu($event)" md-button="md-button" class="mobile-trigger button">Docs <span class="icon icon-arrow-drop-down"></span></button></header><ul class="sidenav-links"><li class="sidenav-section no-border"><a href="/docs/ts/latest/" class="nav-title">Docs Home</a></li><!-- CORE DOCUMENTATION--><li class="sidenav-section-divider"><h3>Core Documentation</h3></li><li class="sidenav-section"><a href="/docs/ts/latest/quickstart.html" title="Get up and running with Angular 2" class="nav-title ">Quickstart</a></li><li class="sidenav-section"><a href="/docs/ts/latest/guide/" title="How to read and use this documentation" class="nav-title is-parent ">Guide<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-ordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/guide/" title="How to read and use this documentation">1. Overview</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/architecture.html" title="The basic building blocks of Angular 2 applications">2. Architecture</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/displaying-data.html" title="Interpolation and other forms of property binding help us show app data in the UI.">3. Displaying Data</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/user-input.html" title="User input triggers DOM events. We listen to those events with event bindings that funnel updated values back into our components and models.">4. User Input</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/forms.html" title="A form creates a cohesive, effective, and compelling data entry experience. An Angular form coordinates a set of data-bound user controls, tracks changes, validates input, and presents errors.">5. Forms</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/dependency-injection.html" title="Angular's dependency injection system creates and delivers dependent services &quot;just-in-time&quot;.">6. Dependency Injection</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/template-syntax.html" title="Learn how to write templates that display data and consume user events with the help of data binding.">7. Template Syntax</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/cheatsheet.html" title="A quick guide to Angular syntax. (Content is provisional and may change.)">8. Angular Cheat Sheet</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/style-guide.html" title="Write Angular 2 with style.">9. Style Guide</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/glossary.html" title="Brief definitions of the most important words in the Angular 2 vocabulary">10. Glossary</a></li></ul></div></li><li class="sidenav-section no-border"><a href="/docs/ts/latest/api/" title="API Preview" class="nav-title ">API Reference</a></li><!-- ADVANCED DOCUMENATION--><li class="sidenav-section-divider"><h3>Additional Documentation</h3></li><li class="sidenav-section"><a href="/docs/ts/latest/tutorial/" title="The Tour of Heroes tutorial takes us through the steps of creating an Angular application in TypeScript." class="nav-title is-parent ">Tutorial<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-ordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/" title="The Tour of Heroes tutorial takes us through the steps of creating an Angular application in TypeScript.">1. Introduction</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt1.html" title="We build a simple hero editor">2. The Hero Editor</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt2.html" title="We build a master/detail page with a list of heroes">3. Master/Detail</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt3.html" title="We refactor the master/detail view into separate components">4. Multiple Components</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt4.html" title="We create a reusable service to manage our hero data calls">5. Services</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt5.html" title="We add the Angular Component Router and learn to navigate among the views">6. Routing</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt6.html" title="We convert our service and components to use Angular's HTTP service">7. HTTP</a></li></ul></div></li><li class="sidenav-section"><a href="/docs/ts/latest/guide/ngmodule.html" title="Define application modules with @NgModule" class="nav-title is-parent ">Advanced Documentation<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-unordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/guide/ngmodule.html" title="Define application modules with @NgModule">Angular Modules (NgModule)</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/animations.html" title="A guide to Angular's animation system.">Animations</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/attribute-directives.html" title="Attribute directives attach behavior to elements.">Attribute Directives</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/browser-support.html" title="Browser support and polyfills guide.">Browser support</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/component-styles.html" title="Learn how to apply CSS styles to components.">Component Styles</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/hierarchical-dependency-injection.html" title="Angular's hierarchical dependency injection system supports nested injectors in parallel with the component tree.">Hierarchical Injectors</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/server-communication.html" title="Talk to a remote server with an HTTP Client.">HTTP Client</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/lifecycle-hooks.html" title="Angular calls lifecycle hook methods on directives and components as it creates, changes, and destroys them.">Lifecycle Hooks</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/npm-packages.html" title="Recommended npm packages, and how to specify package dependencies">Npm Packages</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/pipes.html" title="Pipes transform displayed values within a template.">Pipes</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/router.html" title="Discover the basics of screen navigation with the Angular 2 Router.">Routing &amp; Navigation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/security.html" title="Developing for content security in Angular applications">Security</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/structural-directives.html" title="Angular has a powerful template engine that lets us easily manipulate the DOM structure of our elements.">Structural Directives</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/testing.html" title="Techniques and practices for testing an Angular 2 app">Testing</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/typescript-configuration.html" title="TypeScript configuration for Angular 2 developers">TypeScript Configuration</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/upgrade.html" title="Angular 1 applications can be incrementally upgraded to Angular 2.">Upgrading from 1.x</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/webpack.html" title="Create your Angular 2 applications with a Webpack based tooling">Webpack: an introduction</a></li></ul></div></li><li class="sidenav-section"><a href="/docs/ts/latest/cookbook/" title="A collection of recipes for common Angular application scenarios" class="nav-title is-parent is-selected">Cookbook<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-unordered-lists"><ul><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/" title="A collection of recipes for common Angular application scenarios">Overview</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/aot-compiler.html" title="Learn how to use Ahead-of-time compilation">Ahead-of-Time Compilation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/a1-a2-quick-reference.html" title="Learn how Angular 1 concepts and techniques map to Angular 2">Angular 1 to 2 Quick Ref</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/ngmodule-faq.html" title="Answers to frequently asked questions about @NgModule">Angular Module FAQs</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/component-communication.html" title="Share information between different directives and components">Component Interaction</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/component-relative-paths.html" title="Use relative URLs for component templates and styles.">Component-relative Paths</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/dependency-injection.html" title="Techniques for Dependency Injection">Dependency Injection</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/dynamic-form.html" title="Render dynamic forms with FormGroup">Dynamic Forms</a></li><li class="nav-list-item is-selected"><a href="/docs/ts/latest/cookbook/form-validation.html" title="Validate user's form entries">Form Validation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/rc4-to-rc5.html" title="Migrate your RC4 app to RC5 in minutes.">RC4 to RC5 Migration</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/set-document-title.html" title="Setting the document or window title using the Title service.">Set the Document Title</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/ts-to-js.html" title="Convert Angular 2 TypeScript examples into ES5 JavaScript">TypeScript to JavaScript</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/visual-studio-2015.html" title="Use Visual Studio 2015 with the QuickStart files">Visual Studio 2015 QuickStart</a></li></ul></div></li></ul><!-- DROPDOWN BUTTON --><nav class="dropdown"><button aria-label="Select a version of Angular" md-button="md-button" ng-click="appCtrl.toggleVersionMenu($event)" class="dropdown-button">Angular 2 for TypeScript  <span class="icon icon-arrow-drop-down"></span></button><div ng-click="appCtrl.toggleVersionMenu($event)" ng-show="appCtrl.showMenu" class="overlay ng-hide"></div><!-- DROPDOWN MENU --><ul ng-class="appCtrl.showMenu ? 'is-visible' : ''" class="dropdown-menu"><li><a href="/docs/ts/latest/cookbook/form-validation.html" md-button>Angular 2 for TypeScript </a></li><li><a href="/docs/js/latest/cookbook/form-validation.html" md-button>Angular 2 for JavaScript </a></li><li><a href="/docs/dart/latest/cookbook/form-validation.html" md-button>Angular 2 for Dart </a></li></ul></nav></nav><script>// Could put in appCtrl but only needed here and clear here
+(function scrollToSelectedLink() {
+  var sideNav = document.getElementsByClassName('sidenav')[0];
+  var link = sideNav.getElementsByClassName('is-selected')[0];
+  if(link && link.offsetTop > window.innerHeight){
+    sideNav.scrollTop = link.offsetTop - (window.innerHeight/2);
+    //alert("offsetTop: " + link.offsetTop + " side-nav top is " + sideNav.scrollTop);
+  }
+})()</script><!-- template: public/_includes/_hero--><header class="hero background-sky"><h1 class="hero-title ">Form Validation</h1><!--CLEAR FLOAT ELEMENTS--><div class="clear"></div></header><div class="banner"><p class="text-body">Validate user's form entries</p></div><article class="l-content-small grid-fluid docs-content"><script>function why(id, backTo) {
+  var id = "#"+id;
+  var el = document.querySelector(id);
+  el.hidden=el.hidden=!el.hidden;
+
+  if (el.hidden && backTo){
+    // the next line is required to work around a bug in WebKit (Chrome / Safari)
+    location.href = "#";
+    location.href =  "#" + backTo;
+  }
+}</script><script>function verbose(isVerbose) {
+  isVerbose = !! isVerbose;
+  var el = document.querySelector('button.verbose.off');
+  el.style.display = isVerbose ? 'block' : 'none';
+  var el = document.querySelector('button.verbose.on');
+  el.style.display = isVerbose ? 'none' : 'block';
+
+  CCSStylesheetRuleStyle('main','.l-verbose-section', 'display',
+    isVerbose ? 'block' : 'none');
+}
+</script><script>function CCSStylesheetRuleStyle(stylesheet, selectorText, style, value){
+  /* returns the value of the element style of the rule in the stylesheet
+  *  If no value is given, reads the value
+  *  If value is given, the value is changed and returned
+  *  If '' (empty string) is given, erases the value.
+  *  The browser will apply the default one
+  *
+  * string stylesheet: part of the .css name to be recognized, e.g. 'default'
+  * string selectorText: css selector, e.g. '#myId', '.myClass', 'thead td'
+  * string style: camelCase element style, e.g. 'fontSize'
+  * string value optional : the new value
+  */
+  var CCSstyle = undefined, rules, sheet;
+  for(var m in document.styleSheets){
+    sheet = document.styleSheets[m];
+    if(sheet.href && sheet.href.indexOf(stylesheet) != -1){
+    rules = sheet[document.all ? 'rules' : 'cssRules'];
+    for(var n in rules){
+      console.log(rules[n].selectorText);
+      if(rules[n].selectorText == selectorText){
+        CCSstyle = rules[n].style;
+        break;
+      }
+    }
+    break;
+    }
+  }
+  if(value == undefined)
+    return CCSstyle[style]
+  else
+    return CCSstyle[style] = value
+}
+</script><a id="top"></a><p>We can improve overall data quality by validating user input for accuracy and completeness.</p>
+<p>In this cookbook we show how to validate user input in the UI and display useful validation messages 
+using first the template-driven forms and then the reactive forms approach.</p>
+<div class="l-sub-section"><p>Learn more about these choices in the <a href="../guide/forms.html">Forms chapter.</a></p>
+</div><a id="toc"></a><h2 id="table-of-contents">Table of Contents</h2>
+<p>  <a href="#template1">Simple Template-Driven Forms</a></p>
+<p>  <a href="#template2">Template-Driven Forms with validation messages in code</a></p>
+<p>  <a href="#reactive">Reactive Forms with validation in code</a></p>
+<p>  <a href="#custom-validation">Custom validation</a></p>
+<p>  <a href="#testing">Testing</a></p>
+<a id="live-example"></a><p><strong>Try the live example to see and download the full cookbook source code</strong></p>
+<live-example name="cb-form-validation" embedded="embedded" img="cookbooks/form-validation/plunker.png"></live-example><div class="l-main-section"></div><a id="template1"></a><h2 id="simple-template-driven-forms">Simple Template-Driven Forms</h2>
+<p>In the template-driven approach, you arrange 
+<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms_in_HTML">form elements</a> in the component&#39;s template.</p>
+<p>You add Angular form directives (mostly directives beginning <code>ng...</code>) to help
+Angular construct a corresponding internal control model that implements form functionality.
+We say that the control model is <em>implicit</em> in the template.</p>
+<p>To validate user input, you add <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation">HTML validation attributes</a> 
+to the elements. Angular interprets those as well, adding validator functions to the control model.</p>
+<p>Angular exposes information about the state of the controls including 
+whether the user has &quot;touched&quot; the control or made changes and if the control values are valid.</p>
+<p>In the first template validation example, 
+we add more HTML to read that control state and update the display appropriately.
+Here&#39;s an excerpt from the template html for a single input box control bound to the hero name:</p>
+<div class="code-example"><header><h4>template/hero-form-template1.component.html (Hero name)</h4></header><code-example language="html" format="">&lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+
+&lt;input type=&quot;text&quot; id=&quot;name&quot; class=&quot;form-control&quot;
+       required minlength=&quot;4&quot; maxlength=&quot;24&quot;
+       name=&quot;name&quot; [(ngModel)]=&quot;hero.name&quot;
+       #name=&quot;ngModel&quot; &gt;
+
+&lt;div *ngIf=&quot;name.errors &amp;&amp; (name.dirty || name.touched)&quot;
+     class=&quot;alert alert-danger&quot;&gt;
+    &lt;div [hidden]=&quot;!name.errors.required&quot;&gt;
+      Name is required
+    &lt;/div&gt;
+    &lt;div [hidden]=&quot;!name.errors.minlength&quot;&gt;
+      Name must be at least 4 characters long.
+    &lt;/div&gt;
+    &lt;div [hidden]=&quot;!name.errors.maxlength&quot;&gt;
+      Name cannot be more than 24 characters long.
+    &lt;/div&gt;
+&lt;/div&gt;
+</code-example></div><p>Note the following:</p>
+<ul>
+<li><p>The <code>&lt;input&gt;</code> element carries the HTML validation attributes: <code>required</code>, <code>minlength</code>, and <code>maxlength</code>.</p>
+</li>
+<li><p>We set the <code>name</code> attribute of the input box to <code>&quot;name&quot;</code> so Angular can track this input element and associate it
+with an Angular form control called <code>name</code> in its internal control model.</p>
+</li>
+<li><p>We use the <code>[(ngModel)]</code> directive to two-way data bind the input box to the <code>hero.name</code> property.</p>
+</li>
+<li><p>We set a template variable (<code>#name</code>) to the value <code>&quot;ngModel&quot;</code> (always <code>ngModel</code>).
+This gives us a reference to the Angular <code>NgModel</code> directive 
+associated with this control that we can use <em>in the template</em>
+to check for control states such as <code>valid</code> and <code>dirty</code>.</p>
+</li>
+<li><p>The <code>*ngIf</code> on <code>&lt;div&gt;</code> element reveals a set of nested message <code>divs</code> but only if there are &quot;name&quot; errors and
+the control is either <code>dirty</code> or <code>touched</code>.</p>
+</li>
+<li><p>Each nested <code>&lt;div&gt;</code> can present a custom message for one of the possible validation errors.
+We&#39;ve prepared messages for <code>required</code>, <code>minlength</code>, and <code>maxlength</code>.</p>
+</li>
+</ul>
+<p>The full template repeats this kind of layout for each data entry control on the form.</p>
+<div class="l-sub-section"><h4 id="why-check-_dirty_-and-_touched_-">Why check <em>dirty</em> and <em>touched</em>?</h4>
+<p>We shouldn&#39;t show errors for a new hero before the user has had a chance to edit the value.
+The checks for <code>dirty</code> and <code>touched</code> prevent premature display of errors.</p>
+<p>Learn about <code>dirty</code> and <code>touched</code> in the <a href="../guide/forms.html">Forms</a> chapter.</p>
+</div><p>The component class manages the hero model used in the data binding
+as well as other code to support the view.</p>
+<div class="code-example"><header><h4>template/hero-form-template1.component.ts (class)</h4></header><code-example language="ts" format="linenums">export class HeroFormTemplate1Component {
+
+  powers = [&#39;Really Smart&#39;, &#39;Super Flexible&#39;, &#39;Weather Changer&#39;];
+
+  hero = new Hero(18, &#39;Dr. WhatIsHisWayTooLongName&#39;, this.powers[0], &#39;Dr. What&#39;);
+
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
+  }
+
+  addHero() {
+    this.hero = new Hero(42, &#39;&#39;, &#39;&#39;);
+  }
+}
+</code-example></div><p>Use this template-driven validation technique when working with static forms with simple, standard validation rules.</p>
+<p>Here are the complete files for the first version of <code>HeroFormTemplateCompononent</code> in the template-driven approach:</p>
+<code-tabs><code-pane language="html" name="template/hero-form-template1.component.html" format="linenums">&lt;div class=&quot;container&quot;&gt;
+  &lt;div [hidden]=&quot;submitted&quot;&gt;
+    &lt;h1&gt;Hero Form 1 (Template)&lt;/h1&gt;
+    &lt;form #heroForm=&quot;ngForm&quot;  *ngIf=&quot;active&quot;  (ngSubmit)=&quot;onSubmit()&quot;&gt;
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+
+        &lt;input type=&quot;text&quot; id=&quot;name&quot; class=&quot;form-control&quot;
+               required minlength=&quot;4&quot; maxlength=&quot;24&quot;
+               name=&quot;name&quot; [(ngModel)]=&quot;hero.name&quot;
+               #name=&quot;ngModel&quot; &gt;
+
+        &lt;div *ngIf=&quot;name.errors &amp;&amp; (name.dirty || name.touched)&quot;
+             class=&quot;alert alert-danger&quot;&gt;
+            &lt;div [hidden]=&quot;!name.errors.required&quot;&gt;
+              Name is required
+            &lt;/div&gt;
+            &lt;div [hidden]=&quot;!name.errors.minlength&quot;&gt;
+              Name must be at least 4 characters long.
+            &lt;/div&gt;
+            &lt;div [hidden]=&quot;!name.errors.maxlength&quot;&gt;
+              Name cannot be more than 24 characters long.
+            &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;alterEgo&quot;&gt;Alter Ego&lt;/label&gt;
+        &lt;input type=&quot;text&quot; id=&quot;alterEgo&quot; class=&quot;form-control&quot;
+               name=&quot;alterEgo&quot;
+               [(ngModel)]=&quot;hero.alterEgo&quot; &gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;power&quot;&gt;Hero Power&lt;/label&gt;
+        &lt;select id=&quot;power&quot; class=&quot;form-control&quot;
+                name=&quot;power&quot;
+                [(ngModel)]=&quot;hero.power&quot; required
+                #power=&quot;ngModel&quot; &gt;
+          &lt;option *ngFor=&quot;let p of powers&quot; [value]=&quot;p&quot;&gt;{{p}}&lt;/option&gt;
+        &lt;/select&gt;
+
+        &lt;div *ngIf=&quot;power.errors &amp;&amp; power.touched&quot; class=&quot;alert alert-danger&quot;&gt;
+          &lt;div [hidden]=&quot;!power.errors.required&quot;&gt;Power is required&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;
+             [disabled]=&quot;!heroForm.form.valid&quot;&gt;Submit&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;
+             (click)=&quot;addHero()&quot;&gt;New Hero&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+
+  &lt;hero-submitted [hero]=&quot;hero&quot; [(submitted)]=&quot;submitted&quot;&gt;&lt;/hero-submitted&gt;
+&lt;/div&gt;
+</code-pane><code-pane language="ts" name="template/hero-form-template1.component.ts" format="linenums">import { Component } from &#39;@angular/core&#39;;
+
+
+import { Hero }      from &#39;../shared/hero&#39;;
+
+@Component({
+  moduleId:  module.id,
+  selector: &#39;hero-form-template1&#39;,
+  templateUrl: &#39;hero-form-template1.component.html&#39;
+})
+export class HeroFormTemplate1Component {
+
+  powers = [&#39;Really Smart&#39;, &#39;Super Flexible&#39;, &#39;Weather Changer&#39;];
+
+  hero = new Hero(18, &#39;Dr. WhatIsHisWayTooLongName&#39;, this.powers[0], &#39;Dr. What&#39;);
+
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
+  }
+
+  addHero() {
+    this.hero = new Hero(42, &#39;&#39;, &#39;&#39;);
+  }
+}
+</code-pane></code-tabs><div class="l-main-section"></div><a id="template2"></a><h2 id="template-driven-forms-with-validation-messages-in-code">Template-Driven Forms with validation messages in code</h2>
+<p>While the layout is straightforward, 
+there are obvious shortcomings with the way we handle validation messages:</p>
+<ul>
+<li><p>It takes a lot of HTML to represent all possible error conditions. 
+This gets out of hand when there are many controls and many validation rules.</p>
+</li>
+<li><p>We&#39;re not fond of so much JavaScript logic in HTML.</p>
+</li>
+<li><p>The messages are static strings, hard-coded into the template. 
+We often require dynamic messages that we should shape in code.</p>
+</li>
+</ul>
+<p>We can move the logic and the messages into the component with a few changes to 
+the template and component.</p>
+<p>Here&#39;s the hero name again, excerpted from the revised template (&quot;Template 2&quot;), next to the original version:</p>
+<code-tabs><code-pane language="html" name="hero-form-template2.component.html (name #2)" format="linenums">        &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+
+        &lt;input type=&quot;text&quot; id=&quot;name&quot; class=&quot;form-control&quot;
+               required minlength=&quot;4&quot; maxlength=&quot;24&quot; forbiddenName=&quot;bob&quot;
+               name=&quot;name&quot; [(ngModel)]=&quot;hero.name&quot; &gt;
+
+        &lt;div *ngIf=&quot;formErrors.name&quot; class=&quot;alert alert-danger&quot;&gt;
+          {{ formErrors.name }}
+        &lt;/div&gt;
+</code-pane><code-pane language="html" name="hero-form-template1.component.html (name #1)" format="linenums">&lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+
+&lt;input type=&quot;text&quot; id=&quot;name&quot; class=&quot;form-control&quot;
+       required minlength=&quot;4&quot; maxlength=&quot;24&quot;
+       name=&quot;name&quot; [(ngModel)]=&quot;hero.name&quot;
+       #name=&quot;ngModel&quot; &gt;
+
+&lt;div *ngIf=&quot;name.errors &amp;&amp; (name.dirty || name.touched)&quot;
+     class=&quot;alert alert-danger&quot;&gt;
+    &lt;div [hidden]=&quot;!name.errors.required&quot;&gt;
+      Name is required
+    &lt;/div&gt;
+    &lt;div [hidden]=&quot;!name.errors.minlength&quot;&gt;
+      Name must be at least 4 characters long.
+    &lt;/div&gt;
+    &lt;div [hidden]=&quot;!name.errors.maxlength&quot;&gt;
+      Name cannot be more than 24 characters long.
+    &lt;/div&gt;
+&lt;/div&gt;
+</code-pane></code-tabs><p>The <code>&lt;input&gt;</code> element HTML is almost the same. There are noteworthy differences:</p>
+<ul>
+<li><p>The hard-code error message <code>&lt;divs&gt;</code> are gone.</p>
+</li>
+<li><p>There&#39;s a new attribute, <code>forbiddenName</code>, that is actually a custom validation directive.
+It invalidates the control if the user enters &quot;bob&quot; anywhere in the name (<a href="#live-example">try it</a>).
+We discuss <a href="#custom-validation">custom validation directives</a> later in this cookbook.</p>
+</li>
+<li><p>The <code>#name</code> template variable is gone because we no longer refer to the Angular control for this element.</p>
+</li>
+<li><p>Binding to the new <code>formErrors.name</code> property is sufficent to display all name validation error messages.</p>
+</li>
+</ul>
+<h4 id="component-class">Component class</h4>
+<p>The original component code stays the same.
+We <em>added</em> new code to acquire the Angular form control and compose error messages.</p>
+<p>The first step is to acquire the form control that Angular created from the template by querying for it.</p>
+<p>Look back at the top of the component template where we set the 
+<code>#heroForm</code> template variable in the <code>&lt;form&gt;</code> element:</p>
+<div class="code-example"><header><h4>template/hero-form-template1.component.html (form tag)</h4></header><code-example language="html" format="">&lt;form #heroForm=&quot;ngForm&quot;  *ngIf=&quot;active&quot;  (ngSubmit)=&quot;onSubmit()&quot;&gt;
+</code-example></div><p>The <code>heroForm</code> variable is a reference to the control model that Angular derived from the template.
+We tell Angular to inject that model into the component class&#39;s <code>currentForm</code> property using a <code>@ViewChild</code> query:</p>
+<div class="code-example"><header><h4>template/hero-form-template2.component.ts (heroForm)</h4></header><code-example language="ts" format="">heroForm: NgForm;
+@ViewChild(&#39;heroForm&#39;) currentForm: NgForm;
+
+ngAfterViewChecked() {
+  this.formChanged();
+}
+
+formChanged() {
+  if (this.currentForm === this.heroForm) { return; }
+  this.heroForm = this.currentForm;
+  if (this.heroForm) {
+    this.heroForm.valueChanges
+      .subscribe(data =&gt; this.onValueChanged(data));
+  }
+}
+</code-example></div><p>Some observations:</p>
+<ul>
+<li><p>Angular <code>@ViewChild</code> queries for a template variable when you pass it 
+the name of that variable as a string (<code>&#39;heroForm&#39;</code> in this case).</p>
+</li>
+<li><p>The <code>heroForm</code> object changes several times during the life of the component, most notably when we add a new hero.
+We&#39;ll have to re-inspect it periodically.</p>
+</li>
+<li><p>Angular calls the <code>ngAfterViewChecked</code> <a href="../guide/lifecycle-hooks.html#afterview">lifecycle hook method</a> 
+when anything changes in the view.
+That&#39;s the right time to see if there&#39;s a new <code>heroForm</code> object.</p>
+</li>
+<li><p>When there <em>is</em> a new <code>heroForm</code> model, we subscribe to its <code>valueChanged</code> <em>Observable</em> property.
+The <code>onValueChanged</code> handler looks for validation errors after every user keystroke.  </p>
+</li>
+</ul>
+<div class="code-example"><header><h4>template/hero-form-template2.component.ts (handler)</h4></header><code-example language="ts" format="">onValueChanged(data?: any) {
+  if (!this.heroForm) { return; }
+  const form = this.heroForm.form;
+
+  for (const field in this.formErrors) {
+    // clear previous error message (if any)
+    this.formErrors[field] = &#39;&#39;;
+    const control = form.get(field);
+
+    if (control &amp;&amp; control.dirty &amp;&amp; !control.valid) {
+      const messages = this.validationMessages[field];
+      for (const key in control.errors) {
+        this.formErrors[field] += messages[key] + &#39; &#39;;
+      }
+    }
+  }
+}
+
+formErrors = {
+  &#39;name&#39;: &#39;&#39;,
+  &#39;power&#39;: &#39;&#39;
+};
+</code-example></div><p>The <code>onValueChanged</code> handler interprets user data entry. 
+The <code>data</code> object passed into the handler contains the current element values.
+The handler ignores them. Instead, it iterates over the fields of the component&#39;s <code>formErrors</code> object.</p>
+<p>The <code>formErrors</code> is a dictionary of the hero fields that have validation rules and their current error messages.
+Only two hero properties have validation rules, <code>name</code> and <code>power</code>.
+The messages are empty strings when the hero data are valid.</p>
+<p>For each field, the handler</p>
+<ul>
+<li>clears the prior error message if any</li>
+<li>acquires the field&#39;s corresponding Angular form control </li>
+<li>if such a control exists <em>and</em> its been changed (&quot;dirty&quot;) <em>and</em> its invalid ...</li>
+<li>the handler composes a consolidated error message for all of the control&#39;s errors.</li>
+</ul>
+<p>We&#39;ll need some error messages of course, a set for each validated property, one message per validation rule:</p>
+<div class="code-example"><header><h4>template/hero-form-template2.component.ts (messages)</h4></header><code-example language="ts" format="">validationMessages = {
+  &#39;name&#39;: {
+    &#39;required&#39;:      &#39;Name is required.&#39;,
+    &#39;minlength&#39;:     &#39;Name must be at least 4 characters long.&#39;,
+    &#39;maxlength&#39;:     &#39;Name cannot be more than 24 characters long.&#39;,
+    &#39;forbiddenName&#39;: &#39;Someone named &quot;Bob&quot; cannot be a hero.&#39;
+  },
+  &#39;power&#39;: {
+    &#39;required&#39;: &#39;Power is required.&#39;
+  }
+};
+</code-example></div><p>Now every time the user makes a change, the <code>onValueChanged</code> handler checks for validation errors and produces messages accordingly.</p>
+<h3 id="is-this-an-improvement-">Is this an improvement?</h3>
+<p>Clearly the template got substantially smaller while the component code got substantially larger. 
+It&#39;s not easy to see the benefit when there are just three fields and only two of them have validation rules.</p>
+<p>Consider what happens as we increase the number of validated fields and rules.
+In general, HTML is harder to read and maintain than code. 
+The initial template was already large and threatening to get rapidly worse as we add more validation message <code>&lt;divs&gt;</code>.</p>
+<p>After moving the validation messaging to the component, 
+the template grows more slowly and proportionally.
+Each field has approximately the same number of lines no matter its number of validation rules.
+The component also grows proportionally, at the rate of one line per validated field
+and one line per validation message.</p>
+<p>Both trends are manageable.</p>
+<p>Now that the messages are in code, we have more flexibility. We can compose messages more intelligently. 
+We can refactor the messages out of the component, perhaps to a service class that retrieves them from the server.
+In short, there are more opportunities to improve message handling now that text and logic have moved from template to code.</p>
+<h3 id="_formmodule_-and-template-driven-forms"><em>FormModule</em> and template-driven forms</h3>
+<p>Angular has two different forms modules &mdash; <code>FormsModule</code> and <code>ReactiveFormsModule</code> &mdash; 
+that correspond with the two approaches to form development.
+Both modules come from the same <code>@angular/forms</code> library package.</p>
+<p>We&#39;ve been reviewing the &quot;Template-driven&quot; approach which requires the <code>FormsModule</code>
+Here&#39;s how we imported it in the <code>HeroFormTemplateModule</code>.</p>
+<div class="code-example"><header><h4>template/hero-form-template.module.ts</h4></header><code-example language="ts" format="">import { NgModule }     from &#39;@angular/core&#39;;
+import { FormsModule }  from &#39;@angular/forms&#39;;
+
+import { SharedModule }               from &#39;../shared/shared.module&#39;;
+import { HeroFormTemplate1Component } from &#39;./hero-form-template1.component&#39;;
+import { HeroFormTemplate2Component } from &#39;./hero-form-template2.component&#39;;
+
+@NgModule({
+  imports:      [ SharedModule, FormsModule ],
+  declarations: [ HeroFormTemplate1Component, HeroFormTemplate2Component ],
+  exports:      [ HeroFormTemplate1Component, HeroFormTemplate2Component ]
+})
+export class HeroFormTemplateModule { }
+</code-example></div><div class="l-sub-section"><p>We haven&#39;t talked about the <code>SharedModule</code> or its <code>SubmittedComponent</code> which appears at the bottom of every
+form template in this cookbook.  </p>
+<p>They&#39;re not germane to the validation story. Look at the <a href="#live-example">live example</a> if you&#39;re interested.</p>
+</div><div class="l-main-section"></div><a id="reactive"></a><h2 id="reactive-forms">Reactive Forms</h2>
+<p>In the template-driven approach, you markup the template with form elements, validation attributes, 
+and <code>ng...</code> directives from the Angular <code>FormsModule</code>.
+At runtime, Angular interprets the template and derives its <em>form control model</em>.</p>
+<p><strong>Reactive Forms</strong> takes a different approach. 
+You create the form control model in code. You write the template with form elements
+and<code>form...</code> directives from the Angular <code>ReactiveFormsModule</code>.
+At runtime, Angular binds the template elements to your control model based on your instructions.</p>
+<p>This approach requires a bit more effort. <em>You have to write the control model and manage it</em>.</p>
+<p>In return, you can</p>
+<ul>
+<li>add, change, and remove validation functions on the fly</li>
+<li>manipulate the control model dynamically from within the component</li>
+<li><a href="#testing">test</a> validation and control logic with isolated unit tests.</li>
+</ul>
+<p>The third cookbook sample re-writes the hero form in <em>reactive forms</em> style.</p>
+<h3 id="switch-to-the-_reactiveformsmodule_">Switch to the <em>ReactiveFormsModule</em></h3>
+<p>The reactive forms classes and directives come from the Angular <code>ReactiveFormsModule</code>, not the <code>FormsModule</code>.
+The application module for the &quot;Reactive Forms&quot; feature in this sample looks like this:</p>
+<div class="code-example"><header><h4>app/reactive/hero-form-reactive.module.ts</h4></header><code-example language="ts" format="">import { NgModule }            from &#39;@angular/core&#39;;
+import { ReactiveFormsModule } from &#39;@angular/forms&#39;;
+
+import { SharedModule }              from &#39;../shared/shared.module&#39;;
+import { HeroFormReactiveComponent } from &#39;./hero-form-reactive.component&#39;;
+
+@NgModule({
+  imports:      [ SharedModule, ReactiveFormsModule ],
+  declarations: [ HeroFormReactiveComponent ],
+  exports:      [ HeroFormReactiveComponent ]
+})
+export class HeroFormReactiveModule { }
+</code-example></div><p>The &quot;Reactive Forms&quot; feature module and component are in the <code>app/reactive</code> folder. 
+Let&#39;s focus on the <code>HeroFormReactiveComponent</code> there, starting with its template.</p>
+<h3 id="component-template">Component template</h3>
+<p>We begin by changing the <code>&lt;form&gt;</code> tag so that it binds the Angular <code>formGroup</code> directive in the template
+to the <code>heroForm</code> property in the component class. 
+The <code>heroForm</code> is the control model that the component class builds and maintains.</p>
+<div class="code-example"><code-example language="html" format="">&lt;form [formGroup]=&quot;heroForm&quot;  *ngIf=&quot;active&quot;  (ngSubmit)=&quot;onSubmit()&quot;&gt;
+</code-example></div><p>Then we modify the template HTML elements to match the <em>reactive forms</em> style.
+Here is the &quot;name&quot; portion of the template again, revised for reactive forms and compared with the template-driven version:</p>
+<code-tabs><code-pane language="html" name="hero-form-reactive.component.html (name #3)" format="linenums">&lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+
+&lt;input type=&quot;text&quot; id=&quot;name&quot; class=&quot;form-control&quot;
+       formControlName=&quot;name&quot; required &gt;
+
+&lt;div *ngIf=&quot;formErrors.name&quot; class=&quot;alert alert-danger&quot;&gt;
+  {{ formErrors.name }}
+&lt;/div&gt;
+</code-pane><code-pane language="html" name="hero-form-template1.component.html (name #2)" format="linenums">        &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+
+        &lt;input type=&quot;text&quot; id=&quot;name&quot; class=&quot;form-control&quot;
+               required minlength=&quot;4&quot; maxlength=&quot;24&quot; forbiddenName=&quot;bob&quot;
+               name=&quot;name&quot; [(ngModel)]=&quot;hero.name&quot; &gt;
+
+        &lt;div *ngIf=&quot;formErrors.name&quot; class=&quot;alert alert-danger&quot;&gt;
+          {{ formErrors.name }}
+        &lt;/div&gt;
+</code-pane></code-tabs><p>Key changes:</p>
+<ul>
+<li><p>the validation attributes are gone (except <code>required</code>) because we&#39;ll be validating in code.</p>
+</li>
+<li><p><code>required</code> remains, not for validation purposes (we&#39;ll cover that in the code), 
+but rather for css styling and accessibility.</p>
+</li>
+</ul>
+<div class="l-sub-section"><p>A future version of reactive forms will add the <code>required</code> HTML validation attribute to the DOM element
+(and perhaps the <code>aria-required</code> attribute) when the control has the <code>required</code> validator function. </p>
+<p>Until then, apply the <code>required</code> attribute <em>and</em> add the <code>Validator.required</code> function
+to the control model, as we&#39;ll do below.</p>
+</div><ul>
+<li><p>the <code>formControlName</code> replaces the <code>name</code> attribute; it serves the same
+purpose of correlating the input box with the Angular form control.</p>
+</li>
+<li><p>the two-way <code>[(ngModel)]</code> binding is gone. 
+The reactive approach does not use data binding to move data into and out of the form controls.
+We do that in code.</p>
+</li>
+</ul>
+<div class="l-sub-section"><p>The retreat from data binding is a principle of the reactive paradigm rather than a technical limitation.</p>
+</div><h3 id="component-class">Component class</h3>
+<p>The component class is now responsible for defining and managing the form control model. </p>
+<p>Angular no longer derives the control model from the template so we can no longer query for it.
+We create the Angular form control model explicitly with the help of the <code>FormBuilder</code>.</p>
+<p>Here&#39;s the section of code devoted to that process, paired with the template-driven code it replaces:</p>
+<code-tabs><code-pane language="ts" name="reactive/hero-form-reactive.component.ts (FormBuilder)" format="linenums">  heroForm: FormGroup;
+  constructor(private fb: FormBuilder) { }
+
+  ngOnInit(): void {
+    this.buildForm();
+  }
+
+  buildForm(): void {
+    this.heroForm = this.fb.group({
+      &#39;name&#39;: [this.hero.name, [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(24),
+          forbiddenNameValidator(/bob/i)
+        ]
+      ],
+      &#39;alterEgo&#39;: [this.hero.alterEgo],
+      &#39;power&#39;:    [this.hero.power, Validators.required]
+    });
+
+    this.heroForm.valueChanges
+      .subscribe(data =&gt; this.onValueChanged(data));
+
+    this.onValueChanged(); // (re)set validation messages now
+  }
+</code-pane><code-pane language="ts" name="template/hero-form-template2.component.ts (ViewChild)" format="linenums">heroForm: NgForm;
+@ViewChild(&#39;heroForm&#39;) currentForm: NgForm;
+
+ngAfterViewChecked() {
+  this.formChanged();
+}
+
+formChanged() {
+  if (this.currentForm === this.heroForm) { return; }
+  this.heroForm = this.currentForm;
+  if (this.heroForm) {
+    this.heroForm.valueChanges
+      .subscribe(data =&gt; this.onValueChanged(data));
+  }
+}
+</code-pane></code-tabs><ul>
+<li><p>we inject the <code>FormBuilder</code> in a constructor.</p>
+</li>
+<li><p>we call a <code>buildForm</code> method in the <code>ngOnInit</code> <a href="../guide/lifecycle-hooks.html#hooks-overview">lifecycle hook method</a>
+because that&#39;s when we&#39;ll have the hero data. We&#39;ll call it again in the <code>addHero</code> method.</p>
+</li>
+</ul>
+<div class="l-sub-section"><p>A real app would retrieve the hero asynchronously from a data service, a task best performed in the <code>ngOnInit</code> hook.</p>
+</div><ul>
+<li>the <code>buildForm</code> method uses the <code>FormBuilder</code> (<code>fb</code>) to declare the form control model.
+Then it attaches the same <code>onValueChanged</code> handler (there&#39;s a one line difference) 
+to the form&#39;s <code>valueChanged</code> event and calls it immediately 
+to set error messages for the new control model.</li>
+</ul>
+<h4 id="_formbuilder_-declaration"><em>FormBuilder</em> declaration</h4>
+<p>The <code>FormBuilder</code> declaration object specifies the three controls of the sample&#39;s hero form. </p>
+<p>Each control spec is a control name with an array value. 
+The first array element is the current value of the corresponding hero field.
+The (optional) second value is a validator function or an array of validator functions.</p>
+<p>Most of the validator functions are stock validators provided by Angular as static methods of the <code>Validators</code> class.
+Angular has stock validators that correspond to the standard HTML validation attributes.</p>
+<p>The <code>forbiddenNames</code> validator on the <code>&quot;name&quot;</code> control is a custom validator, 
+discussed in a separate <a href="#custom-validation">section below</a>.</p>
+<div class="l-sub-section"> <p>Learn more about <code>FormBuilder</code> in a <em>forthcoming</em> chapter on reactive forms. </p>
+</div><h4 id="committing-hero-value-changes">Committing hero value changes</h4>
+<p>In two-way data binding, the user&#39;s changes flow automatically from the controls back to the data model properties.
+Reactive forms do not use data binding to update data model properties. 
+The developer decides <em>when and how</em> to update the data model from control values.</p>
+<p>This sample updates the model twice:</p>
+<ol>
+<li>when the user submits the form</li>
+<li>when the user chooses to add a new hero</li>
+</ol>
+<p>The <code>onSubmit</code> method simply replaces the <code>hero</code> object with the combined values of the form:</p>
+<div class="code-example"><code-example language="ts" format="">onSubmit() {
+  this.submitted = true;
+  this.hero = this.heroForm.value;
+}
+</code-example></div><div class="l-sub-section"><p>This example is &quot;lucky&quot; in that the <code>heroForm.value</code> properties <em>just happen</em> to
+correspond <em>exactly</em> to the hero data object properties.</p>
+</div><p>The <code>addHero</code> method discards pending changes and creates a brand new <code>hero</code> model object.</p>
+<div class="code-example"><code-example language="ts" format="">addHero() {
+  this.hero = new Hero(42, &#39;&#39;, &#39;&#39;);
+  this.buildForm();
+}
+</code-example></div><p>Then it calls <code>buildForm</code> again which replaces the previous <code>heroForm</code> control model with a new one.
+The <code>&lt;form&gt;</code> tag&#39;s <code>[formGroup]</code> binding refreshes the page with the new control model.</p>
+<p>Here&#39;s the complete reactive component file, compared to the two template-driven component files.</p>
+<code-tabs><code-pane language="ts" name="reactive/hero-form-reactive.component.ts (#3)" format="linenums">import { Component, OnInit }                  from &#39;@angular/core&#39;;
+import { FormGroup, FormBuilder, Validators } from &#39;@angular/forms&#39;;
+
+import { Hero }                   from &#39;../shared/hero&#39;;
+import { forbiddenNameValidator } from &#39;../shared/forbidden-name.directive&#39;;
+
+@Component({
+  moduleId:  module.id,
+  selector: &#39;hero-form-reactive3&#39;,
+  templateUrl: &#39;hero-form-reactive.component.html&#39;
+})
+export class HeroFormReactiveComponent implements OnInit {
+
+  powers = [&#39;Really Smart&#39;, &#39;Super Flexible&#39;, &#39;Weather Changer&#39;];
+
+  hero = new Hero(18, &#39;Dr. WhatIsHisName&#39;, this.powers[0], &#39;Dr. What&#39;);
+
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
+    this.hero = this.heroForm.value;
+  }
+  addHero() {
+    this.hero = new Hero(42, &#39;&#39;, &#39;&#39;);
+    this.buildForm();
+
+    this.active = false;
+    setTimeout(() =&gt; this.active = true, 0);
+  }
+
+  heroForm: FormGroup;
+  constructor(private fb: FormBuilder) { }
+
+  ngOnInit(): void {
+    this.buildForm();
+  }
+
+  buildForm(): void {
+    this.heroForm = this.fb.group({
+      &#39;name&#39;: [this.hero.name, [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(24),
+          forbiddenNameValidator(/bob/i)
+        ]
+      ],
+      &#39;alterEgo&#39;: [this.hero.alterEgo],
+      &#39;power&#39;:    [this.hero.power, Validators.required]
+    });
+
+    this.heroForm.valueChanges
+      .subscribe(data =&gt; this.onValueChanged(data));
+
+    this.onValueChanged(); // (re)set validation messages now
+  }
+
+
+  onValueChanged(data?: any) {
+    if (!this.heroForm) { return; }
+    const form = this.heroForm;
+
+    for (const field in this.formErrors) {
+      // clear previous error message (if any)
+      this.formErrors[field] = &#39;&#39;;
+      const control = form.get(field);
+
+      if (control &amp;&amp; control.dirty &amp;&amp; !control.valid) {
+        const messages = this.validationMessages[field];
+        for (const key in control.errors) {
+          this.formErrors[field] += messages[key] + &#39; &#39;;
+        }
+      }
+    }
+  }
+
+  formErrors = {
+    &#39;name&#39;: &#39;&#39;,
+    &#39;power&#39;: &#39;&#39;
+  };
+
+  validationMessages = {
+    &#39;name&#39;: {
+      &#39;required&#39;:      &#39;Name is required.&#39;,
+      &#39;minlength&#39;:     &#39;Name must be at least 4 characters long.&#39;,
+      &#39;maxlength&#39;:     &#39;Name cannot be more than 24 characters long.&#39;,
+      &#39;forbiddenName&#39;: &#39;Someone named &quot;Bob&quot; cannot be a hero.&#39;
+    },
+    &#39;power&#39;: {
+      &#39;required&#39;: &#39;Power is required.&#39;
+    }
+  };
+}
+</code-pane><code-pane language="ts" name="template/hero-form-template2.component.ts (#2)" format="linenums">import { Component, AfterViewChecked, ViewChild } from &#39;@angular/core&#39;;
+import { NgForm } from &#39;@angular/forms&#39;;
+
+import { Hero }      from &#39;../shared/hero&#39;;
+
+@Component({
+  moduleId:  module.id,
+  selector: &#39;hero-form-template2&#39;,
+  templateUrl: &#39;hero-form-template2.component.html&#39;
+})
+export class HeroFormTemplate2Component implements AfterViewChecked {
+
+  powers = [&#39;Really Smart&#39;, &#39;Super Flexible&#39;, &#39;Weather Changer&#39;];
+
+  hero = new Hero(18, &#39;Dr. WhatIsHisWayTooLongName&#39;, this.powers[0], &#39;Dr. What&#39;);
+
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
+  }
+
+  addHero() {
+    this.hero = new Hero(42, &#39;&#39;, &#39;&#39;);
+  }
+
+  heroForm: NgForm;
+  @ViewChild(&#39;heroForm&#39;) currentForm: NgForm;
+
+  ngAfterViewChecked() {
+    this.formChanged();
+  }
+
+  formChanged() {
+    if (this.currentForm === this.heroForm) { return; }
+    this.heroForm = this.currentForm;
+    if (this.heroForm) {
+      this.heroForm.valueChanges
+        .subscribe(data =&gt; this.onValueChanged(data));
+    }
+  }
+
+  onValueChanged(data?: any) {
+    if (!this.heroForm) { return; }
+    const form = this.heroForm.form;
+
+    for (const field in this.formErrors) {
+      // clear previous error message (if any)
+      this.formErrors[field] = &#39;&#39;;
+      const control = form.get(field);
+
+      if (control &amp;&amp; control.dirty &amp;&amp; !control.valid) {
+        const messages = this.validationMessages[field];
+        for (const key in control.errors) {
+          this.formErrors[field] += messages[key] + &#39; &#39;;
+        }
+      }
+    }
+  }
+
+  formErrors = {
+    &#39;name&#39;: &#39;&#39;,
+    &#39;power&#39;: &#39;&#39;
+  };
+
+  validationMessages = {
+    &#39;name&#39;: {
+      &#39;required&#39;:      &#39;Name is required.&#39;,
+      &#39;minlength&#39;:     &#39;Name must be at least 4 characters long.&#39;,
+      &#39;maxlength&#39;:     &#39;Name cannot be more than 24 characters long.&#39;,
+      &#39;forbiddenName&#39;: &#39;Someone named &quot;Bob&quot; cannot be a hero.&#39;
+    },
+    &#39;power&#39;: {
+      &#39;required&#39;: &#39;Power is required.&#39;
+    }
+  };
+}
+</code-pane><code-pane language="ts" name="template/hero-form-template1.component.ts (#1)" format="linenums">import { Component } from &#39;@angular/core&#39;;
+
+
+import { Hero }      from &#39;../shared/hero&#39;;
+
+@Component({
+  moduleId:  module.id,
+  selector: &#39;hero-form-template1&#39;,
+  templateUrl: &#39;hero-form-template1.component.html&#39;
+})
+export class HeroFormTemplate1Component {
+
+  powers = [&#39;Really Smart&#39;, &#39;Super Flexible&#39;, &#39;Weather Changer&#39;];
+
+  hero = new Hero(18, &#39;Dr. WhatIsHisWayTooLongName&#39;, this.powers[0], &#39;Dr. What&#39;);
+
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
+  }
+
+  addHero() {
+    this.hero = new Hero(42, &#39;&#39;, &#39;&#39;);
+  }
+}
+</code-pane></code-tabs><div class="l-sub-section"><p>Run the <a href="#live-example">live example</a> to see how the reactive form behaves
+and to compare all of the files in this cookbook sample.</p>
+</div><div class="l-main-section"></div><a id="custom-validation"></a><h2 id="custom-validation">Custom validation</h2>
+<p>This cookbook sample has a custom <code>forbiddenNamevalidator</code> function that&#39;s applied to both the 
+template-driven and the reactive form controls. It&#39;s in the <code>app/shared</code> folder
+and declared in the <code>SharedModule</code>.</p>
+<p>Here&#39;s the <code>forbiddenNamevalidator</code> function itself:</p>
+<div class="code-example"><header><h4>shared/forbidden-name.directive.ts (forbiddenNameValidator)</h4></header><code-example language="ts" format="">/** A hero&#39;s name can&#39;t match the given regular expression */
+export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+  return (control: AbstractControl): {[key: string]: any} =&gt; {
+    const name = control.value;
+    const no = nameRe.test(name);
+    return no ? {&#39;forbiddenName&#39;: {name}} : null;
+  };
+}
+</code-example></div><p>The function is actually a factory that takes a regular expression to detect a <em>specific</em> forbidden name
+and returns a validator function.</p>
+<p>In this sample, the forbidden name is &quot;bob&quot;; 
+the validator rejects any hero name containing &quot;bob&quot;.
+Elsewhere it could reject &quot;alice&quot; or any name that the configuring regular expression matches.</p>
+<p>The <code>forbiddenNamevalidator</code> factory returns the configured validator function.
+That function takes an Angular control object and returns <em>either</em>
+null if the control value is valid <em>or</em> a validation error object.
+The validation error object typically has a property whose name is the validation key (&#39;forbiddenName&#39;)
+and whose value is an arbitrary dictionary of values that we could insert into an error message (<code>{name}</code>).</p>
+<div class="l-sub-section"><p>Learn more about validator functions in a <em>forthcoming</em> chapter on custom form validation.</p>
+</div><h4 id="custom-validation-directive">Custom validation directive</h4>
+<p>In the reactive forms component we added a configured <code>forbiddenNamevalidator</code>
+to the bottom of the <code>&#39;name&#39;</code> control&#39;s validator function list.</p>
+<div class="code-example"><header><h4>reactive/hero-form-reactive.component.ts (name validators)</h4></header><code-example language="ts" format="">&#39;name&#39;: [this.hero.name, [
+    Validators.required,
+    Validators.minLength(4),
+    Validators.maxLength(24),
+    forbiddenNameValidator(/bob/i)
+  ]
+],
+</code-example></div><p>In the template-driven component template, we add the selector (<code>forbiddenName</code>) of a custom <em>attribute directive</em> to the name&#39;s input box
+and configured it to reject &quot;bob&quot;.</p>
+<div class="code-example"><header><h4>template/hero-form-template2.component.html (name input)</h4></header><code-example language="html" format="">&lt;input type=&quot;text&quot; id=&quot;name&quot; class=&quot;form-control&quot;
+       required minlength=&quot;4&quot; maxlength=&quot;24&quot; forbiddenName=&quot;bob&quot;
+       name=&quot;name&quot; [(ngModel)]=&quot;hero.name&quot; &gt;
+</code-example></div><p>The corresponding <code>ForbiddenValidatorDirective</code> is a wrapper around the <code>forbiddenNamevalidator</code>.</p>
+<p>Angular forms recognizes the directive&#39;s role in the validation process because the directive registers itself
+with the <code>NG_VALIDATORS</code> provider, a provider with an extensible collection of validation directives.</p>
+<div class="code-example"><header><h4>shared/forbidden-name.directive.ts (providers)</h4></header><code-example language="ts" format="">providers: [{provide: NG_VALIDATORS, useExisting: ForbiddenValidatorDirective, multi: true}]
+</code-example></div><p>The rest of the directive is unremarkable and we present it here without further comment.</p>
+<div class="code-example"><header><h4>shared/forbidden-name.directive.ts (directive)</h4></header><code-example language="ts" format="linenums">@Directive({
+  selector: &#39;[forbiddenName]&#39;,
+  providers: [{provide: NG_VALIDATORS, useExisting: ForbiddenValidatorDirective, multi: true}]
+})
+export class ForbiddenValidatorDirective implements Validator, OnChanges {
+  @Input() forbiddenName: string;
+  private valFn = Validators.nullValidator;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    const change = changes[&#39;forbiddenName&#39;];
+    if (change) {
+      const val: string | RegExp = change.currentValue;
+      const re = val instanceof RegExp ? val : new RegExp(val, &#39;i&#39;);
+      this.valFn = forbiddenNameValidator(re);
+    } else {
+      this.valFn = Validators.nullValidator;
+    }
+  }
+
+  validate(control: AbstractControl): {[key: string]: any} {
+    return this.valFn(control);
+  }
+}
+</code-example></div><div class="l-sub-section"><p>See the <a href="../guide/attribute-directives.html">Attribute Directives</a> chapter.</p>
+</div><div class="l-main-section"></div><a id="testing"></a><h2 id="testing-considerations">Testing Considerations</h2>
+<p>We can write <em>isolated unit tests</em> of validation and control logic in <em>Reactive Forms</em>.</p>
+<p><em>Isolated unit tests</em> probe the component class directly, independent of its
+interactions with its template, the DOM, other dependencies, or Angular itself.</p>
+<p>Such tests have minimal setup, are quick to write, and easy to maintain.
+They do not require the <code>Angular TestBed</code> or asynchronous testing practices.</p>
+<p>That&#39;s not possible with <em>Template-driven</em> forms.
+The template-driven approach relies on Angular to produce the control model and 
+to derive validation rules from the HTML validation attributes.
+You must use the <code>Angular TestBed</code> to create component test instances,
+write asynchronous tests, and interact with the DOM.</p>
+<p>While not difficult, this takes more time, work and skill &mdash; 
+factors that tend to diminish test code coverage and quality.</p></article><div class="main-footer"><nav class="background-midnight grid-fluid"><div class="c3 main-footer-branding"><div class="logo-inverse-large"></div></div><div class="c2"><h3 class="text-headline">RESOURCES</h3><ul class="text-body"><!-- TODO: (ericjim) make a libraries page to showcase all angular 2 libraries--><!--li <a href="/libraries.html">Libraries</a>--><li><a href="/about/">About</a></li><li><a href="/resources/">Books & Training</a></li><li><a href="/resources/">Tools & Libraries</a></li><li><a href="/resources/">Community</a></li><li><a href="/presskit.html">Press Kit</a></li></ul></div><div class="c2"><h3 class="text-headline">HELP</h3><ul class="text-body"><li><a href="http://stackoverflow.com/questions/tagged/angular2">Stack Overflow</a></li><li><a href="https://gitter.im/angular/angular">Gitter</a></li><li><a href="https://groups.google.com/forum/#!forum/angular"> Google Group</a></li><li><a href="https://github.com/angular/angular/issues"> Report Issues</a></li><li><a class="footer-feedback" ng-click="appCtrl.openFeedback()" aria-label="Submit feedback on this page"> Site Feedback</a></li></ul></div><div class="c2"><h3 class="text-headline">COMMUNITY</h3><ul class="text-body"><li><a href="/events.html">Events</a></li><li><a href="http://www.meetup.com/topics/angularjs/">Meetups</a></li><li><a href="https://twitter.com/angularjs"> Twitter</a></li><li><a href="https://github.com/angular/angular"> GitHub</a></li><li><a href="/contribute.html"> Contribute</a></li></ul></div><div class="c2"><h3 class="text-headline">LANGUAGES</h3><ul class="text-body"><li><a href="https://angular.cn/">中文版</a></li></ul></div></nav><footer class="background-midnight"><small class="text-caption">Powered by Google ©2010-2016. Code licensed under an <a href="/license" class="text-snow">MIT-style License</a>. Documentation licensed under <a class="text-snow" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</small><a aria-label="View Style Guide" href="/docs/ts/latest/styleguide.html" title="Style Guide" class="styleguide-trigger text-snow"><span class="icon-favorite"></span></a></footer></div><!-- VENDORS --><script src="/resources/js/vendor/prettify.js"></script><script src="/resources/js/vendor/lang-basic.js"></script><script src="/resources/js/vendor/lang-dart.js"></script><script src="/resources/js/vendor/lodash.js"></script><script src="/resources/js/vendor/clipboard.min.js"></script><!-- Angular Material Dependencies --><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script><!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+<!-- Angular.io Site JS --><script src="/resources/js/site.js"></script><script src="/resources/js/util.js"></script><script src="/resources/js/controllers/app-controller.js"></script><script src="/resources/js/controllers/resources-controller.js"></script><script src="/resources/js/directives/cheatsheet.js"></script><script src="/resources/js/directives/api-list.js"></script><script src="/resources/js/directives/bio.js"></script><script src="/resources/js/directives/bold.js"></script><script src="/resources/js/directives/announcement-bar.js"></script><script src="/resources/js/directives/code.js"></script><script src="/resources/js/directives/copy.js"></script><script src="/resources/js/directives/code-tabs.js"></script><script src="/resources/js/directives/code-pane.js"></script><script src="/resources/js/directives/code-example.js"></script><script src="/resources/js/directives/if-docs.js"></script><script src="/resources/js/directives/live-example.js"></script><script src="/resources/js/directives/ngio-ex-path.js"></script><script src="/resources/js/directives/scroll-y-offset-element.js"></script><!-- GA --><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-8594346-15', 'auto');
+ga('send', 'pageview')
+
+</script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+_st('install','VsuU7kH5Hnnj9tfyNvfK');
+</script><!-- Google Feedback --><script src="//www.gstatic.com/feedback/api.js" type="text/javascript"></script><!-- Twitter Widget --><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}})(document,"script","twitter-wjs");</script></body></html>
